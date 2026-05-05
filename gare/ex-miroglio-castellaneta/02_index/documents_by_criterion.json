@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "data_indicizzazione": "2026-05-04",
+    "agente": "document-indexer",
+    "totale_documenti": 95
+  },
+  "C1": {
+    "titolo": "Qualita' tecnica delle proposte migliorative",
+    "punti": 35,
+    "primari": [
+      {
+        "id": "D001",
+        "nome": "00 Disciplinare 26_136.pdf",
+        "tipo": "disciplinare",
+        "pertinenza": "Definisce i criteri C1.1-C1.4 con testo prescrittivo, scala motivazionale e vincoli formali. Fonte gerarchicamente superiore."
+      },
+      {
+        "id": "D060",
+        "nome": "ES.GE.D.06_rev.02_Relazione Criteri Ambientali Minimi.pdf",
+        "tipo": "relazione",
+        "pertinenza": "Documento CAM: elenca i requisiti obbligatori per materiali (EPD, riciclato, VOC, SRI) e cantiere. Baseline per i miglioramenti premianti C1."
+      },
+      {
+        "id": "D061",
+        "nome": "ES.GE.D.07_rev.02_Relazione Gestione delle materie.pdf",
+        "tipo": "relazione",
+        "pertinenza": "Bilancio materiali da scavo/demolizione, gestione rifiuti C&D, classificazione CER. Baseline quantitativa per C1.1."
+      },
+      {
+        "id": "D065",
+        "nome": "ES.GE.D.11_rev.01_Capitolato prestazionale delle opere.pdf",
+        "tipo": "capitolato",
+        "pertinenza": "Specifica le prestazioni attese per materiali e componenti (riciclati, VOC, pavimenti, impermeabilizzazioni, infissi, isolamento termico). Baseline obbligatoria per C1.2, C1.3, C1.4."
+      },
+      {
+        "id": "D080",
+        "nome": "ES.GE.D.26_rev.03_Capitolato speciale d'appalto.pdf",
+        "tipo": "capitolato",
+        "pertinenza": "Disciplina contrattuale con articoli su requisiti ambientali e materiali. Integra i requisiti CAM per forniture e lavorazioni. Rilevante per C1.2 e C1.3."
+      },
+      {
+        "id": "D062",
+        "nome": "ES.GE.D.08_rev.03_Computo metrico estimativo.pdf",
+        "tipo": "computo",
+        "pertinenza": "Quantita' e categorie di lavoro. Indispensabile per identificare i componenti su cui costruire l'analisi LCA (C1.4)."
+      },
+      {
+        "id": "D063",
+        "nome": "ES.GE.D.09_rev.02_Elenco analisi prezzi.pdf",
+        "tipo": "elenco prezzi",
+        "pertinenza": "Voci analitiche con composizione dei materiali. Utile per identificare i componenti con maggiore incidenza per LCA."
+      },
+      {
+        "id": "D064",
+        "nome": "ES.GE.D.10_rev.03_Elenco prezzi.pdf",
+        "tipo": "elenco prezzi",
+        "pertinenza": "Prezzario con descrizione dei materiali e prodotti impiegati. Supporto per C1.2, C1.3, C1.4."
+      },
+      {
+        "id": "D075",
+        "nome": "ES.GE.D.21_Studio di fattibilita' ambientale.pdf",
+        "tipo": "relazione",
+        "pertinenza": "Impatti ambientali della fase di cantiere e misure di mitigazione. Baseline per C1.1 e C1.4."
+      }
+    ],
+    "secondari": [
+      { "id": "D054", "nome": "ES.GE.D.02.1_rev.03_Relazione generale.pdf", "tipo": "relazione", "pertinenza": "Descrive le opere nel loro insieme; contesto per C1.4." },
+      { "id": "D055", "nome": "ES.GE.D.02.2_rev.02_Relazione tecnico illustrativa.pdf", "tipo": "relazione", "pertinenza": "Descrizione tecnica coperture, finiture esterne e interne, infissi, impianti; contesto per C1.2 e C1.3." },
+      { "id": "D077", "nome": "ES.GE.D.23_rev.01_Piano di manutenzione.pdf", "tipo": "relazione", "pertinenza": "Durabilita' componenti edilizi; utile per LCA (C1.4)." },
+      { "id": "D057", "nome": "ES.GE.D.04.1_Relazione di compatibilita' paesaggistica.pdf", "tipo": "relazione", "pertinenza": "Analisi materiali esterni rispetto al contesto paesaggistico; C1.2." },
+      { "id": "D082", "nome": "ES.GE.D.28_rev.01_Relazione di valutazione previsionale requisiti acustici passivi.pdf", "tipo": "relazione", "pertinenza": "Specifiche partizioni e coperture; contesto per C1.3." },
+      { "id": "D040", "nome": "ES.ARC.SP.T.13_rev_01_Abaco infissi - Catalogazione.pdf", "tipo": "tavola", "pertinenza": "Catalogazione infissi; contesto per VOC/EPD (C1.3)." },
+      { "id": "D041", "nome": "ES.ARC.SP.T.13_rev_01_Abaco infissi - Stato di progetto.pdf", "tipo": "tavola", "pertinenza": "Specifiche infissi di progetto; C1.2 e C1.3." },
+      { "id": "D032", "nome": "ES.ARC.SP.T.05_Planimetria piano copertura - Stato di progetto.pdf", "tipo": "tavola", "pertinenza": "Layout copertura; riferimento visivo per SRI (C1.2)." },
+      { "id": "D035", "nome": "ES.ARC.SP.T.08_Prospetti Nord e Sud immobili - Stato di progetto.pdf", "tipo": "tavola", "pertinenza": "Finiture esterne; riferimento visivo per C1.2." },
+      { "id": "D036", "nome": "ES.ARC.SP.T.09_Prospetti Est e Ovest immobili - Stato di progetto.pdf", "tipo": "tavola", "pertinenza": "Finiture esterne; riferimento visivo per C1.2." },
+      { "id": "D086", "nome": "ES.M.SP.D.01_rev.02_Relazione specialistica e calcoli impianti meccanici.pdf", "tipo": "relazione", "pertinenza": "Componenti impianti meccanici per analisi LCA (C1.4)." },
+      { "id": "D044", "nome": "ES.E.SP.D.03_rev.03_Relazione specialistica e calcoli impianti elettrici BT.pdf", "tipo": "relazione", "pertinenza": "Componenti impianti elettrici BT per LCA (C1.4)." },
+      { "id": "D066", "nome": "ES.GE.D.12_rev.03_Piano di sicurezza e coordinamento.pdf", "tipo": "PSC", "pertinenza": "Descrizione attivita' di cantiere e materiali di risulta; baseline per C1.1." },
+      { "id": "D002", "nome": "ELENCO ELABORATI.pdf", "tipo": "elenco elaborati", "pertinenza": "Indice documentazione di progetto. Orientativo." }
+    ]
+  },
+  "C2": {
+    "titolo": "Cantiere a basso impatto ambientale",
+    "punti": 25,
+    "primari": [
+      {
+        "id": "D001",
+        "nome": "00 Disciplinare 26_136.pdf",
+        "tipo": "disciplinare",
+        "pertinenza": "Definisce i criteri C2.1-C2.3 con punteggi tabellari e discrezionali. Fonte gerarchicamente superiore."
+      },
+      {
+        "id": "D066",
+        "nome": "ES.GE.D.12_rev.03_Piano di sicurezza e coordinamento.pdf",
+        "tipo": "PSC",
+        "pertinenza": "Descrive attivita' di cantiere, gestione rischi, macchinari, organizzazione fasi. Baseline per C2.1 e C2.3."
+      },
+      {
+        "id": "D060",
+        "nome": "ES.GE.D.06_rev.02_Relazione Criteri Ambientali Minimi.pdf",
+        "tipo": "relazione",
+        "pertinenza": "Sezione 2.6: prestazioni ambientali del cantiere obbligatorie (demolizione selettiva, recupero, riciclo). Baseline per C2.2."
+      },
+      {
+        "id": "D061",
+        "nome": "ES.GE.D.07_rev.02_Relazione Gestione delle materie.pdf",
+        "tipo": "relazione",
+        "pertinenza": "Gestione rifiuti C&D, deposito temporaneo, classificazione. Baseline quantitativa per C2.2."
+      },
+      {
+        "id": "D075",
+        "nome": "ES.GE.D.21_Studio di fattibilita' ambientale.pdf",
+        "tipo": "relazione",
+        "pertinenza": "Sezioni 5.2 e 5.3: impatti potenziali di cantiere (polveri, rumore, vibrazioni, acque) e misure di mitigazione. Baseline per C2.3."
+      },
+      {
+        "id": "D083",
+        "nome": "ES.GE.D.29_rev.01_Relazione valutazione impatto acustico.pdf",
+        "tipo": "relazione",
+        "pertinenza": "Valutazione impatto acustico cantiere; dati di riferimento per piano mitigazione rumore (C2.3)."
+      },
+      {
+        "id": "D093",
+        "nome": "ES.SIC.SP.T.01_rev.02_Layout di cantiere - Cabina MT.pdf",
+        "tipo": "tavola",
+        "pertinenza": "Layout cantiere con zone stoccaggio rifiuti, percorsi mezzi, aree deposito. Riferimento per C2.1 e C2.3."
+      },
+      {
+        "id": "D094",
+        "nome": "ES.SIC.SP.T.02_rev.02_Layout di cantiere - Capannoni.pdf",
+        "tipo": "tavola",
+        "pertinenza": "Layout cantiere area capannoni. Riferimento per C2.1 e C2.3."
+      },
+      {
+        "id": "D095",
+        "nome": "ES.SIC.SP.T.03_rev.02_Layout di cantiere - Aree esterne.pdf",
+        "tipo": "tavola",
+        "pertinenza": "Layout cantiere aree esterne. Riferimento per C2.3 (viabilita', impatti su utenza)."
+      },
+      {
+        "id": "D069",
+        "nome": "ES.GE.D.15_rev_01_Cronoprogramma.pdf",
+        "tipo": "cronoprogramma",
+        "pertinenza": "Fasi temporali del cantiere. Necessario per strutturare il piano di mitigazione per fasi (C2.3)."
+      }
+    ],
+    "secondari": [
+      { "id": "D062", "nome": "ES.GE.D.08_rev.03_Computo metrico estimativo.pdf", "tipo": "computo", "pertinenza": "Quantita' e categorie di lavoro; utile per stimare riciclato aggiuntivo (C2.2)." },
+      { "id": "D065", "nome": "ES.GE.D.11_rev.01_Capitolato prestazionale delle opere.pdf", "tipo": "capitolato", "pertinenza": "Requisiti dei materiali; baseline per riciclato aggiuntivo oltre CAM (C2.2)." },
+      { "id": "D080", "nome": "ES.GE.D.26_rev.03_Capitolato speciale d'appalto.pdf", "tipo": "capitolato", "pertinenza": "Articoli su materiali e forniture con requisiti ambientali; supporto per C2.2." },
+      { "id": "D082", "nome": "ES.GE.D.28_rev.01_Relazione di valutazione previsionale requisiti acustici passivi.pdf", "tipo": "relazione", "pertinenza": "Dati acustici opera finita; contesto per impatto acustico cantiere (C2.3)." },
+      { "id": "D087", "nome": "ES.M.SP.D.02_Relazione idrogeologica.pdf", "tipo": "relazione", "pertinenza": "Dati idrogeologici; utile per acque di dilavamento nel piano mitigazione (C2.3)." },
+      { "id": "D068", "nome": "ES.GE.D.14_rev.02_Stima dei costi della sicurezza.pdf", "tipo": "relazione", "pertinenza": "Costi sicurezza; contesto per risorse disponibili per piano mitigazione (C2.3)." },
+      { "id": "D073", "nome": "ES.GE.D.19_rev.01_Relazione sulla risoluzione delle interferenze.pdf", "tipo": "relazione", "pertinenza": "Interferenze tra lavorazioni; rilevante per organizzazione cantiere (C2.3)." },
+      { "id": "D054", "nome": "ES.GE.D.02.1_rev.03_Relazione generale.pdf", "tipo": "relazione", "pertinenza": "Fasi intervento e macchinari coinvolti; contesto per C2.1." },
+      { "id": "D067", "nome": "ES.GE.D.13_Fascicolo dell'opera.pdf", "tipo": "allegato", "pertinenza": "Dati tecnici opera; contesto per C2.3." },
+      { "id": "D028", "nome": "ES.ARC.SP.T.01_Planimetria aree esterne - Stato di progetto.pdf", "tipo": "tavola", "pertinenza": "Layout aree esterne; contesto per organizzazione cantiere (C2.3)." }
+    ]
+  },
+  "C3": {
+    "titolo": "Sostenibilita' aziendale e certificazioni",
+    "punti": 15,
+    "nota": "C3 e' interamente tabellare. Dipende da documentazione aziendale (certificazioni ISO 14001, ISO 45001, attestazione ESG, rating legalita'). Nessun documento progettuale di gara puo' sostituire questi elementi.",
+    "primari": [
+      {
+        "id": "D001",
+        "nome": "00 Disciplinare 26_136.pdf",
+        "tipo": "disciplinare",
+        "pertinenza": "Definisce C3.1, C3.2, C3.3 con punteggi tabellari e condizioni di validita'. Unica fonte prescrittiva per C3."
+      }
+    ],
+    "secondari": [
+      { "id": "D081", "nome": "ES.GE.D.27_rev.02_Schema di contratto.pdf", "tipo": "schema contratto", "pertinenza": "Clausole contrattuali; contesto per integrazione certificazioni." },
+      { "id": "D076", "nome": "ES.GE.D.22_Fascicolo pareri.pdf", "tipo": "allegato", "pertinenza": "Atti autorizzativi; contesto sul soggetto attuatore." }
+    ]
+  }
+}

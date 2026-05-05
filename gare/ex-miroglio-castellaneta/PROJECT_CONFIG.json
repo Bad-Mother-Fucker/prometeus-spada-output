@@ -1,0 +1,60 @@
+{
+  "sistema": "Prometeus S.P.A.D.A",
+  "versione_agente": "1.0.0",
+  "gara": {
+    "nome": "Intervento di riqualificazione del sito industriale denominato \"Ex Miroglio\" sito in Castellaneta (TA)",
+    "stazione_appaltante": "AGROMED S.r.l. S.B. – Organismo di diritto pubblico",
+    "CIG": "BB5AABF660",
+    "CUP": "G88H22001120001",
+    "importo_base_asta": "4.748.128,93 €",
+    "scadenza_offerta": "2026-05-25 12:00",
+    "codice_interno": "ex-miroglio-castellaneta",
+    "note": "Oneri sicurezza non ribassabili: 46.770,41 €. Importo complessivo progetto: 4.794.899,34 €. Costi manodopera stimati (non ribassabili): 745.560,14 €. Limite relazione tecnica: max 30 facciate A4."
+  },
+  "remote_output": {
+    "repository": "prometeus-spada-output",
+    "branch": "main",
+    "path_gara": "gare/"
+  },
+  "criteri_attivi": [
+    {
+      "id": "C1",
+      "titolo": "Qualità tecnica delle proposte migliorative",
+      "punti": 35,
+      "tipo": "discrezionale",
+      "stato": "da_analizzare"
+    },
+    {
+      "id": "C2",
+      "titolo": "Cantiere a basso impatto ambientale",
+      "punti": 25,
+      "tipo": "misto",
+      "stato": "da_analizzare"
+    },
+    {
+      "id": "C3",
+      "titolo": "Sostenibilità aziendale e certificazioni",
+      "punti": 15,
+      "tipo": "tabellare",
+      "stato": "da_analizzare"
+    }
+  ],
+  "punteggio_offerta_tecnica": 75,
+  "punteggio_offerta_temporale": 10,
+  "punteggio_offerta_economica": 15,
+  "stato": "iniziata",
+  "fasi_completate": [],
+  "ultimo_aggiornamento": "2026-05-04T00:00:00",
+  "paths": {
+    "input": "00_input/",
+    "extracted": "01_extracted/",
+    "index": "02_index/",
+    "criteria": "03_criteria/",
+    "summaries": "04_doc_summaries/",
+    "outputs": "05_criteria_outputs/",
+    "registers": "06_registers/",
+    "questions": "07_questions/",
+    "state": "08_state/",
+    "offer": "10_offer/"
+  }
+}

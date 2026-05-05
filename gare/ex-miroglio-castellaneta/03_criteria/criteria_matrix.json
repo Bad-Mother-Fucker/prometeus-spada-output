@@ -1,0 +1,226 @@
+{
+  "gara": {
+    "nome": "Lavori ex-Miroglio Castellaneta",
+    "CIG": "BB5AABF660",
+    "CUP": "G88H22001120001",
+    "stazione_appaltante": "AGROMED S.r.l. S.B.",
+    "importo_base": 4748128.93,
+    "scadenza_offerta": "2026-05-25T12:00:00"
+  },
+  "punteggi_totali": {
+    "offerta_tecnica": 75,
+    "offerta_temporale": 10,
+    "offerta_economica": 15,
+    "totale": 100
+  },
+  "scala_motivazionale": {
+    "descrizione": "Applicata ai criteri discrezionali. Coefficiente 0-1 per ogni commissario; la commissione calcola la media aritmetica.",
+    "livelli": [
+      {"giudizio": "Non adeguato", "coefficiente_da": 0.00, "coefficiente_a": 0.19},
+      {"giudizio": "Mediocre", "coefficiente_da": 0.20, "coefficiente_a": 0.39},
+      {"giudizio": "Adeguato", "coefficiente_da": 0.40, "coefficiente_a": 0.59},
+      {"giudizio": "Buono", "coefficiente_da": 0.60, "coefficiente_a": 0.79},
+      {"giudizio": "Ottimo", "coefficiente_da": 0.80, "coefficiente_a": 1.00}
+    ]
+  },
+  "criteri": [
+    {
+      "id": "C1",
+      "codice_disciplinare": "1",
+      "titolo": "Qualità tecnica delle proposte migliorative",
+      "punti": 35,
+      "tipo": "discrezionale",
+      "metodo": "Coefficiente 0-1 per ciascun sottocriterio attribuito da ogni commissario; punteggio = coefficiente_medio × sub-peso",
+      "riferimento_disciplinare": "Art. 18.1, criterio 1",
+      "note": "Tutti i sottocriteri sono discrezionali",
+      "sottocriteri": [
+        {
+          "id": "C1.1",
+          "codice_disciplinare": "1.a",
+          "titolo": "Piano di gestione ambientale del cantiere con obiettivi quantificati di riduzione rifiuti C&D",
+          "punti": 12,
+          "tipo": "discrezionale",
+          "metodo": "Coefficiente 0-1, scala motivazionale (media aritmetica commissari)",
+          "descrizione": "Il concorrente dovrà descrivere il Piano di gestione ambientale del cantiere con obiettivi quantificati di riduzione dei rifiuti da C&D oltre i minimi CAM obbligatori e di reimpiego/riciclo in situ.",
+          "riferimento_CAM": "CAM DM 24.11.2025 - criterio premiante 3.2 riduzione rifiuti da cantiere",
+          "elementi_premianti": [
+            "Obiettivi quantificati di riduzione rifiuti C&D oltre minimi CAM",
+            "Piano di reimpiego/riciclo in situ",
+            "Analiticità della trattazione",
+            "Vantaggi chiari e dimostrabili per la SA"
+          ],
+          "vincoli_formali": null
+        },
+        {
+          "id": "C1.2",
+          "codice_disciplinare": "1.b",
+          "titolo": "Proposte migliorative finiture esterne — materiali SRI ≥ 40 e/o EPD/Ecolabel UE",
+          "punti": 8,
+          "tipo": "discrezionale",
+          "metodo": "Coefficiente 0-1, scala motivazionale (media aritmetica commissari)",
+          "descrizione": "Il concorrente dovrà descrivere le proposte migliorative per le finiture esterne: impiego di materiali con Solar Reflectance Index (SRI) ≥ 40 per coperture e superfici orizzontali e/o con certificazione EPD/Ecolabel UE, in sostituzione di materiali standard.",
+          "riferimento_CAM": "CAM - prodotti a basso impatto ambientale lungo il ciclo di vita",
+          "elementi_premianti": [
+            "Materiali con SRI ≥ 40 per coperture e superfici orizzontali",
+            "Certificazione EPD o Ecolabel UE",
+            "Sostituzione materiali standard con basso impatto ambientale"
+          ],
+          "vincoli_formali": null
+        },
+        {
+          "id": "C1.3",
+          "codice_disciplinare": "1.c",
+          "titolo": "Proposte migliorative finiture interne — materiali a basse VOC e/o riciclato certificato",
+          "punti": 8,
+          "tipo": "discrezionale",
+          "metodo": "Coefficiente 0-1, scala motivazionale (media aritmetica commissari)",
+          "descrizione": "Il concorrente dovrà descrivere le proposte migliorative per le finiture interne: impiego di materiali con basse emissioni di VOC e/o con contenuto di materia riciclata certificata in quantità superiore ai minimi CAM obbligatori.",
+          "riferimento_CAM": "CAM - materiali riciclati",
+          "elementi_premianti": [
+            "Materiali a basse emissioni di VOC",
+            "Contenuto di materia riciclata certificata superiore ai minimi CAM",
+            "Specificità delle proposte e analiticità della descrizione"
+          ],
+          "vincoli_formali": null
+        },
+        {
+          "id": "C1.4",
+          "codice_disciplinare": "1.d",
+          "titolo": "Analisi LCA semplificata dei componenti edilizi e impiantistici con minore GWP",
+          "punti": 7,
+          "tipo": "discrezionale",
+          "metodo": "Coefficiente 0-1, scala motivazionale (media aritmetica commissari)",
+          "descrizione": "Il concorrente dovrà esplicitare l'analisi semplificata del ciclo di vita (LCA) dei principali componenti edilizi e impiantistici previsti nell'offerta migliorativa, con individuazione delle soluzioni a minore GWP (Global Warming Potential) rispetto alle soluzioni a base di gara.",
+          "riferimento_CAM": "CAM DM 24.11.2025 - criterio premiante 3.2.1 LCA",
+          "elementi_premianti": [
+            "Analisi LCA semplificata dei componenti principali",
+            "Individuazione soluzioni a minore GWP rispetto a base di gara",
+            "Confronto documentato con alternative a base di gara"
+          ],
+          "vincoli_formali": null
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "codice_disciplinare": "2",
+      "titolo": "Cantiere a basso impatto ambientale",
+      "punti": 25,
+      "tipo": "misto",
+      "metodo": "2.a tabellare automatico in valore assoluto; 2.b e 2.c discrezionali con coefficiente 0-1",
+      "riferimento_disciplinare": "Art. 18.1, criterio 2",
+      "note": "Solo 2.a è tabellare (T); 2.b e 2.c sono discrezionali",
+      "sottocriteri": [
+        {
+          "id": "C2.1",
+          "codice_disciplinare": "2.a",
+          "titolo": "Macchine operatrici Fase V / elettriche / ibride plug-in",
+          "punti": 8,
+          "tipo": "tabellare",
+          "metodo": "Punteggio automatico in valore assoluto: 100% Fase V o superiore = 8 pt; almeno 70% Fase V = 4 pt; sotto 70% = 0 pt",
+          "descrizione": "Il concorrente dovrà dettagliare l'impiego esclusivo di macchine operatrici dotate di motori di Fase V ai sensi del Regolamento UE 1628/2016, o con propulsione elettrica o ibrida plug-in.",
+          "riferimento_CAM": "CAM DM 24.11.2025 - clausola macchine operatrici; Regolamento UE 1628/2016",
+          "elementi_premianti": [
+            "100% parco macchine Fase V o superiore = 8 pt",
+            "Almeno 70% parco macchine Fase V = 4 pt",
+            "Propulsione elettrica o ibrida plug-in equivale a Fase V"
+          ],
+          "vincoli_formali": "Documentazione obbligatoria del parco macchine con percentuale effettiva"
+        },
+        {
+          "id": "C2.2",
+          "codice_disciplinare": "2.b",
+          "titolo": "Impiego aggiuntivo materiali recuperati/riciclati oltre minimi CAM",
+          "punti": 8,
+          "tipo": "discrezionale",
+          "metodo": "Coefficiente 0-1, scala motivazionale (media aritmetica commissari)",
+          "descrizione": "Il concorrente dovrà dettagliare l'impiego aggiuntivo di prodotti con contenuto di materiale recuperato/riciclato superiore alle percentuali minime CAM obbligatorie.",
+          "riferimento_CAM": null,
+          "elementi_premianti": [
+            "Percentuale di riciclato superiore ai minimi CAM",
+            "Certificazione ReMade in Italy",
+            "Certificazione UNI EN 15804 EPD",
+            "Certificazione equivalente di terza parte"
+          ],
+          "vincoli_formali": "Documentazione obbligatoria: certificazione ReMade in Italy, UNI EN 15804 EPD o equivalente terza parte"
+        },
+        {
+          "id": "C2.3",
+          "codice_disciplinare": "2.c",
+          "titolo": "Piano di mitigazione impatti cantiere su utenza e ambiente",
+          "punti": 9,
+          "tipo": "discrezionale",
+          "metodo": "Coefficiente 0-1, scala motivazionale (media aritmetica commissari)",
+          "descrizione": "Il concorrente dovrà dettagliare il piano di mitigazione degli impatti su utenza e ambiente (polveri, rumore, vibrazioni, traffico indotto, acque di dilavamento) con indicatori di monitoraggio misurabili e figure tecniche dedicate al coordinamento ambientale.",
+          "riferimento_CAM": null,
+          "elementi_premianti": [
+            "Indicatori di monitoraggio misurabili per ogni impatto",
+            "Figure tecniche dedicate al coordinamento ambientale",
+            "Copertura di tutti gli impatti: polveri, rumore, vibrazioni, traffico, acque"
+          ],
+          "vincoli_formali": null
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "codice_disciplinare": "3",
+      "titolo": "Sostenibilità aziendale e certificazioni",
+      "punti": 15,
+      "tipo": "tabellare",
+      "metodo": "Punteggio assegnato automaticamente in valore assoluto sulla base della presenza/assenza della documentazione prodotta",
+      "riferimento_disciplinare": "Art. 18.1, criterio 3",
+      "note": "Tutti i sottocriteri sono tabellari (T); i punteggi sono automatici",
+      "sottocriteri": [
+        {
+          "id": "C3.1",
+          "codice_disciplinare": "3.a",
+          "titolo": "Possesso certificazioni di sistema ISO 14001 e/o ISO 45001",
+          "punti": 5,
+          "tipo": "tabellare",
+          "metodo": "ISO 14001 (gestione ambientale) = 3 pt; ISO 45001 (salute e sicurezza) = 2 pt; cumulabili fino a max 5 pt",
+          "descrizione": "Possesso di certificazioni di sistema in corso di validità.",
+          "riferimento_CAM": null,
+          "elementi_premianti": [
+            "ISO 14001 in corso di validità = 3 pt",
+            "ISO 45001 in corso di validità = 2 pt",
+            "Entrambe le certificazioni = 5 pt (massimo)"
+          ],
+          "vincoli_formali": "Certificazioni devono essere in corso di validità"
+        },
+        {
+          "id": "C3.2",
+          "codice_disciplinare": "3.b",
+          "titolo": "Attestazione ESG (organismo accreditato UNI CEI EN ISO/IEC 17029)",
+          "punti": 5,
+          "tipo": "tabellare",
+          "metodo": "Possesso attestazione in corso di validità = 5 pt; assenza = 0 pt",
+          "descrizione": "Attestazione ESG rilasciata da organismo di valutazione della conformità accreditato ai sensi della norma UNI CEI EN ISO/IEC 17029.",
+          "riferimento_CAM": "CAM DM 24.11.2025 - criterio premiante 3.2.5",
+          "elementi_premianti": [
+            "Attestazione ESG in corso di validità = 5 pt"
+          ],
+          "vincoli_formali": "Rilasciata da organismo accreditato UNI CEI EN ISO/IEC 17029; in corso di validità"
+        },
+        {
+          "id": "C3.3",
+          "codice_disciplinare": "3.c",
+          "titolo": "Rating di legalità",
+          "punti": 5,
+          "tipo": "tabellare",
+          "metodo": "2 pt per ogni stella intera; 1 pt per ogni '+'; massimo 5 pt",
+          "descrizione": "Rating di legalità assegnato dall'AGCM. Punteggio tabellare fino al massimo attribuibile di 5 punti.",
+          "riferimento_CAM": null,
+          "elementi_premianti": [
+            "1 stella = 2 pt",
+            "1 stella e un '+' = 3 pt",
+            "2 stelle = 4 pt",
+            "2 stelle e un '+' = 5 pt (massimo)",
+            "3 stelle = 6 pt ma capped a 5 pt"
+          ],
+          "vincoli_formali": "Massimo attribuibile 5 pt indipendentemente dal punteggio totale del rating"
+        }
+      ]
+    }
+  ]
+}
