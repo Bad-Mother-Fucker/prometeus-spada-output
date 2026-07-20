@@ -1,0 +1,186 @@
+{
+  "gara": {
+    "nome": "Intervento di efficientamento energetico dell'Istituto Comprensivo \"De Luca Picione Caravita\" sito alla Via Nuova",
+    "CIG": "BC3ECFAA55",
+    "CUP": "G13C25000920001",
+    "punteggio_tecnico_max": 90,
+    "punteggio_economico_max": 10,
+    "punteggio_totale_max": 100,
+    "soglia_sbarramento_tecnico": 45,
+    "soglia_sbarramento_base": 90,
+    "riparametrazione": "Se nessun concorrente ottiene il punteggio tecnico massimo, il punteggio viene riparametrato: il concorrente con il punteggio tecnico più alto ottiene il massimo, gli altri un punteggio proporzionale decrescente (art. 18.4). La soglia di sbarramento è calcolata PRIMA della riparametrazione (art. 18.1).",
+    "fonte": "Disciplinare di gara, artt. 16, 18.1, 18.2, 18.3, 18.4"
+  },
+  "criteria": [
+    {
+      "id": "C1",
+      "codice_disciplinare": "A1",
+      "title": "Proposte integrative/migliorative delle opere inerenti al progetto di Efficientamento energetico, dei materiali impiegati e delle loro caratteristiche tecniche",
+      "max_score": 20,
+      "tipo": "qualitativo",
+      "subcriteria": [],
+      "scoring_method": "discrezionale — coefficiente 0-1 attribuito da ciascun commissario secondo griglia (ottimo 0,76-1; più che adeguato 0,51-0,75; adeguato 0,26-0,50; parzialmente adeguato 0,01-0,25; inadeguato 0), media aritmetica dei coefficienti dei commissari, moltiplicata per il punteggio massimo del criterio",
+      "elementi_premianti": [
+        "Utilizzo di tecnologie e materiali maggiormente performanti rispetto al progetto a base di gara",
+        "Migliore e più agevole manutenibilità",
+        "Maggiore durabilità e livelli prestazionali più elevati (ambiti architettonico, edile, tecnologico, impiantistico)",
+        "Soluzioni progettuali/realizzative migliorative e integrative per aree servizi culturali/didattici, ricreativi, gestionali-amministrativi e aree comuni",
+        "Soluzioni migliorative nell'ambito energetico e impiantistico (reti) con migliori standard realizzativi e di esercizio",
+        "Caratteristiche costruttive dei prodotti, qualità dei materiali, qualità assemblaggio componenti, qualità finiture superficiali, caratteristiche prestazionali/meccaniche, certificazioni di prodotto, igiene e sicurezza dei prodotti, classe di reazione al fuoco"
+      ],
+      "constraints": [
+        "Le migliorie offerte implicano la redazione dell'Allegato tecnico (Relazione energetica ex L. 10 + APE post operam) con riferimento ai criteri A1-A2-A3 (art. 16 lett. m)",
+        "Le relazioni tecniche non devono contenere alcuna quantificazione economica o elemento che vi riconduca, pena esclusione dalla gara (art. 16)",
+        "L'offerta tecnica deve rispettare le caratteristiche minime stabilite nei documenti di gara, nel rispetto del principio di equivalenza (art. 16)",
+        "Massimo 6 facciate A4 (oltre copertina e indice) nella Relazione tecnica unica per il sub-criterio; facciate eccedenti non valutate (art. 16 lett. j)"
+      ],
+      "out_of_scope_risks": [
+        "Proposte che alterano sostanzialmente le opere di efficientamento energetico già validate, anziché integrarle/migliorarle, rischiano di configurare una variante non ammessa rispetto al progetto validato (art. 3.5)",
+        "Inserimento di riferimenti economici o di ribasso nella relazione tecnica comporta esclusione dalla gara (art. 16)"
+      ],
+      "documenti_richiesti": [
+        "Relazione tecnica unica (sezione dedicata al criterio A1)",
+        "Relazione di sintesi (sezione dedicata al criterio A1)",
+        "Computo metrico non estimativo con inserimento delle migliorie",
+        "Allegato tecnico: Relazione energetica ex L. 10 e APE post operam"
+      ]
+    },
+    {
+      "id": "C2",
+      "codice_disciplinare": "A2",
+      "title": "Proposte integrative/migliorative delle opere e delle caratteristiche tecniche relative alla fornitura e posa in opera degli infissi",
+      "max_score": 25,
+      "tipo": "qualitativo",
+      "subcriteria": [],
+      "scoring_method": "discrezionale — coefficiente 0-1 attribuito da ciascun commissario secondo griglia (ottimo 0,76-1; più che adeguato 0,51-0,75; adeguato 0,26-0,50; parzialmente adeguato 0,01-0,25; inadeguato 0), media aritmetica dei coefficienti dei commissari, moltiplicata per il punteggio massimo del criterio",
+      "elementi_premianti": [
+        "Caratteristiche dei materiali in termini di requisiti qualitativi e funzionali",
+        "Uso di materiali e tecnologie originali e/o innovativi",
+        "Manutenibilità, durabilità, livelli prestazionali, ecocompatibilità",
+        "Fornitura di infissi a taglio termico",
+        "Integrazione degli infissi con sistemi oscuranti",
+        "Caratteristiche costruttive dei prodotti, qualità dei materiali, qualità assemblaggio componenti, qualità finiture superficiali, caratteristiche prestazionali/meccaniche, certificazioni di prodotto, igiene e sicurezza dei prodotti, classe di reazione al fuoco"
+      ],
+      "constraints": [
+        "Le migliorie offerte implicano la redazione dell'Allegato tecnico (Relazione energetica ex L. 10 + APE post operam) con riferimento ai criteri A1-A2-A3 (art. 16 lett. m)",
+        "Le relazioni tecniche non devono contenere alcuna quantificazione economica o elemento che vi riconduca, pena esclusione dalla gara (art. 16)",
+        "L'offerta tecnica deve rispettare le caratteristiche minime stabilite nei documenti di gara, nel rispetto del principio di equivalenza (art. 16)",
+        "Massimo 6 facciate A4 (oltre copertina e indice) nella Relazione tecnica unica per il sub-criterio; facciate eccedenti non valutate (art. 16 lett. j)"
+      ],
+      "out_of_scope_risks": [
+        "Proposte di infissi che non rispettino le caratteristiche minime di progetto rischiano di violare il principio di equivalenza richiesto dal disciplinare (art. 16)",
+        "Inserimento di riferimenti economici o di ribasso nella relazione tecnica comporta esclusione dalla gara (art. 16)"
+      ],
+      "documenti_richiesti": [
+        "Relazione tecnica unica (sezione dedicata al criterio A2)",
+        "Relazione di sintesi (sezione dedicata al criterio A2)",
+        "Computo metrico non estimativo con inserimento delle migliorie",
+        "Allegato tecnico: Relazione energetica ex L. 10 e APE post operam"
+      ]
+    },
+    {
+      "id": "C3",
+      "codice_disciplinare": "A3",
+      "title": "Proposte integrative/migliorative delle opere e delle caratteristiche tecniche relative all'impianto Fotovoltaico",
+      "max_score": 20,
+      "tipo": "qualitativo",
+      "subcriteria": [],
+      "scoring_method": "discrezionale — coefficiente 0-1 attribuito da ciascun commissario secondo griglia (ottimo 0,76-1; più che adeguato 0,51-0,75; adeguato 0,26-0,50; parzialmente adeguato 0,01-0,25; inadeguato 0), media aritmetica dei coefficienti dei commissari, moltiplicata per il punteggio massimo del criterio",
+      "elementi_premianti": [
+        "Pannelli fotovoltaici più performanti rispetto a quelli previsti in progetto",
+        "Risparmio energetico ed ecocompatibilità (a parità di potenza generata, minor spazio occupato)",
+        "Preferenza prioritaria per pannelli con durabilità e vita utile maggiori (elemento esplicitamente premiante indicato dal disciplinare)",
+        "Caratteristiche costruttive dei prodotti, qualità dei materiali, qualità assemblaggio componenti, caratteristiche prestazionali/meccaniche, certificazioni di prodotto"
+      ],
+      "constraints": [
+        "Le migliorie offerte implicano la redazione dell'Allegato tecnico (Relazione energetica ex L. 10 + APE post operam) con riferimento ai criteri A1-A2-A3 (art. 16 lett. m)",
+        "Le relazioni tecniche non devono contenere alcuna quantificazione economica o elemento che vi riconduca, pena esclusione dalla gara (art. 16)",
+        "L'offerta tecnica deve rispettare le caratteristiche minime stabilite nei documenti di gara, nel rispetto del principio di equivalenza (art. 16)",
+        "Massimo 6 facciate A4 (oltre copertina e indice) nella Relazione tecnica unica per il sub-criterio; facciate eccedenti non valutate (art. 16 lett. j)"
+      ],
+      "out_of_scope_risks": [
+        "Proposte che aumentano l'ingombro dei pannelli a parità di potenza vanno in direzione opposta all'elemento premiante indicato dal disciplinare (minor spazio occupato)",
+        "Inserimento di riferimenti economici o di ribasso nella relazione tecnica comporta esclusione dalla gara (art. 16)"
+      ],
+      "documenti_richiesti": [
+        "Relazione tecnica unica (sezione dedicata al criterio A3)",
+        "Relazione di sintesi (sezione dedicata al criterio A3)",
+        "Computo metrico non estimativo con inserimento delle migliorie",
+        "Allegato tecnico: Relazione energetica ex L. 10 e APE post operam"
+      ]
+    },
+    {
+      "id": "C4",
+      "codice_disciplinare": "B1",
+      "title": "Interventi attinenti all'abbattimento delle barriere architettoniche (voci 01, 02, 04 del computo opere opzionali, valore economico € 67.000,00)",
+      "max_score": 13,
+      "tipo": "tabellare",
+      "subcriteria": [],
+      "scoring_method": "on/off, non discrezionale — la Commissione valuta unicamente se, per il sub-criterio, è presente o meno la proposta dell'operatore economico corrispondente alle voci 01, 02, 04 del computo opere opzionali; se presente e conforme, assegna il punteggio pieno (13), altrimenti 0 (art. 18.2)",
+      "elementi_premianti": [
+        "Presenza della proposta corrispondente esattamente alle voci 01, 02, 04 del computo opere opzionali (€ 67.000,00)"
+      ],
+      "constraints": [
+        "La proposta deve corrispondere alle specifiche dell'atto contabile (computo) delle opere opzionali per le voci 01, 02, 04 (art. 18.2 — criteri tabellari)",
+        "Le relazioni tecniche non devono contenere alcuna quantificazione economica o elemento che vi riconduca, pena esclusione dalla gara (art. 16)"
+      ],
+      "out_of_scope_risks": [
+        "Proposte che eccedono, modificano o non corrispondono esattamente alle voci 01, 02, 04 del computo opere opzionali rischiano di non essere riconosciute in sede di attribuzione on/off del punteggio",
+        "Il valore economico dell'opzione (€67.000,00) è un tetto contabile: proposte che lo superano non risultano coerenti con l'atto contabile richiamato"
+      ],
+      "documenti_richiesti": [
+        "Relazione tecnica unica (sezione dedicata al criterio B1)",
+        "Relazione di sintesi (sezione dedicata al criterio B1)",
+        "Computo metrico non estimativo con inserimento delle migliorie"
+      ]
+    },
+    {
+      "id": "C5",
+      "codice_disciplinare": "B2",
+      "title": "Interventi relativi alla sistemazione e decoro esterno (voci 03, 05, 06, 07, 08 del computo opere opzionali, valore economico € 46.000,00)",
+      "max_score": 10,
+      "tipo": "tabellare",
+      "subcriteria": [],
+      "scoring_method": "on/off, non discrezionale — la Commissione valuta unicamente se, per il sub-criterio, è presente o meno la proposta dell'operatore economico corrispondente alle voci 03, 05, 06, 07, 08 del computo opere opzionali; se presente e conforme, assegna il punteggio pieno (10), altrimenti 0 (art. 18.2)",
+      "elementi_premianti": [
+        "Presenza della proposta corrispondente esattamente alle voci 03, 05, 06, 07, 08 del computo opere opzionali (€ 46.000,00)"
+      ],
+      "constraints": [
+        "La proposta deve corrispondere alle specifiche dell'atto contabile (computo) delle opere opzionali per le voci 03, 05, 06, 07, 08 (art. 18.2 — criteri tabellari)",
+        "Le relazioni tecniche non devono contenere alcuna quantificazione economica o elemento che vi riconduca, pena esclusione dalla gara (art. 16)"
+      ],
+      "out_of_scope_risks": [
+        "Proposte che eccedono, modificano o non corrispondono esattamente alle voci 03, 05, 06, 07, 08 del computo opere opzionali rischiano di non essere riconosciute in sede di attribuzione on/off del punteggio",
+        "Il valore economico dell'opzione (€46.000,00) è un tetto contabile: proposte che lo superano non risultano coerenti con l'atto contabile richiamato"
+      ],
+      "documenti_richiesti": [
+        "Relazione tecnica unica (sezione dedicata al criterio B2)",
+        "Relazione di sintesi (sezione dedicata al criterio B2)",
+        "Computo metrico non estimativo con inserimento delle migliorie"
+      ]
+    },
+    {
+      "id": "C6",
+      "codice_disciplinare": "B2 (probabile refuso di battitura, verosimilmente B3)",
+      "title": "Certificazione UNI/PdR 125:2022",
+      "max_score": 2,
+      "tipo": "tabellare",
+      "subcriteria": [],
+      "scoring_method": "on/off, non discrezionale — la Commissione valuta unicamente se è presente o meno la certificazione/impegno dichiarato dall'operatore economico; assegna il punteggio pieno (2) o 0 (art. 18.2). Il disciplinare NON specifica ulteriori modalità di attribuzione o comprova.",
+      "elementi_premianti": [
+        "Possesso (o presumibilmente impegno a conseguire, dato che il disciplinare non specifica) della certificazione UNI/PdR 125:2022 sulla parità di genere"
+      ],
+      "constraints": [
+        "Le relazioni tecniche non devono contenere alcuna quantificazione economica o elemento che vi riconduca, pena esclusione dalla gara (art. 16)"
+      ],
+      "out_of_scope_risks": [
+        "Il disciplinare non chiarisce se la certificazione debba essere già posseduta al momento dell'offerta o sia sufficiente un impegno futuro: rischio di interpretazione difforme rispetto a quanto atteso dalla Commissione",
+        "Assenza di indicazioni sulla documentazione di comprova richiesta per il criterio"
+      ],
+      "documenti_richiesti": [
+        "Relazione tecnica unica (sezione dedicata al criterio, presumibilmente con allegata copia della certificazione, se posseduta)",
+        "Relazione di sintesi (sezione dedicata al criterio)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "sistema": "Prometeus S.P.A.D.A",
+  "versione_agente": "1.0.0",
+
+  "gara": {
+    "nome": "Procedura aperta telematica per l'affidamento dell'appalto dei lavori di \"Intervento di efficientamento energetico dell'Istituto Comprensivo 'De Luca Picione Caravita' sito alla Via Nuova\"",
+    "stazione_appaltante": "Comune di Cercola (NA) — V Settore. RUP/Responsabile fase aggiudicazione: ing. Lorenzo D'Alessandro",
+    "CIG": "BC3ECFAA55",
+    "CUP": "G13C25000920001",
+    "importo_base_asta": "€ 954.883,79 complessivo (di cui € 915.809,83 lavori soggetti a ribasso; € 39.073,96 oneri sicurezza non soggetti a ribasso, di cui € 180.457,45 costi manodopera non soggetti a ribasso)",
+    "scadenza_offerta": "2026-08-06T23:59:00",
+    "codice_interno": "Cercola072026",
+    "prezzario_riferimento": {
+      "regione": "Campania",
+      "anno": 2026,
+      "percorso": "/Users/michele/.spada/prezzari/Campania/2026",
+      "note": "regione/anno compilati a /new_bid; percorso scritto da scripts/prezzario/fetch_prezzario.sh (cache condivisa fuori dal repo, non per-gara). Usato dalla skill prezzario per il gap prezzi di strategy-auditor."
+    },
+    "note": "OEPV: 90 punti tecnici / 10 punti economici. Soglia di sbarramento tecnico: 45/90. Punteggio criteri tecnici: 65 qualitativo (C1-C3) + 25 tabellare (C4-C6). Nota disciplinare pag. 27: refuso di battitura, C6 riportato come 'B2' insieme a C5 nella tabella criterio tabellare — probabile B3."
+  },
+
+  "criteri": [
+    { "id": "C1", "codice_disciplinare": "A1", "titolo": "Proposte integrative/migliorative delle opere inerenti al progetto di Efficientamento energetico, dei materiali impiegati e delle loro caratteristiche tecniche", "punti_max": 20, "tipo": "qualitativo" },
+    { "id": "C2", "codice_disciplinare": "A2", "titolo": "Proposte integrative/migliorative delle opere e delle caratteristiche tecniche relative alla fornitura e posa in opera degli infissi", "punti_max": 25, "tipo": "qualitativo" },
+    { "id": "C3", "codice_disciplinare": "A3", "titolo": "Proposte integrative/migliorative delle opere e delle caratteristiche tecniche relative all'impianto Fotovoltaico", "punti_max": 20, "tipo": "qualitativo" },
+    { "id": "C4", "codice_disciplinare": "B1", "titolo": "Interventi attinenti all'abbattimento delle barriere architettoniche (voci 01, 02, 04 del computo opere opzionali, valore economico €67.000,00)", "punti_max": 13, "tipo": "tabellare" },
+    { "id": "C5", "codice_disciplinare": "B2", "titolo": "Interventi relativi alla sistemazione e decoro esterno (voci 03, 05, 06, 07, 08 del computo opere opzionali, valore economico €46.000,00)", "punti_max": 10, "tipo": "tabellare" },
+    { "id": "C6", "codice_disciplinare": "B2 (probabile refuso, verosimilmente B3)", "titolo": "Certificazione UNI/PdR 125:2022", "punti_max": 2, "tipo": "tabellare" }
+  ],
+
+  "stato": "iniziata",
+  "fasi_completate": ["preprocessing", "analisi_disciplinare", "knowledge_graph", "audit_strategico"],
+  "criteri_attivi": [],
+  "criteri_stato": {},
+  "ultimo_aggiornamento": "2026-07-21T00:00:00",
+
+  "remote_output": {
+    "repository": "prometeus-spada-output",
+    "branch": "main",
+    "path_gara": "gare/"
+  },
+
+  "paths": {
+    "input": "00_input/",
+    "extracted": "01_extracted/",
+    "graph": "02_graph/",
+    "criteria": "03_criteria/",
+    "summaries": "04_doc_summaries/",
+    "outputs": "05_criteria_outputs/",
+    "registers": "06_registers/",
+    "questions": "07_questions/",
+    "state": "08_state/",
+    "offer": "10_offer/"
+  }
+}
