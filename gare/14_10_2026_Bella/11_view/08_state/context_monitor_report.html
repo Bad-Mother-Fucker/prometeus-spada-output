@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report context monitor — chiusura Fase 1</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Stato Progetto</div>
+  <h1>Report context monitor — chiusura Fase 1</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 11:29</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#h396998e2f3d9">1. Stato del contesto</a><a class="l2" href="#h2b4a19c46431">2. Prerequisiti per la pulizia (verificati sui file)</a><a class="l2" href="#hb1419829af25">3. Verdetto sulla pulizia del contesto</a><a class="l2" href="#hcdc7fa359ec1">4. Coerenza tra file centrali</a><a class="l2" href="#hef0a481a5c82">5. Artifact HTML (11_view/)</a></nav>
+<main>
+<p class="kv"><span class="k">Aggiornato il</span><span class="v">2026-10-03 13:25 CEST</span></p>
+<p class="kv"><span class="k">Agente</span><span class="v">context-monitor</span></p>
+<p class="kv"><span class="k">Attivazione</span><span class="v">chiusura della Fase 1 (indicizzazione + audit strategico), su richiesta del main loop</span></p>
+<p class="kv"><span class="k">Esito</span><span class="v">snapshot completo · pulizia del contesto CONSENTITA ORA, con le condizioni del §3</span></p>
+<hr>
+<h2 id="h396998e2f3d9" data-nav="2">1. Stato del contesto</h2>
+<div class="tw"><table><thead><tr><th>Contesto</th><th>Misura</th><th>Fascia</th><th>Azione</th></tr></thead><tbody><tr><td>Main loop</td><td>non misurabile da questo agente (contesto separato)</td><td>da verificare dal main loop</td><td>applicare le soglie sotto</td></tr><tr><td>context-monitor (questo passaggio)</td><td>letture mirate: config, matrice, brief, audit, index, economic_framework §10-13, scope §2</td><td>nessun impatto sul main loop</td><td>—</td></tr></tbody></table></div>
+<p>Soglie operative (CLAUDE.md §7):</p>
+<div class="tw"><table><thead><tr><th>Token nel main context</th><th>Stato</th><th>Azione</th></tr></thead><tbody><tr><td>0-120k</td><td><span class="badge good">OK</span></td><td>nessuna</td></tr><tr><td>120k-180k</td><td><span class="badge warn">attenzione</span></td><td>avvisare l'utente</td></tr><tr><td>180k-220k</td><td>preparare snapshot</td><td>snapshot pronto (questo) e proporre pulizia</td></tr><tr><td>220k-250k</td><td>blocco letture massive</td><td>nessuna nuova lettura integrale</td></tr><tr><td>250k-280k</td><td>snapshot obbligatorio</td><td>snapshot prima di proseguire</td></tr><tr><td>oltre 280k</td><td>zona rossa</td><td>stop operazioni massive</td></tr></tbody></table></div>
+<h2 id="h2b4a19c46431" data-nav="2">2. Prerequisiti per la pulizia (verificati sui file)</h2>
+<div class="tw"><table><thead><tr><th>File</th><th>Stato rilevato</th><th>Esito</th></tr></thead><tbody><tr><td><code>PROJECT_CONFIG.json</code></td><td>stato <code>analisi_preliminare_completata</code>; fasi preprocessing, analisi_disciplinare, knowledge_graph, audit_strategico; <code>criteri_stato</code> C1-C7 <code>analizzato: false</code>; <code>deliverables</code> C1-C7 + trasversali presenti</td><td><span class="badge good">OK</span></td></tr><tr><td><code>03_criteria/criteria_matrix.md</code> + <code>.json</code></td><td>7 criteri, 14 sottocriteri, somma 90 = totale tabella</td><td><span class="badge good">OK</span></td></tr><tr><td><code>03_criteria/criteria_checklist.md</code></td><td>presente</td><td><span class="badge good">OK</span></td></tr><tr><td><code>03_criteria/gara_brief.md</code></td><td>presente; «Stato analisi» C1-C7 = non ancora analizzato</td><td><span class="badge good">OK</span></td></tr><tr><td><code>03_criteria/strategy_audit.md</code></td><td>presente; Riepilogo e Domande chiave completi; «Indicazioni strategiche del professionista» a segnaposto</td><td>ATTENZIONE — STOP #1 aperto</td></tr><tr><td><code>02_graph/index.md</code>, <code>scope.md</code>, <code>economic_framework.md</code></td><td>presenti, rebuild dell'invocazione 8</td><td><span class="badge good">OK</span></td></tr><tr><td><code>06_registers/proposal_register.md</code>, <code>audit_summary.md</code></td><td>assenti</td><td>atteso: nessun criterio analizzato</td></tr><tr><td><code>05_criteria_outputs/Cx_output.md</code></td><td>nessun file; nessuno <code>stato_feedback: in_attesa</code></td><td><span class="badge good">OK</span></td></tr><tr><td><code>08_state/</code> (5 file)</td><td>scritti in questo passaggio</td><td><span class="badge good">OK</span></td></tr></tbody></table></div>
+<h2 id="hb1419829af25" data-nav="2">3. Verdetto sulla pulizia del contesto</h2>
+<p class="kv"><span class="k">Pulizia</span><span class="v">CONSENTITA ORA</span></p>
+<p class="kv"><span class="k">Motivo</span><span class="v">Fase 1 chiusa (indicizzazione e audit completati); nessun criterio in analisi; nessun feedback in attesa di <code>/process_feedback</code>.</span></p>
+<p>Condizioni:</p>
+<ul><li>Le due decisioni del professionista comunicate in chat sono ora su file: DEC-001 (Analisi 2 rinviata) in <code>decision_log.md</code>, <code>PROJECT_CONFIG.json → gara.prezzario_riferimento.note</code> e <code>strategy_audit.md</code> §2; DEC-002 (pubblicazione su <code>prometeus-spada-output</code>) in <code>decision_log.md</code> e <code>PROJECT_CONFIG.json → remote_output</code>.</li><li>Questo snapshot registra solo ciò che è nei file o nel prompt del main loop. Se in chat esistono altre informazioni (per esempio sopralluogo già richiesto, quesiti già decisi), il main loop deve farle scrivere prima di comprimere.</li><li><strong>NON comprimere</strong> dal momento in cui il professionista inizia a rispondere a STOP #1 fino a quando le risposte sono scritte in <code>strategy_audit.md</code> § «Indicazioni strategiche del professionista» (raccolta feedback e decisioni strategiche).</li><li><strong>NON comprimere</strong> durante l'analisi di un criterio (Fase 2) né prima che un <code>Cx_output.md</code> con <code>stato_feedback: in_attesa</code> sia elaborato.</li></ul>
+<h2 id="hcdc7fa359ec1" data-nav="2">4. Coerenza tra file centrali</h2>
+<div class="tw"><table><thead><tr><th>Controllo</th><th>Valore</th><th>Fonti confrontate</th><th>Esito</th></tr></thead><tbody><tr><td>Pagine nodo</td><td>53</td><td>index frontmatter; file in <code>02_graph/nodes/</code>; strategy_audit intestazione</td><td>coerente</td></tr><tr><td>Sintesi</td><td>11</td><td>index; file in <code>02_graph/synthesis/</code></td><td>coerente</td></tr><tr><td>Archi</td><td>367 = 114 + 253</td><td>index frontmatter e §10</td><td>coerente</td></tr><tr><td>Orfani</td><td>3 (IT-00, PI-06, VVF-PI-01)</td><td>index §6, §9</td><td>coerente</td></tr><tr><td>Contraddizioni irrisolte</td><td>7 (D13, D11, D14, D18, D4, D2, D16)</td><td>index §7.1; economic_framework «Per l'index»</td><td>coerente</td></tr><tr><td>Quesiti SA</td><td>5 (Q1-Q5)</td><td>index §7.4; economic_framework §10.1; strategy_audit domanda 5</td><td>coerente</td></tr><tr><td>Scadenze</td><td>05/10, 06/10, 14/10 ore 12:00</td><td>PROJECT_CONFIG; gara_brief; index §1; strategy_audit §3</td><td>coerente</td></tr><tr><td>Punteggio tecnico</td><td>90 (25+30+15+10+6+2+2)</td><td>criteria_matrix; gara_brief; PROJECT_CONFIG</td><td>coerente</td></tr></tbody></table></div>
+<p>Disallineamenti non bloccanti (non corretti: fuori dal perimetro di context-monitor):</p>
+<ul><li><code>gara_brief.md</code> «Prossimi passi» punto 4 invita ad avviare la Fase 1 completa: superato, la Fase 1 è chiusa. Il brief è stato generato prima del grafo e non viene riscritto in Fase 1.</li><li>I quesiti (b), (c), (d) delle «Domande aperte» del brief (comprova C6.1/C7.1, schede C5.1, regole C5.1) non sono tra Q1-Q5: tracciati come OI-04.</li></ul>
+<h2 id="hef0a481a5c82" data-nav="2">5. Artifact HTML (<code>11_view/</code>)</h2>
+<p class="kv"><span class="k">Situazione prima dello snapshot</span><span class="v">3 artifact presenti (<code>02_graph/index.html</code>, <code>03_criteria/gara_brief.html</code>, <code>03_criteria/strategy_audit.html</code>). L'hook PostToolUse non scatta su questa cartella (legato alla cartella di progetto della sessione): la rigenerazione è manuale (SYS-007).</span></p>
+<p class="kv"><span class="k">Rigenerazione</span><span class="v"><code>node scripts/render/md_to_html.js --all</code> seguito da <code>--check</code>, eseguiti al termine di questo snapshot (2026-10-03).</span></p>
+<p class="kv"><span class="k">Esito --all</span><span class="v">12 artifact generati, exit 0</span></p>
+<p class="kv"><span class="k">Esito --check</span><span class="v">«Tutti gli artifact allineati (12)», exit 0</span></p>
+<div class="tw"><table><thead><tr><th>Artifact</th><th>Note</th></tr></thead><tbody><tr><td><code>11_view/02_graph/index.html</code> · <code>economic_framework.html</code> · <code>scope.html</code></td><td>Knowledge Graph</td></tr><tr><td><code>11_view/03_criteria/gara_brief.html</code></td><td>6 campi compilabili</td></tr><tr><td><code>11_view/03_criteria/strategy_audit.html</code></td><td>24 campi compilabili (risposte a STOP #1)</td></tr><tr><td><code>11_view/03_criteria/criteria_matrix.html</code> · <code>criteria_checklist.html</code></td><td>Matrice e checklist</td></tr><tr><td><code>11_view/08_state/</code> (5 file)</td><td>questo snapshot</td></tr></tbody></table></div>
+<p>Dopo ogni nuova modifica di un <code>.md</code> in whitelist ripetere <code>--all</code> e <code>--check</code> (NA-14).</p>
+</main>
+
+<footer class="src">
+  Generato da <span>08_state/context_monitor_report.md</span> — ultima modifica 2026-10-03 11:29 — contenuto 2351052a179d<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 08_state/context_monitor_report.md</span>
+</footer>
+</div>
+
+</body>
+</html>

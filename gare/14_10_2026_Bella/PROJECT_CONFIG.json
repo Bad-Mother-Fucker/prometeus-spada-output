@@ -1,0 +1,95 @@
+{
+  "sistema": "Prometeus S.P.A.D.A",
+  "versione_agente": "1.0.0",
+
+  "gara": {
+    "nome": "Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)",
+    "stazione_appaltante": "Comune di Bella (PZ) — Area III Lavori Pubblici e Appalti (RUP ing. Vito Menza); procedura su PAD ASMECOMM (ASMEL Consortile)",
+    "CIG": "BCF01395AF",
+    "CUP": "D63I23000230009",
+    "importo_base_asta": "€ 381.364,99 soggetto a ribasso (incl. costi manodopera € 47.849,85) + € 13.005,47 costi sicurezza non soggetti a ribasso = € 394.370,46 complessivo, IVA esclusa (disciplinare art. 3, Tabella 1, p. 7)",
+    "scadenza_offerta": "14/10/2026 ore 12:00",
+    "codice_interno": "14_10_2026_Bella",
+    "prezzario_riferimento": {
+      "regione": "Basilicata",
+      "anno": "",
+      "percorso": "",
+      "note": "Elenco prezzi di progetto su tariffa Regione Basilicata (codici tipo B.10.001.01). Prezzario Basilicata non disponibile in prometeus-prezzari (presente solo Calabria 2025, non pertinente): Analisi 2 gap prezzi rinviata a fase successiva."
+    },
+    "note": "Procedura aperta telematica art. 71 D.Lgs. 36/2023, OEPV miglior rapporto qualità/prezzo; appalto misto lavori + forniture, lotto unico. Punteggi: tecnica 90 (80 D + 10 T) / economica 10 (bilineare X=0,85) / temporale 0. Soglia sbarramento 50/90 prima della riparametrazione (art. 18.1 p. 30). Forniture € 55.296,43; categorie OG1 prevalente € 185.390,73, OS4 € 43.512,19, OS3 € 76.576,21, OG9 € 41.600,21, OS30 € 34.285,65 (tutte class. I). Durata 150 gg naturali consecutivi (art. 3.1 p. 8). Scadenze: richiesta sopralluogo OBBLIGATORIO 05/10/2026 ore 12:00 (pena inammissibilità, art. 11); chiarimenti 06/10/2026 ore 12:00; offerte 14/10/2026 ore 12:00 (Timing p. 18). Offerta tecnica: relazione max 15 pag. fronte-retro = 30 facciate A4 numerate, font ≥ 11 pt + computo metrico NON estimativo + cronoprogramma, nessun elemento economico pena esclusione (art. 16). Garanzia provvisoria € 7.887,41 (2%); contributo ANAC € 33,00; validità offerta 180 gg. CUI L00224880765202600016. Dichiarazione uso IA nell'offerta tecnica da rendere in domanda (art. 15.1 p. 21)."
+  },
+
+  "stato": "analisi_preliminare_completata",
+  "fasi_completate": ["preprocessing", "analisi_disciplinare", "knowledge_graph", "audit_strategico"],
+  "criteri_attivi": ["C1", "C2", "C3", "C4", "C5", "C6", "C7"],
+  "criteri_stato": {
+    "C1": { "analizzato": false, "stato_feedback": null },
+    "C2": { "analizzato": false, "stato_feedback": null },
+    "C3": { "analizzato": false, "stato_feedback": null },
+    "C4": { "analizzato": false, "stato_feedback": null },
+    "C5": { "analizzato": false, "stato_feedback": null },
+    "C6": { "analizzato": false, "stato_feedback": null },
+    "C7": { "analizzato": false, "stato_feedback": null }
+  },
+  "deliverables": {
+    "C1": [
+      { "nome": "Relazione tecnica — sezione C1 (sub 1.1, 1.2, 1.3: descrizione di quanto offerto per ciascun sub-criterio)", "vincolo_formato": "parte della relazione unica: max 15 pag. fronte-retro = 30 facciate complessive A4, pagine numerate, font non inferiore a 11 punti, strutturata per criteri e sub-criteri", "fonte": "art. 16, p. 25" },
+      { "nome": "Computo metrico non estimativo — voci delle migliorie C1", "vincolo_formato": "per ogni miglioria: riferimento a criterio/sub-criterio, descrizione puntuale, unità di misura, quantità, elementi tecnici di verifica; nessun prezzo/importo/ribasso/valorizzazione economica, pena esclusione", "fonte": "art. 16, pp. 25-26" },
+      { "nome": "Elaborati grafici e schede tecniche esplicative C1 (facoltativi)", "vincolo_formato": "non conteggiati nelle 30 facciate; limiti [non indicato]", "fonte": "art. 16, p. 25" }
+    ],
+    "C2": [
+      { "nome": "Relazione tecnica — sezione C2 (sub 2.1, 2.2, 2.3: descrizione di quanto offerto per ciascun sub-criterio; per 2.1 formulazione con riferimento all'elaborato PI-00a-ESEC-01)", "vincolo_formato": "parte della relazione unica: max 15 pag. fronte-retro = 30 facciate complessive A4, pagine numerate, font non inferiore a 11 punti, strutturata per criteri e sub-criteri", "fonte": "art. 16, p. 25; art. 18.1, p. 28" },
+      { "nome": "Computo metrico non estimativo — voci delle migliorie C2", "vincolo_formato": "per ogni miglioria: riferimento a criterio/sub-criterio, descrizione puntuale, unità di misura, quantità, elementi tecnici di verifica; nessun prezzo/importo/ribasso/valorizzazione economica, pena esclusione", "fonte": "art. 16, pp. 25-26" },
+      { "nome": "Elaborati grafici (es. fotoinserimenti) e schede tecniche esplicative C2 (facoltativi)", "vincolo_formato": "non conteggiati nelle 30 facciate; limiti [non indicato]", "fonte": "art. 16, p. 25" }
+    ],
+    "C3": [
+      { "nome": "Relazione tecnica — sezione C3 (sub 3.1, 3.2, 3.3: descrizione di quanto offerto per ciascun sub-criterio)", "vincolo_formato": "parte della relazione unica: max 15 pag. fronte-retro = 30 facciate complessive A4, pagine numerate, font non inferiore a 11 punti, strutturata per criteri e sub-criteri", "fonte": "art. 16, p. 25" },
+      { "nome": "Computo metrico non estimativo — voci delle migliorie C3", "vincolo_formato": "per ogni miglioria: riferimento a criterio/sub-criterio, descrizione puntuale, unità di misura, quantità, elementi tecnici di verifica; nessun prezzo/importo/ribasso/valorizzazione economica, pena esclusione", "fonte": "art. 16, pp. 25-26" },
+      { "nome": "Elaborati grafici e schede tecniche esplicative C3 (facoltativi)", "vincolo_formato": "non conteggiati nelle 30 facciate; limiti [non indicato]", "fonte": "art. 16, p. 25" }
+    ],
+    "C4": [
+      { "nome": "Relazione tecnica — sezione C4 (sub 4.1, 4.2: descrizione di quanto offerto per ciascun sub-criterio)", "vincolo_formato": "parte della relazione unica: max 15 pag. fronte-retro = 30 facciate complessive A4, pagine numerate, font non inferiore a 11 punti, strutturata per criteri e sub-criteri", "fonte": "art. 16, p. 25" },
+      { "nome": "Computo metrico non estimativo — voci delle migliorie C4", "vincolo_formato": "per ogni miglioria: riferimento a criterio/sub-criterio, descrizione puntuale, unità di misura, quantità, elementi tecnici di verifica; nessun prezzo/importo/ribasso/valorizzazione economica, pena esclusione", "fonte": "art. 16, pp. 25-26" },
+      { "nome": "Elaborati grafici e schede tecniche esplicative C4, es. EPD e schede prodotto (facoltativi)", "vincolo_formato": "non conteggiati nelle 30 facciate; limiti [non indicato]", "fonte": "art. 16, p. 25" }
+    ],
+    "C5": [
+      { "nome": "Scheda sintetica per ciascun intervento analogo (1 punto per intervento ammissibile, max 6)", "vincolo_formato": "contenuto minimo: committente, denominazione e ubicazione dell'immobile, destinazione d'uso, oggetto e descrizione delle lavorazioni eseguite, importo dei lavori, periodo di esecuzione e data di ultimazione; formato e lunghezza [non indicato]; conteggio nelle 30 facciate [non indicato]", "fonte": "art. 18.1, sub 5.1, p. 29" },
+      { "nome": "Relazione tecnica — sezione C5", "vincolo_formato": "struttura per criteri e sub-criteri richiesta per l'intera tabella 18.1; contenuto per i criteri tabellari [non indicato]", "fonte": "art. 16, p. 25" },
+      { "nome": "Contratto di avvalimento premiale (eventuale, solo se l'esperienza è di un'impresa ausiliaria)", "vincolo_formato": "allegato alla domanda di partecipazione (Busta A), nativo digitale e firmato digitalmente dalle parti", "fonte": "art. 7, pp. 13-14; art. 15.4, p. 23" }
+    ],
+    "C6": [
+      { "nome": "Comprova del rispetto degli obblighi L. 68/1999 nell'ultimo triennio (documento non specificato dal disciplinare — TBD)", "vincolo_formato": "[non indicato]", "fonte": "art. 18.1, sub 6.1, p. 30" },
+      { "nome": "Relazione tecnica — sezione C6", "vincolo_formato": "struttura per criteri e sub-criteri richiesta per l'intera tabella 18.1; contenuto [non indicato]", "fonte": "art. 16, p. 25" }
+    ],
+    "C7": [
+      { "nome": "Certificazione UNI/PdR 125:2022 in corso di validità (in RTI: di tutti i componenti) — modalità di comprova non specificata (TBD)", "vincolo_formato": "[non indicato]", "fonte": "art. 18.1, sub 7.1, p. 30" },
+      { "nome": "Relazione tecnica — sezione C7", "vincolo_formato": "struttura per criteri e sub-criteri richiesta per l'intera tabella 18.1; contenuto [non indicato]", "fonte": "art. 16, p. 25" }
+    ],
+    "trasversali": [
+      { "nome": "Relazione tecnica delle migliorie offerte (documento unico per tutti i criteri)", "vincolo_formato": "max 15 pag. fronte-retro = 30 facciate complessive A4, opportunamente numerate, font non inferiore a 11 punti, strutturata per criteri e sub-criteri della tabella 18.1; non conteggiati copertine, sommari, elaborati grafici e schede tecniche esplicative", "fonte": "art. 16, p. 25" },
+      { "nome": "Computo metrico NON estimativo delle migliorie (documento unico)", "vincolo_formato": "obbligatorio; contenuto esclusivamente tecnico-quantitativo; nessun prezzo, importo, ribasso o valorizzazione economica, pena esclusione; limiti di pagine [non indicato]", "fonte": "art. 16, pp. 25-26" },
+      { "nome": "Cronoprogramma delle lavorazioni integrato con le migliorie", "vincolo_formato": "obbligatorio; deve evidenziare inserimento delle migliorie e integrazione con le lavorazioni di progetto; nessun elemento economico, pena esclusione; limiti di formato [non indicato]", "fonte": "art. 16, p. 26" },
+      { "nome": "Versione oscurata dell'offerta tecnica + dichiarazione firmata dei motivi (eventuale, solo se si chiede l'oscuramento)", "vincolo_formato": "in aggiunta all'offerta in chiaro", "fonte": "art. 16, p. 26" }
+    ]
+  },
+  "ultimo_aggiornamento": "2026-10-03T13:23:25+02:00",
+
+  "remote_output": {
+    "repository": "prometeus-spada-output",
+    "branch": "main",
+    "path_gara": "gare/"
+  },
+
+  "paths": {
+    "input": "00_input/",
+    "extracted": "01_extracted/",
+    "graph": "02_graph/",
+    "criteria": "03_criteria/",
+    "summaries": "04_doc_summaries/",
+    "outputs": "05_criteria_outputs/",
+    "registers": "06_registers/",
+    "questions": "07_questions/",
+    "state": "08_state/",
+    "offer": "10_offer/"
+  }
+}

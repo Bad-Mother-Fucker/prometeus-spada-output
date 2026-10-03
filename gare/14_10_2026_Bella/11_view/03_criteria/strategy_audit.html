@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Strategico — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Audit Strategico</div>
+  <h1>Audit Strategico — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 11:22</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#h6d3eeb0bf892">1. Budget sicurezza</a><a class="l2" href="#h13b7b64f1ee9">2. Analisi prezzi — gap rispetto al prezzario</a><a class="l2" href="#h8cb291a80ece">3. Posizione e viabilita' cantiere</a><a class="l2" href="#h17213f5a3382">4. Capacita' di investimento migliorativo</a><a class="l2" href="#h8cb9c900e370">Domande chiave per il professionista</a><a class="l2" href="#hf08b8fdc21c7">Riepilogo</a><a class="l2" href="#ha9e3f3be55d4">Indicazioni strategiche del professionista</a><a class="l2" href="#note-team">Note libere del team</a></nav>
+<main>
+<p class="kv"><span class="k">Generato il</span><span class="v">2026-10-03</span></p>
+<p class="kv"><span class="k">Agente</span><span class="v">strategy-auditor</span></p>
+<p class="kv"><span class="k">Knowledge graph</span><span class="v">02_graph/index.md (build del 2026-10-03, invocazione 8 di graph-builder: 53 nodi, 11 sintesi, 7 contraddizioni irrisolte, 5 quesiti SA)</span></p>
+<blockquote class="info"><p>ℹ️ Questo audit riporta misure e classificazioni, non raccomandazioni. Nessun importo o percentuale qui riportato può comparire nei documenti dell'offerta tecnica (disciplinare art. 16 p. 26 e art. 22 p. 33: esclusione).</p></blockquote>
+<hr>
+<h2 id="h6d3eeb0bf892" data-nav="2">1. Budget sicurezza</h2>
+<p class="kv"><span class="k">Fonte</span><span class="v"><span class="wl">SIC-03-ESEC-01_COSTI_PER_LA_SICUREZZA</span> — Costi per la sicurezza / totale p. 3, 12 voci (confidence: verificato); valori ripresi in <span class="wl">economic_framework</span> §1, §3, §8</span></p>
+<p class="kv"><span class="k">Importo oneri sicurezza</span><span class="v">€ 13.005,47</span></p>
+<p class="kv"><span class="k">Importo lavori</span><span class="v">€ 381.364,99 (lavori a misura soggetti a ribasso, QE <span class="wl">G-01-ESEC-02_QUADRO_ECONOMICO</span> A1 = computo <span class="wl">G-04-ESEC-02_COMPUTO_METRICO_ESTIMATIVO</span> p. 23)</span></p>
+<p class="kv"><span class="k">Percentuale</span><span class="v">3,41%</span></p>
+<p class="kv"><span class="k">Classificazione</span><span class="v">⚠️ BASSO</span></p>
+<blockquote class="warn"><p>⚠️ ATTENZIONE: Gli oneri per la sicurezza rappresentano il 3,41% dell'importo lavori, sotto la soglia indicativa del 5%.</p></blockquote>
+<p>Verifica del calcolo: 13.005,47 / 381.364,99 × 100 = 3,410%, identico al campo <code>oneri_sicurezza_pct: 3.410</code> di <span class="wl">economic_framework</span> (nessuna discrepanza). Sul totale A di 394.370,46 € l'incidenza è 3,298% (<span class="wl">economic_framework</span> §3, verificato).</p>
+<p>Coerenza tra fonti: <code>fonte_sicurezza</code> elenca una sola fonte (SIC-03). Lo stesso importo compare in QE A4, disciplinare Tabella 1 riga B, bando II.2.1, capitolato <span class="wl">G-06-ESEC-02_CAPITOLATO_SPECIALE_D_APPALTO</span> artt. 1.2 e 2.15 e nella copia interna del PSC <span class="wl">SIC-00-ESEC-01_PIANO_DI_SICUREZZA_E_COORDINAMENTO</span> pp. 256-258 (12/12 voci identiche, confronto della Fase E): <strong>nessuna contraddizione sugli oneri</strong>. Il PSC p. 2 riporta un importo presunto dei lavori di 391.795,41 €, diverso dal QE (contraddizione D16, origine non ricostruibile): non incide sugli oneri.</p>
+<p><strong>Composizione degli oneri</strong> (da <span class="wl">SIC-03-ESEC-01_COSTI_PER_LA_SICUREZZA</span>; percentuali calcolate sul totale degli oneri)</p>
+<div class="tw"><table><thead><tr><th>Gruppo di voci</th><th>Voci SIC-03</th><th>Importo €</th><th>% sugli oneri</th><th>Confidence</th></tr></thead><tbody><tr><td>Ponteggio a tubi e giunti, 195 mq (15 × 13 m)</td><td>2</td><td>6.374,55</td><td>49,01</td><td>verificato (valore), calcolo (%)</td></tr><tr><td>Teli/reti di schermatura del ponteggio, 195 mq</td><td>4</td><td>1.117,35</td><td>8,59</td><td>verificato (valore), calcolo (%)</td></tr><tr><td><strong>Subtotale ponteggio + teli</strong></td><td>2 + 4</td><td><strong>7.491,90</strong></td><td><strong>57,61</strong></td><td>verificato (valore), calcolo (%)</td></tr><tr><td>Monoblocco 6 mesi (1 + 5)</td><td>6, 7</td><td>2.061,52</td><td>15,85</td><td>verificato (valore), calcolo (%)</td></tr><tr><td>Parapetto provvisorio anticaduta, 110 m</td><td>3</td><td>1.107,70</td><td>8,52</td><td>verificato (valore), calcolo (%)</td></tr><tr><td>Trabattello mobile, 60 gg</td><td>1</td><td>1.005,60</td><td>7,73</td><td>verificato (valore), calcolo (%)</td></tr><tr><td>Recinzione (40 mq per 2 mesi + 160 mq per le frazioni successive)</td><td>8, 9</td><td>850,40</td><td>6,54</td><td>verificato (valore), calcolo (%)</td></tr><tr><td>Imbracature anticaduta</td><td>5</td><td>472,80</td><td>3,64</td><td>verificato (valore), calcolo (%)</td></tr><tr><td>Cartelli di divieto, obbligo, pericolo (3)</td><td>10-12</td><td>15,55</td><td>0,12</td><td>verificato (valore), calcolo (%)</td></tr><tr><td><strong>Totale</strong></td><td>12</td><td><strong>13.005,47</strong></td><td>100</td><td>verificato</td></tr></tbody></table></div>
+<p><strong>Elementi rilevati nel grafo</strong></p>
+<ul><li>Durata implicita degli apprestamenti: monoblocco e recinzione per 6 mesi, contro 150 giorni naturali di lavori (disciplinare art. 3.1): circa un mese oltre la durata contrattuale (<span class="wl">SIC-03-ESEC-01_COSTI_PER_LA_SICUREZZA</span>, osservazioni; confidence: inferito).</li><li>Ponteggio su un solo fronte, il prospetto Nord-Est (15 × 13 m), usato anche per il carico e lo scarico dei moduli FV in copertura (PSC pp. 13, 16; layout nella copia PSC pp. 259-260, lettura visiva parziale). In copertura le protezioni stimate sono i parapetti (110 m) e le imbracature.</li><li>Misure citate o prescritte dal PSC <strong>senza voce negli oneri</strong> (<span class="wl">SIC-00-ESEC-01_PIANO_DI_SICUREZZA_E_COORDINAMENTO</span>, <span class="wl">SIC-03-ESEC-01_COSTI_PER_LA_SICUREZZA</span>, sintesi <code>logistica_cantiere</code>; confidence: verificato):</li><li>gru: sottofase «Montaggio della gru a torre» (PSC p. 36), assente da cronoprogramma e costi; autogrù, gru su autocarro e sollevatori telescopici previsti per il carico/scarico (PSC p. 16);</li><li>protezione delle attrezzature esistenti di sala (impianto audio, proiettori, schermo) e aree di stoccaggio coperte: nessuna voce; il PSC prescrive solo la protezione generica di pavimentazioni, pareti e arredi con coperture temporanee (p. 13);</li><li>monitoraggio delle vibrazioni «durante le lavorazioni più invasive» (PSC p. 17) e abbattimento delle polveri (p. 20): nessuna voce;</li><li>regolazione del traffico e segnaletica temporanea sulle strade di accesso (PSC p. 18): nessuna voce oltre ai 3 cartelli;</li><li>interferenze con residenti e visitatori del Castello (PSC pp. 17, 24): nessuna voce dedicata.</li><li>Entità presunta del lavoro: 773 uomini-giorno, 2 imprese (PSC p. 2, verificato). Rischio di caduta dall'alto valutato ALTO [P3×E4] per l'impianto FV (PSC p. 54).</li></ul>
+<hr>
+<h2 id="h13b7b64f1ee9" data-nav="2">2. Analisi prezzi — gap rispetto al prezzario</h2>
+<p class="kv"><span class="k">Documento prezzi usato</span><span class="v"><span class="wl">G-02-ESEC-01_ELENCO_PREZZI</span> — G-02-ESEC-01_ELENCO_PREZZI.pdf (is_latest: true); quantità e importi da <span class="wl">G-04-ESEC-02_COMPUTO_METRICO_ESTIMATIVO</span> (is_latest: true; esiste la versione precedente <span class="wl">G-04-ESEC-01_COMPUTO_METRICO_ESTIMATIVO</span>, is_latest: false, con voci e prezzi identici)</span></p>
+<p class="kv"><span class="k">Prezzario di riferimento</span><span class="v">Basilicata, anno TBD — percorso non compilato (<code>PROJECT_CONFIG.json → gara.prezzario_riferimento</code>: regione «Basilicata», anno vuoto, percorso vuoto)</span></p>
+<p class="kv"><span class="k">Voci campionate</span><span class="v">0 su 139 (confronto non eseguito)</span></p>
+<p class="kv"><span class="k">Copertura per importo</span><span class="v">non calcolata (nessuna voce confrontata)</span></p>
+<p class="kv"><span class="k">Categorie coperte</span><span class="v">non calcolate (nessuna voce confrontata)</span></p>
+<p class="kv"><span class="k">Gap medio</span><span class="v"><span class="badge na">N.D.</span></span></p>
+<p class="kv"><span class="k">Classificazione</span><span class="v"><span class="badge na">NON DISPONIBILE</span></span></p>
+<blockquote class="info"><p>ℹ️ Confronto non eseguibile: il prezzario Basilicata (anno non indicato) non e' disponibile in <code>prometeus-prezzari</code>. Per abilitare questa analisi vedi il README di quel repo (estrazione da Excel ufficiale + pubblicazione di una release), poi riesegui strategy-auditor.</p></blockquote>
+<p>Stato della procedura:</p>
+<ul><li>Il professionista ha rinviato l'analisi economica. <code>scripts/prezzario/fetch_prezzario.sh</code> non è stato eseguito.</li><li>In <code>prometeus-prezzari</code> è presente solo il prezzario Calabria 2025 (nota in <code>PROJECT_CONFIG.json</code>), non pertinente: non è stato usato come sostituto, né per codice né per parola chiave.</li><li>Nessuna tabella di voci e nessuna tabella di copertura per categoria: nessuna voce è stata confrontata, quindi nessun gap è stato misurato.</li></ul>
+<p><strong>Fatti del grafo utili a preparare il confronto futuro</strong> (nessuna classificazione del gap)</p>
+<div class="tw"><table><thead><tr><th>Dato</th><th>Valore</th><th>Fonte</th><th>Confidence</th></tr></thead><tbody><tr><td>Voci di computo</td><td>139 righe, 123 codici distinti</td><td><span class="wl">scope</span> §1; <span class="wl">G-04-ESEC-02_COMPUTO_METRICO_ESTIMATIVO</span></td><td>verificato</td></tr><tr><td>Quota a nuovi prezzi (NP)</td><td>143.667,94 € = <strong>37,67%</strong> dell'importo lavori; 20 righe, 19 codici</td><td><span class="wl">economic_framework</span> §3; <span class="wl">scope</span> §5</td><td>verificato</td></tr><tr><td>— NP con analisi in G-03</td><td>5 codici (NP 001-005), 63.401,75 €</td><td><span class="wl">G-03-ESEC-01_ANALISI_NUOVI_PREZZI</span> pp. 12-16</td><td>verificato</td></tr><tr><td>— NP senza analisi</td><td>14 codici / 15 righe, <strong>80.266,19 €</strong> (21,05% dell'importo lavori), comprese le poltrone NP 05 (30.923,18 €) e il palco e allestimento scenografico NP 07 (16.000,00 €)</td><td><span class="wl">G-03-ESEC-01_ANALISI_NUOVI_PREZZI</span>; <span class="wl">economic_framework</span> §3, D5</td><td>verificato</td></tr><tr><td>Quota da tariffa regionale</td><td><strong>237.697,05 €</strong> = 62,33%; 119 righe, 104 codici</td><td><span class="wl">economic_framework</span> §3</td><td>verificato</td></tr><tr><td>Tariffa ed edizione</td><td>gli elaborati <strong>non dichiarano</strong> né la tariffa né l'edizione/anno; il disciplinare (p. 7) parla di «Listino regionale vigente»; l'attribuzione alla tariffa Regione Basilicata deriva dalla struttura dei codici (A., B., D1-D6., E., H., O., R., S.; es. B.10.001.01)</td><td><span class="wl">economic_framework</span> §11, §13; <span class="wl">G-02-ESEC-01_ELENCO_PREZZI</span></td><td>inferito (tariffa); TBD (edizione/anno)</td></tr><tr><td>Codici anomali</td><td>voce 128 E.00050 «sabbia di cava», 175,00 €: formato diverso dalla tariffa, non NP, senza analisi (D9); voce 37 B.18.071.10 a quantità e prezzo zero, assente da G-02 (D8)</td><td><span class="wl">economic_framework</span> §10; <span class="wl">scope</span> §4</td><td>verificato</td></tr></tbody></table></div>
+<p>Capitoli del computo che pesano almeno il 5% dell'importo lavori (da <span class="wl">economic_framework</span> §5 e <span class="wl">scope</span> §3; la skill definisce la categoria sul primo livello del codice tariffa, il grafo documenta la ripartizione per capitolo):</p>
+<div class="tw"><table><thead><tr><th>Capitolo</th><th>Peso sull'importo</th><th>di cui NP €</th><th>Righe da tariffa</th><th>Confidence</th></tr></thead><tbody><tr><td>Impianto aspirazione forzata fumi e calore</td><td>13,329%</td><td>50.833,39 (100%, NP 005 con analisi)</td><td>0</td><td>verificato</td></tr><tr><td>Ascensore - impianto elettrico vano ascensore</td><td>11,410%</td><td>3.000,00</td><td>4</td><td>verificato</td></tr><tr><td>Impianto elettrico</td><td>8,990%</td><td>14.026,56</td><td>13</td><td>verificato</td></tr><tr><td>Poltrone</td><td>8,423%</td><td>32.123,18 (100%, senza analisi)</td><td>0</td><td>verificato</td></tr><tr><td>Opere in cartongesso</td><td>7,976%</td><td>0,00</td><td>8</td><td>verificato</td></tr><tr><td>Impianto Fotovoltaico</td><td>7,090%</td><td>0,00</td><td>22</td><td>verificato</td></tr><tr><td>Impermeabilizzazioni</td><td>7,087%</td><td>1.315,60</td><td>5</td><td>verificato</td></tr><tr><td>Pavimentazione</td><td>6,109%</td><td>0,00</td><td>6</td><td>verificato</td></tr><tr><td>Palco e allestimento scenografico</td><td>6,076%</td><td>23.173,25 (100%, senza analisi)</td><td>0</td><td>verificato</td></tr><tr><td>Infissi</td><td>5,908%</td><td>0,00</td><td>13</td><td>verificato</td></tr></tbody></table></div>
+<p>Tre di questi dieci capitoli (aspirazione fumi, poltrone, palco e allestimento: 27,83% dell'importo lavori) non contengono alcun codice di tariffa: nessuna loro voce è confrontabile con un prezzario regionale (<span class="wl">economic_framework</span> §11).</p>
+<hr>
+<h2 id="h8cb291a80ece" data-nav="2">3. Posizione e viabilita' cantiere</h2>
+<p class="kv"><span class="k">Fonti</span><span class="v"><span class="wl">G-08-ESEC-01_RELAZIONE_GENERALE</span> (relazione generale), <span class="wl">SIC-00-ESEC-01_PIANO_DI_SICUREZZA_E_COORDINAMENTO</span> (PSC); a supporto <span class="wl">SIC-01-ESEC-01_CRONOPROGRAMMA</span>, <span class="wl">SIC-02-ESEC-01_LAYOUT_DI_CANTIERE</span> (tavola non letta; copia nel PSC pp. 259-260, lettura visiva parziale), <span class="wl">G-06-ESEC-02_CAPITOLATO_SPECIALE_D_APPALTO</span>, disciplinare art. 11, sintesi <code>02_graph/synthesis/logistica_cantiere.md</code></span></p>
+<p class="kv"><span class="k">Localizzazione estratta</span><span class="v">Via Guglielmo Marconi, 85051 Bella (PZ) (PSC p. 2); sala in un'ala del Castello Aragonese, di proprietà comunale, alla sommità del centro storico (G-08 p. 4; PSC pp. 13, 17); accesso da «un ampio piazzale accessibile agli automezzi (piazzale Periz)» (G-08 p. 10)</span></p>
+<p class="kv"><span class="k">Classificazione</span><span class="v"><span class="badge crit">SFAVOREVOLE</span></span></p>
+<p>Condizioni della skill:</p>
+<div class="tw"><table><thead><tr><th>Condizione SFAVOREVOLE</th><th>Esito</th><th>Fonte</th></tr></thead><tbody><tr><td>Centro storico o zona con ZTL</td><td>presente: centro storico di impianto medievale; ZTL non citata</td><td>PSC pp. 17-18; G-08 p. 4</td></tr><tr><td>Strade di accesso citate come strette o con limitazioni</td><td>presente: strade «strette, con tracciati irregolari e pendenze accentuate»</td><td>PSC p. 18</td></tr><tr><td>Divieti di transito mezzi pesanti citati esplicitamente</td><td>non come divieto: strade «spesso non progettate per il transito di mezzi pesanti o di grandi dimensioni» (descrizione); mezzi «necessariamente di dimensioni ridotte» (prescrizione del PSC)</td><td>PSC p. 18</td></tr><tr><td>Orari di cantiere vincolati dalla normativa locale</td><td>nessuna norma locale citata; il PSC prescrive consegne «in fasce orarie controllate» e lavori esterni estivi nelle prime ore del giorno o dopo le 16:00 (microclima)</td><td>PSC p. 17</td></tr></tbody></table></div>
+<p>Nessuna condizione FAVOREVOLE rilevata: il sito non è in zona industriale o periferica, nessun accesso diretto da strade provinciali o autostrade è citato, la viabilità di accesso non è descritta come ampia.</p>
+<p class="kv"><span class="k">Elementi rilevati</span><span class="v"></span></p>
+<ul><li>Viabilità: «L'impianto urbano di origine medievale, caratterizzato da strade strette, pendenze accentuate e spazi limitati, rende difficoltoso l'accesso e la movimentazione di mezzi e materiali» (PSC p. 17).</li><li>Mezzi e approvvigionamenti: mezzi «necessariamente di dimensioni ridotte», «stoccaggio limitato in cantiere e frequenti approvvigionamenti frazionati»; «nei casi più critici» trasporto manuale o con attrezzature ausiliarie (PSC p. 18).</li><li>Consegne e traffico: regolazione degli accessi al centro storico e consegne «in fasce orarie controllate» (PSC p. 17); regolazione del traffico e segnaletica temporanea per la limitata larghezza delle carreggiate (PSC p. 18).</li><li>Area esterna di cantiere: occupazione temporanea della piazzetta antistante il teatro su via Guglielmo Marconi per baraccamenti, stoccaggio materiali, ricovero di mezzi e attrezzature, aree di lavorazione e area rifiuti (PSC p. 13). Tasse e oneri per l'occupazione temporanea di suolo pubblico a carico dell'appaltatore (<span class="wl">G-06-ESEC-02_CAPITOLATO_SPECIALE_D_APPALTO</span> art. 2.22).</li><li>Accessi e sollevamenti: ingresso/uscita dal piazzale tramite cancelli, solo veicoli leggeri a 10-15 km/h con assistenza a terra (PSC p. 23); carico/scarico con autogrù, gru su autocarro o sollevatori telescopici (PSC p. 16); ponteggio sul fronte anteriore per il carico/scarico in copertura, con verifica dei sovraccarichi da parte del committente (PSC pp. 13, 16).</li><li>Layout: accesso carrabile e pedonale, area movimentazione mezzi, ufficio DL, cassone rifiuti, stoccaggio materiali, percorso pedonale; ponteggio fisso sul prospetto Nord-Est; aree di stoccaggio materiali e rifiuti <strong>interne a ogni piano</strong> e sul terrazzo (copia PSC pp. 259-260, confidence: parziale). Stoccaggio senza sovraccaricare i solai, percorsi separati per operatori e materiali (PSC p. 13).</li><li>Interferenze: residenti e visitatori; il Castello ospita mostre ed eventi; visitatori ammessi solo in alcuni spazi, chiusura completa concordabile con i gestori (PSC pp. 16, 24); edifici storici contigui e murature antiche con possibili vibrazioni (PSC p. 17).</li><li>Clima: posizione sopraelevata esposta al vento; lavori esterni estivi nelle prime ore del giorno o dopo le 16:00 (PSC p. 17).</li><li>Tempi: 150 giorni naturali e consecutivi comprese forniture e posa (disciplinare art. 3.1; capitolato art. 2.6). Cronoprogramma <span class="wl">SIC-01-ESEC-01_CRONOPROGRAMMA</span>: 109 giorni lavorativi in 9 gruppi (allestimento 12, copertura 17, interni 40, impianti 23, sala e palco 1, FV 2, pitturazioni 4, finiture esterne 2, smobilizzo 8), zona unica Z1, fasi in sequenza stretta senza sovrapposizioni (verificato). Il calendario del Gantt va da fine maggio a fine ottobre 2026 ed è indicativo: l'aggiudicazione segue il 14/10/2026, il periodo effettivo di esecuzione è TBD.</li><li>Lavorazioni senza fase nel cronoprogramma: infissi esterni, cupola (impermeabilizzazione e oscuramento), rivestimenti MDF e resina, naspi, IRAI, evacuazione fumi oltre ai fori, building automation, accumulo, smontaggio/protezione delle attrezzature esistenti (SIC-01 p. 2, verificato per assenza).</li><li>Incoerenze del PSC sulla logistica: sottofase «Montaggio della gru a torre» (p. 36) assente da cronoprogramma e costi; residui di altri progetti «all'interno della chiesa» (p. 23) e «allegato H» (p. 24).</li><li>Sopralluogo obbligatorio, motivato dalle «peculiari condizioni logistiche, distributive e operative» del sito (accessibilità, introduzione, movimentazione e deposito di materiali e mezzi, spazi per il cantiere, interferenze): richiesta entro il 05/10/2026 ore 12:00; la mancata effettuazione rende l'offerta inammissibile (disciplinare art. 11, pp. 16-17).</li></ul>
+<hr>
+<h2 id="h17213f5a3382" data-nav="2">4. Capacita' di investimento migliorativo</h2>
+<p class="kv"><span class="k">Gap medio vs prezzario</span><span class="v">N.D. (Analisi 2 NON DISPONIBILE)</span></p>
+<p class="kv"><span class="k">Importo lavori</span><span class="v">€ 381.364,99 (da economic_framework.md, confidence: verificato)</span></p>
+<p class="kv"><span class="k">Margine teorico complessivo</span><span class="v">non calcolato</span></p>
+<p class="kv"><span class="k">Classificazione</span><span class="v"><span class="badge na">NON CALCOLABILE</span></span></p>
+<p class="kv"><span class="k">Categorie con maggiore spazio di investimento</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Voce</th><th>Gap%</th></tr></thead><tbody><tr><td>nessuna voce confrontata</td><td><span class="badge na">N.D.</span></td></tr></tbody></table></div>
+<p class="kv"><span class="k">Categorie con minore spazio (o gap negativo)</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Voce</th><th>Gap%</th></tr></thead><tbody><tr><td>nessuna voce confrontata</td><td><span class="badge na">N.D.</span></td></tr></tbody></table></div>
+<blockquote class="info"><p>ℹ️ Calcolo non eseguibile: Analisi 2 non disponibile (prezzario mancante). Aggiungere il prezzario e rieseguire l'audit per ottenere questa stima.</p></blockquote>
+<p><strong>Dati del grafo che delimitano la capacità di investimento</strong> (non sono una misura del margine)</p>
+<div class="tw"><table><thead><tr><th>Elemento</th><th>Dato</th><th>Fonte</th><th>Confidence</th></tr></thead><tbody><tr><td>Migliorie a carico dell'appaltatore</td><td>«Sono altresì compresi, se recepiti dalla Stazione appaltante, i miglioramenti e le previsioni migliorative e aggiuntive contenute nell'offerta tecnica presentata dall'appaltatore, senza ulteriori oneri per la Stazione appaltante»</td><td>capitolato <span class="wl">G-06-ESEC-02_CAPITOLATO_SPECIALE_D_APPALTO</span> art. 1.1 p. 2</td><td>verificato</td></tr><tr><td>Verifica di anomalia</td><td>anormalmente basse le offerte «la cui particolare incidenza economica e organizzativa delle migliorie proposte nell'Offerta Tecnica, ove la loro concreta realizzazione, unitamente alle prestazioni previste dal progetto posto a base di gara, faccia emergere dubbi in ordine alla complessiva sostenibilità economica dell'offerta»</td><td>disciplinare art. 23 p. 33</td><td>verificato</td></tr><tr><td>Ripartizione dei punteggi</td><td>tecnica 90 (80 discrezionali C1-C4 + 10 tabellari C5-C7), economica 10, tempo 0</td><td><code>03_criteria/criteria_matrix.md</code>; disciplinare art. 18</td><td>verificato</td></tr><tr><td>Formula economica</td><td>ribasso unico % sui 381.364,99 €; bilineare con X = 0,85, Asoglia = media dei ribassi; punteggio = Ci × 10</td><td>disciplinare art. 18.3 p. 31</td><td>verificato</td></tr><tr><td>Soglia di sbarramento</td><td>50/90 sul punteggio tecnico, calcolata prima della riparametrazione; sotto soglia esclusione</td><td>disciplinare art. 18.1 p. 30; art. 22</td><td>verificato</td></tr><tr><td>Riparametrazione</td><td>per singolo sub-criterio</td><td>disciplinare art. 18.4 p. 31</td><td>verificato</td></tr><tr><td>Costo della manodopera dichiarato</td><td>47.849,85 € = 12,547% dei lavori; 0,00 su tutte le 19 voci NP (143.667,94 €) — contraddizione D4</td><td><span class="wl">G-05-ESEC-01_QUADRO_INCIDENZA_MANODOPERA</span>; <span class="wl">economic_framework</span> §3, §10</td><td>verificato</td></tr><tr><td>Manodopera esplicita esclusa da G-05</td><td>almeno 13.708,57 € (11.240,41 € nelle 5 analisi G-03 + 2.468,16 € della voce NP 16 «operaio impiantista C3»), circa +28,6% sul dichiarato; quota nei 13 NP senza analisi TBD; il PSC stima 773 uomini-giorno, circa 158.990 € (3,3 volte G-05, stima software)</td><td><span class="wl">economic_framework</span> §3, D4</td><td>verificato (valori), inferito (sottostima)</td></tr><tr><td>Quesito sulla manodopera</td><td>Q5 (priorità bassa, facoltativo): conferma della stima e riferimento alle sole voci di listino</td><td><span class="wl">economic_framework</span> §10.1</td><td>verificato</td></tr><tr><td>Forniture di arredo</td><td>55.296,43 € = 14,5% dei lavori, 100% NP, manodopera 0,00</td><td><span class="wl">economic_framework</span> §1, §5</td><td>verificato</td></tr><tr><td>Premio di accelerazione</td><td>0,5% al giorno dell'ammontare netto contrattuale, max 10%, «nei limiti delle somme ... alla voce imprevisti» (prevale sul capitolato art. 2.14: 0,3‰ e tetto 5%, D7); tetto effettivo = imprevisti QE B3 7.386,68 € IVA compresa (circa 6.054,66 € netti, 1,6% dei lavori), esaurito con circa 3 giorni di anticipo; nessun punteggio sul tempo</td><td>disciplinare p. 8; <span class="wl">economic_framework</span> D7, §12</td><td>verificato (valori), inferito (giorni)</td></tr><tr><td>Revisione prezzi</td><td>riconosciuto il 90% della variazione oltre il 3% (art. 60 D.Lgs. 36/2023); accantonamento QE B6 5.000,00 € (derivazione TBD)</td><td>capitolato art. 2.17 p. 27; <span class="wl">economic_framework</span> §6</td><td>verificato</td></tr><tr><td>Baseline in contraddizione che condizionano il dimensionamento delle migliorie</td><td>D13 accumulo 15 vs 20 kWh (C2.3, quesito Q1); D11 versione CAM (C4.2, Q2); D14 ascensore 8 pers./6 fermate vs 6 pers./3 fermate (C4.1, Q3); D18 poltrone 134 vs 128 (C1.2, Q4)</td><td><span class="wl">economic_framework</span> §10, §10.1</td><td>verificato</td></tr><tr><td>Elementi senza alcuna voce a computo</td><td>antintrusione/TVCC (C2.2), isolamento termico della copertura (C3.1), attrezzature audio/proiezione/schermo (C3.2), protezione delle attrezzature esistenti (C3.3)</td><td><span class="wl">scope</span> §2</td><td>verificato</td></tr></tbody></table></div>
+<hr>
+<h2 id="h8cb9c900e370" data-nav="2">Domande chiave per il professionista</h2>
+<ol><li>Il budget sicurezza del 3,41%, sotto la soglia indicativa del 5%, copre adeguatamente i rischi di cantiere identificati, visto che ponteggio e teli assorbono il 57,6% degli oneri e che mancano voci per gru, protezione delle attrezzature esistenti e monitoraggio delle vibrazioni (prescritto dal PSC p. 17)? Come vengono trattati nell'offerta i costi di queste misure non stimate, e si aggiunge un quesito alla SA sugli oneri (non coperti da Q1-Q5) entro il 06/10/2026 ore 12:00?<textarea class="ans" id="f0" rows="3" placeholder="Risposta…"></textarea></li><li>Il confronto prezzi è rinviato e l'edizione della tariffa Basilicata usata dal progetto non è dichiarata negli elaborati (il disciplinare cita il «Listino regionale vigente», p. 7): entro quale data, rispetto al termine offerte del 14/10/2026 ore 12:00, si esegue il confronto sulla quota da tariffa (237.697,05 €, 62,33% dei lavori), e l'edizione di riferimento si chiede alla SA entro il 06/10/2026 ore 12:00 (non coperta da Q1-Q5) o si ricava in altro modo?<textarea class="ans" id="f1" rows="3" placeholder="Risposta…"></textarea></li><li>I vincoli di viabilità identificati (centro storico medievale, strade strette e in pendenza, mezzi di piccole dimensioni, consegne in fasce orarie, approvvigionamenti frazionati, unica area esterna nella piazzetta su via G. Marconi) sono stati considerati nel cronoprogramma (109 giorni lavorativi in fasi strettamente sequenziali, zona unica) e nel PSC, e quali di essi (dimensioni ammesse dei mezzi, posizionamento di autogrù, aree di stoccaggio protetto, convivenza con visitatori ed eventi del Castello) si verificano al sopralluogo obbligatorio, da richiedere entro il 05/10/2026 ore 12:00?<textarea class="ans" id="f2" rows="3" placeholder="Risposta…"></textarea></li><li>Senza la misura del gap prezzi (margine NON CALCOLABILE), su quale base si fissa la quota di risorse destinabile alle migliorie, tenuto conto che le migliorie sono «senza ulteriori oneri» per la SA (capitolato art. 1.1), che la verifica di anomalia guarda alla loro incidenza economica e organizzativa (disciplinare art. 23), che la manodopera dichiarata (47.849,85 €) esclude almeno 13.708,57 € contenuti nelle voci NP (D4) e che l'offerta economica vale 10 punti (bilineare X = 0,85) contro 80 punti discrezionali con soglia di sbarramento 50/90? Il quesito facoltativo Q5 sulla manodopera si invia?<textarea class="ans" id="f3" rows="3" placeholder="Risposta…"></textarea></li><li>Quali dei quesiti Q1-Q5 già redatti in economic_framework §10.1 (Q1 accumulo, Q2 CAM, Q3 ascensore, Q4 poltrone, Q5 manodopera) si inviano entro il 06/10/2026 ore 12:00, considerando che le risposte sono attese entro l'08/10/2026, che Q1-Q4 fissano le baseline (C2.3, C4.2, C4.1, C1.2) su cui si dimensiona il costo delle migliorie e che D14 (ascensore) e D18 (poltrone) sono verificabili anche al sopralluogo?<textarea class="ans" id="f4" rows="3" placeholder="Risposta…"></textarea></li><li>Quale delle quattro analisi ha la priorita' maggiore per la costruzione dell'offerta tecnica?<textarea class="ans" id="f5" rows="3" placeholder="Risposta…"></textarea></li></ol>
+<hr>
+<h2 id="hf08b8fdc21c7" data-nav="2">Riepilogo</h2>
+<div class="tw"><table><thead><tr><th>Analisi</th><th>Classificazione</th><th>Alert</th></tr></thead><tbody><tr><td>Budget sicurezza</td><td><span class="badge warn">BASSO</span></td><td>⚠️ Oneri 13.005,47 € = 3,41% dei lavori (381.364,99 €), sotto la soglia indicativa del 5%; ponteggio + teli = 57,6% degli oneri; nessuna voce per gru, protezione delle attrezzature esistenti, monitoraggio vibrazioni</td></tr><tr><td>Gap prezzi</td><td><span class="badge na">NON DISPONIBILE</span></td><td>Prezzario Basilicata non disponibile in prometeus-prezzari; edizione/anno della tariffa non dichiarati negli elaborati; confronto rinviato dal professionista; 37,67% dei lavori a NP non confrontabile con alcun prezzario</td></tr><tr><td>Viabilita' cantiere</td><td><span class="badge crit">SFAVOREVOLE</span></td><td>Centro storico medievale: strade strette e in pendenza, mezzi di piccole dimensioni, consegne in fasce orarie, approvvigionamenti frazionati; unica area esterna nella piazzetta su via G. Marconi; sopralluogo obbligatorio (richiesta entro 05/10/2026 ore 12:00)</td></tr><tr><td>Investimento migliorativo</td><td><span class="badge na">NON CALCOLABILE</span></td><td>— nessun margine calcolato (Analisi 2 non disponibile)</td></tr></tbody></table></div>
+<hr>
+<h2 id="ha9e3f3be55d4" data-nav="2">Indicazioni strategiche del professionista</h2>
+<blockquote class="info"><p>Compilare questa sezione dopo la lettura dell'audit. Le indicazioni guidano l'analisi dei criteri nelle fasi successive.</p></blockquote>
+<h3 id="h6f9f4d287922" data-nav="3">Risposte alle domande chiave</h3>
+<ol><li>Domanda 1 (budget sicurezza): [risposta]<textarea class="ans" id="f6" rows="3" placeholder="Risposta…"></textarea></li><li>Domanda 2 (confronto prezzi): [risposta]<textarea class="ans" id="f7" rows="3" placeholder="Risposta…"></textarea></li><li>Domanda 3 (viabilità e sopralluogo): [risposta]<textarea class="ans" id="f8" rows="3" placeholder="Risposta…"></textarea></li><li>Domanda 4 (risorse per le migliorie): [risposta]<textarea class="ans" id="f9" rows="3" placeholder="Risposta…"></textarea></li><li>Domanda 5 (quesiti Q1-Q5): [risposta]<textarea class="ans" id="f10" rows="3" placeholder="Risposta…"></textarea></li><li>Domanda 6 (priorità tra le analisi): [risposta]<textarea class="ans" id="f11" rows="3" placeholder="Risposta…"></textarea></li></ol>
+<h3 id="h9599c98c7234" data-nav="3">Direttive operative (indicazioni strategiche)</h3>
+<ul><li>Tono generale (conservativo / bilanciato / audace): [da compilare]<textarea class="ans" id="f12" rows="3" placeholder="Risposta…"></textarea></li></ul>
+<p class="kv"><span class="k">Priorita' per criterio</span><span class="v"></span></p>
+<ul><li>C1 — Involucro, Poltrone ed Efficientamento Acustico (25 pt): [indicazione]<textarea class="ans" id="f13" rows="3" placeholder="Risposta…"></textarea></li><li>C2 — Energie Rinnovabili e Sistemi di Sicurezza (30 pt): [indicazione]<textarea class="ans" id="f14" rows="3" placeholder="Risposta…"></textarea></li><li>C3 — Logistica Cantieri e Dotazioni Cinematografiche (15 pt): [indicazione]<textarea class="ans" id="f15" rows="3" placeholder="Risposta…"></textarea></li><li>C4 — Accessibilità Universale e Criteri CAM (10 pt): [indicazione]<textarea class="ans" id="f16" rows="3" placeholder="Risposta…"></textarea></li><li>C5 — Esperienza specifica pregressa (6 pt, tabellare): [indicazione]<textarea class="ans" id="f17" rows="3" placeholder="Risposta…"></textarea></li><li>C6 — Criteri premiali art. 57 e Allegato II.3 (2 pt, tabellare): [indicazione]<textarea class="ans" id="f18" rows="3" placeholder="Risposta…"></textarea></li><li>C7 — Criteri premiali art. 108 co. 7 (2 pt, tabellare): [indicazione]<textarea class="ans" id="f19" rows="3" placeholder="Risposta…"></textarea></li></ul>
+<p class="kv"><span class="k">Vincoli specifici</span><span class="v"></span></p>
+<ul><li>[vincolo]<textarea class="ans" id="f20" rows="3" placeholder="Risposta…"></textarea></li></ul>
+<p class="kv"><span class="k">Opportunita' da valorizzare</span><span class="v"></span></p>
+<ul><li>[opportunita']<textarea class="ans" id="f21" rows="3" placeholder="Risposta…"></textarea></li></ul>
+<p class="kv"><span class="k">Note aggiuntive</span><span class="v"></span></p>
+<ul><li>[testo libero]<textarea class="ans" id="f22" rows="3" placeholder="Risposta…"></textarea></li></ul>
+<h2 id="note-team">Note libere del team</h2><textarea class="ans" id="f23" rows="5" placeholder="Osservazioni, vincoli, indicazioni aggiuntive…"></textarea>
+</main>
+<div class="bar">
+  <button id="copy" type="button">Copia risposte in Markdown</button>
+  <button id="dl" class="ghost" type="button">Scarica .md</button>
+  <button id="reset" class="ghost" type="button">Azzera</button>
+  <span id="count"></span>
+</div>
+<footer class="src">
+  Generato da <span>03_criteria/strategy_audit.md</span> — ultima modifica 2026-10-03 11:22 — contenuto c1bf776f51fd<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 03_criteria/strategy_audit.md</span>
+</footer>
+</div>
+
+<script>
+(function () {
+  var KEY = 'spada:c1bf776f51fd';
+  var FIELDS = [{"id":"f0","label":"Il budget sicurezza del 3,41%, sotto la soglia indicativa del 5%, copre adeguatamente i rischi di cantiere identificati, visto che ponteggio e teli assorbono il","section":"Domande chiave per il professionista","kind":"risposta"},{"id":"f1","label":"Il confronto prezzi è rinviato e l'edizione della tariffa Basilicata usata dal progetto non è dichiarata negli elaborati (il disciplinare cita il «Listino regio","section":"Domande chiave per il professionista","kind":"risposta"},{"id":"f2","label":"I vincoli di viabilità identificati (centro storico medievale, strade strette e in pendenza, mezzi di piccole dimensioni, consegne in fasce orarie, approvvigion","section":"Domande chiave per il professionista","kind":"risposta"},{"id":"f3","label":"Senza la misura del gap prezzi (margine NON CALCOLABILE), su quale base si fissa la quota di risorse destinabile alle migliorie, tenuto conto che le migliorie s","section":"Domande chiave per il professionista","kind":"risposta"},{"id":"f4","label":"Quali dei quesiti Q1-Q5 già redatti in economicframework §10.1 (Q1 accumulo, Q2 CAM, Q3 ascensore, Q4 poltrone, Q5 manodopera) si inviano entro il 06/10/2026 or","section":"Domande chiave per il professionista","kind":"risposta"},{"id":"f5","label":"Quale delle quattro analisi ha la priorita' maggiore per la costruzione dell'offerta tecnica?","section":"Domande chiave per il professionista","kind":"risposta"},{"id":"f6","label":"Domanda 1 (budget sicurezza): [risposta]","section":"Risposte alle domande chiave","kind":"risposta"},{"id":"f7","label":"Domanda 2 (confronto prezzi): [risposta]","section":"Risposte alle domande chiave","kind":"risposta"},{"id":"f8","label":"Domanda 3 (viabilità e sopralluogo): [risposta]","section":"Risposte alle domande chiave","kind":"risposta"},{"id":"f9","label":"Domanda 4 (risorse per le migliorie): [risposta]","section":"Risposte alle domande chiave","kind":"risposta"},{"id":"f10","label":"Domanda 5 (quesiti Q1-Q5): [risposta]","section":"Risposte alle domande chiave","kind":"risposta"},{"id":"f11","label":"Domanda 6 (priorità tra le analisi): [risposta]","section":"Risposte alle domande chiave","kind":"risposta"},{"id":"f12","label":"Tono generale (conservativo / bilanciato / audace): [da compilare]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f13","label":"C1 — Involucro, Poltrone ed Efficientamento Acustico (25 pt): [indicazione]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f14","label":"C2 — Energie Rinnovabili e Sistemi di Sicurezza (30 pt): [indicazione]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f15","label":"C3 — Logistica Cantieri e Dotazioni Cinematografiche (15 pt): [indicazione]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f16","label":"C4 — Accessibilità Universale e Criteri CAM (10 pt): [indicazione]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f17","label":"C5 — Esperienza specifica pregressa (6 pt, tabellare): [indicazione]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f18","label":"C6 — Criteri premiali art. 57 e Allegato II.3 (2 pt, tabellare): [indicazione]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f19","label":"C7 — Criteri premiali art. 108 co. 7 (2 pt, tabellare): [indicazione]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f20","label":"[vincolo]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f21","label":"[opportunita']","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f22","label":"[testo libero]","section":"Direttive operative (indicazioni strategiche)","kind":"risposta"},{"id":"f23","label":"Note libere del team","section":"Note libere","kind":"note"}];
+  var boxes = FIELDS.map(function (f) { return document.getElementById(f.id); });
+
+  function load() {
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+    FIELDS.forEach(function (f, n) { if (saved[f.id]) boxes[n].value = saved[f.id]; });
+    autosize();
+  }
+  function save() {
+    var data = {};
+    FIELDS.forEach(function (f, n) { if (boxes[n].value.trim()) data[f.id] = boxes[n].value; });
+    try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {}
+    var n = Object.keys(data).length;
+    document.getElementById('count').textContent =
+      n + ' / ' + FIELDS.length + ' compilate';
+  }
+  function autosize() {
+    boxes.forEach(function (b) { b.style.height = 'auto'; b.style.height = (b.scrollHeight + 2) + 'px'; });
+  }
+  function toMarkdown() {
+    var out = ['# Risposte — Audit Strategico — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)', '',
+               '> Incollare in \`03_criteria/strategy_audit.md\` — il markdown resta la fonte di verita\'.', ''];
+    var section = null;
+    FIELDS.forEach(function (f, n) {
+      var v = boxes[n].value.trim();
+      if (!v) return;
+      if (f.section !== section) { section = f.section; out.push('## ' + section, ''); }
+      out.push('**' + f.label + '**', '', v, '');
+    });
+    if (out.length <= 4) out.push('_Nessuna risposta compilata._');
+    return out.join('\n');
+  }
+
+  boxes.forEach(function (b) {
+    b.addEventListener('input', function () { save(); autosize(); });
+  });
+  document.getElementById('copy').addEventListener('click', function () {
+    navigator.clipboard.writeText(toMarkdown()).then(function () {
+      var el = document.getElementById('copy');
+      var t = el.textContent; el.textContent = 'Copiato ✓';
+      setTimeout(function () { el.textContent = t; }, 1600);
+    });
+  });
+  document.getElementById('dl').addEventListener('click', function () {
+    var blob = new Blob([toMarkdown()], { type: 'text/markdown' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'risposte_03_criteria_strategy_audit_md.md';
+    a.click(); URL.revokeObjectURL(a.href);
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    if (!confirm('Cancellare tutte le risposte compilate su questo dispositivo?')) return;
+    boxes.forEach(function (b) { b.value = ''; });
+    save(); autosize();
+  });
+  window.addEventListener('load', function () { load(); save(); });
+  load(); save();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prossime azioni — Cineteatro «Sala Polifunzionale Periz», Castello di Bella (PZ)</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Stato Progetto</div>
+  <h1>Prossime azioni — Cineteatro «Sala Polifunzionale Periz», Castello di Bella (PZ)</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 11:28</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#hc4e1c99293a7">1. Azioni con scadenza di gara</a><a class="l2" href="#he31dba8cb66e">2. Azioni di workflow (sequenza CLAUDE.md §3)</a><a class="l2" href="#h0a7224cb08c7">3. Azioni tecniche e di manutenzione</a></nav>
+<main>
+<p class="kv"><span class="k">Aggiornato il</span><span class="v">2026-10-03 13:25 CEST</span></p>
+<p class="kv"><span class="k">Agente</span><span class="v">context-monitor</span></p>
+<p class="kv"><span class="k">Fase</span><span class="v">chiusura Fase 1 — prossimo passo del workflow: STOP OBBLIGATORIO #1 (risposte all'audit strategico)</span></p>
+<p class="kv"><span class="k">Giorni alla scadenza offerte</span><span class="v">11 (mer 14/10/2026 ore 12:00)</span></p>
+<blockquote class="crit"><p>ALERT — In ordine di scadenza: <strong>NA-01 sopralluogo entro lun 05/10/2026 ore 12:00</strong> (pena inammissibilità) · <strong>NA-03 quesiti entro mar 06/10/2026 ore 12:00</strong> · NA-06 controllo risposte SA entro gio 08/10/2026 · offerta entro mer 14/10/2026 ore 12:00.</p></blockquote>
+<hr>
+<h2 id="hc4e1c99293a7" data-nav="2">1. Azioni con scadenza di gara</h2>
+<div class="tw"><table><thead><tr><th>ID</th><th>Azione</th><th>Entro</th><th>Chi</th><th>Come</th><th>Issue</th></tr></thead><tbody><tr><td>NA-01</td><td>Richiedere il <strong>sopralluogo obbligatorio</strong> con nominativo e qualifica dell'incaricato (legale rappresentante, procuratore, direttore tecnico o delegato; un delegato non rappresenta più concorrenti). La richiesta è telematica: farla subito, senza attendere lunedì</td><td>lun 05/10/2026 ore 12:00</td><td>professionista / impresa</td><td>PAD ASMECOMM, sezione sopralluogo</td><td>OI-01</td></tr><tr><td>NA-02</td><td>Rispondere a <strong>STOP #1</strong> (6 domande chiave + direttive: tono, priorità C1-C7, vincoli, opportunità). La domanda 5 decide i quesiti di NA-03</td><td>ora (prima di NA-03)</td><td>professionista → main loop scrive le risposte in <code>strategy_audit.md</code> (Edit della sola sezione)</td><td>chat oppure campi compilabili di <code>11_view/03_criteria/strategy_audit.html</code></td><td>OI-02</td></tr><tr><td>NA-03</td><td>Decidere e inviare i <strong>quesiti alla SA</strong>: Q1 (accumulo, alta), Q2 (CAM, alta), Q3 (ascensore, media), Q4 (poltrone, media), Q5 (manodopera, facoltativo); valutare gli extra di OI-04 (oneri sicurezza, edizione tariffa, comprova C6.1/C7.1, schede C5.1, regole C5.1)</td><td>mar 06/10/2026 ore 12:00</td><td>professionista; main loop redige i testi extra se richiesto</td><td>PAD «Sezione chiarimenti»; testi Q1-Q5 in <a href="../02_graph/economic_framework.html" rel="noreferrer">economic_framework</a> §10.1</td><td>OI-03, OI-04</td></tr><tr><td>NA-04</td><td>Preparare la <strong>checklist del sopralluogo</strong>: ascensore (tipo, fermate, corsa, D14); numero e disposizione poltrone (D18); serramenti e nodi di posa (C1.1); copertura, terrazzi e cupola (C3.1); dotazioni audio, proiettori e schermo esistenti (C3.2, C3.3); accessi, dimensioni dei mezzi, posizione autogrù, aree di stoccaggio, convivenza con visitatori ed eventi del Castello (logistica)</td><td>prima della data comunicata dalla SA (preavviso ≥ 2 giorni)</td><td>main loop + professionista</td><td>da strategy_audit §3 e domanda 3; index §8</td><td>OI-01, OI-05</td></tr><tr><td>NA-05</td><td>Ritirare l'<strong>attestazione di avvenuto sopralluogo</strong></td><td>data fissata dalla SA</td><td>incaricato</td><td>in sito</td><td>OI-01</td></tr><tr><td>NA-06</td><td>Controllare le <strong>risposte della SA</strong> e acquisirle nel grafo; segnalare quali baseline (D13, D11, D14, D18) si chiudono</td><td>gio 08/10/2026</td><td>main loop</td><td><code>/update_document</code> sul chiarimento; poi aggiornare le issue OI-05</td><td>OI-05</td></tr></tbody></table></div>
+<h2 id="he31dba8cb66e" data-nav="2">2. Azioni di workflow (sequenza CLAUDE.md §3)</h2>
+<div class="tw"><table><thead><tr><th>ID</th><th>Azione</th><th>Quando</th><th>Chi</th><th>Comando / agente</th><th>Issue</th></tr></thead><tbody><tr><td>NA-07</td><td>Presentare <strong>STOP #2</strong> (menu criteri)</td><td>solo dopo le risposte a STOP #1</td><td>main loop</td><td>—</td><td>OI-02</td></tr><tr><td>NA-08</td><td>Decidere i <strong>3 orfani</strong>: IT-00 (lasciare orfano), PI-06 (collegare come vincolo a C1.3 e C3.3), VVF-PI-01 (facoltativo, C3.3)</td><td>prima della Fase 2 su C1 e C3</td><td>professionista</td><td><code>/resolve_orphan</code></td><td>OI-06</td></tr><tr><td>NA-09</td><td>Leggere le <strong>5 tavole <code>alta</code></strong> con drawing-reader, priorità PI-00a e PI-00 (C2.1, 15 pt), poi PA-05 (C3.1), SIC-02 (C3.3), PA-03 (C4.1)</td><td>Fase 2, passo 2 del criterio collegato</td><td>main loop</td><td><code>drawing-reader</code>, un'invocazione per tavola in parallelo</td><td>OI-07</td></tr><tr><td>NA-10</td><td>Analisi dei criteri scelti a STOP #2: pipeline main loop → pdf-reader / drawing-reader → criterion-agent → evidence-auditor → riepilogo e feedback</td><td>dopo STOP #2</td><td>main loop</td><td>Fase 2; poi <code>context-monitor</code> a ogni criterio chiuso</td><td>—</td></tr><tr><td>NA-11</td><td>Raccogliere i <strong>dati impresa per C5-C7</strong> (interventi analoghi max 6 con committente, immobile, destinazione, lavorazioni, importo, periodo, ultimazione; L. 68/1999; UNI/PdR 125:2022; forma di partecipazione; avvalimento premiale)</td><td>prima dell'analisi di C5-C7</td><td>professionista / impresa</td><td>—</td><td>OI-11</td></tr><tr><td>NA-12</td><td>Fornire indirizzi o pareri della <strong>Soprintendenza Basilicata</strong>, se disponibili, e orientamento sul BIPV</td><td>prima dell'analisi di C2</td><td>professionista</td><td>caricamento in <code>00_input/</code> + <code>/update_document</code></td><td>OI-12</td></tr><tr><td>NA-13</td><td>Compilare <code>vincoli_offerta_tecnica.md</code> <strong>Sezione B</strong> (budget facciate, criteri esclusi, priorità)</td><td>prima di offer-writer</td><td>professionista</td><td>—</td><td>OI-15</td></tr></tbody></table></div>
+<h2 id="h0a7224cb08c7" data-nav="2">3. Azioni tecniche e di manutenzione</h2>
+<div class="tw"><table><thead><tr><th>ID</th><th>Azione</th><th>Quando</th><th>Chi</th><th>Comando</th><th>Issue</th></tr></thead><tbody><tr><td>NA-14</td><td>Rigenerare gli <strong>artifact HTML</strong> dopo ogni modifica di un <code>.md</code> in whitelist (hook non attivo su questa cartella)</td><td>dopo ogni scrittura</td><td>main loop</td><td><code>node scripts/render/md_to_html.js --all</code> poi <code>node scripts/render/md_to_html.js --check</code></td><td>OI-10</td></tr><tr><td>NA-15</td><td><strong>Pubblicare</strong> gli output su <code>prometeus-spada-output</code> (DEC-002), a partire da questo snapshot</td><td>ora e a ogni chiusura di fase o criterio</td><td>main loop su richiesta</td><td><code>/sync_output</code> (<code>./scripts/setup/sync_output.sh</code>)</td><td>—</td></tr><tr><td>NA-16</td><td>Riaprire l'<strong>Analisi 2 gap prezzi</strong> quando è disponibile il prezzario Basilicata nell'edizione usata dal progetto</td><td>dopo OI-08 risolta</td><td>professionista → main loop</td><td><code>scripts/prezzario/fetch_prezzario.sh</code> + <code>/run_strategy_audit</code></td><td>OI-08, OI-09</td></tr><tr><td>NA-17</td><td>Snapshot <code>context-monitor</code></td><td>a ogni criterio chiuso con feedback, o alle soglie di contesto</td><td>main loop</td><td><code>/snapshot_context</code></td><td>—</td></tr></tbody></table></div>
+</main>
+
+<footer class="src">
+  Generato da <span>08_state/next_actions.md</span> — ultima modifica 2026-10-03 11:28 — contenuto 39dcfd7ec2c7<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 08_state/next_actions.md</span>
+</footer>
+</div>
+
+</body>
+</html>

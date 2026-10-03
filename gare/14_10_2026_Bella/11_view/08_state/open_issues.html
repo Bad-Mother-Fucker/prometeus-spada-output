@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Issue aperte — Cineteatro «Sala Polifunzionale Periz», Castello di Bella (PZ)</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Stato Progetto</div>
+  <h1>Issue aperte — Cineteatro «Sala Polifunzionale Periz», Castello di Bella (PZ)</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 11:28</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#h9e9a19072692">1. Registro</a><a class="l2" href="#he91a3e6ce6d6">2. Contraddizioni irrisolte (OI-05)</a><a class="l2" href="#h0b8d11b1d48d">3. Orfani (OI-06)</a><a class="l2" href="#ha638a032b5dc">4. Issue chiuse in questa fase</a></nav>
+<main>
+<p class="kv"><span class="k">Aggiornato il</span><span class="v">2026-10-03 13:25 CEST</span></p>
+<p class="kv"><span class="k">Agente</span><span class="v">context-monitor</span></p>
+<p class="kv"><span class="k">Fase</span><span class="v">chiusura Fase 1 — STOP OBBLIGATORIO #1 aperto</span></p>
+<p class="kv"><span class="k">Issue aperte</span><span class="v">15 · con scadenza di gara: 3 (OI-01, OI-03, OI-04)</span></p>
+<blockquote class="crit"><p>ALERT — SCADENZE. <strong>OI-01</strong> richiesta sopralluogo obbligatorio entro <strong>lun 05/10/2026 ore 12:00</strong> (pena inammissibilità). <strong>OI-03 / OI-04</strong> quesiti alla SA entro <strong>mar 06/10/2026 ore 12:00</strong> (risposte entro gio 08/10/2026). Offerte entro <strong>mer 14/10/2026 ore 12:00</strong>.</p></blockquote>
+<hr>
+<h2 id="h9e9a19072692" data-nav="2">1. Registro</h2>
+<div class="tw"><table><thead><tr><th>ID</th><th>Issue</th><th>Priorità</th><th>Scadenza</th><th>Blocca</th><th>Chi agisce</th><th>Riferimento</th></tr></thead><tbody><tr><td>OI-01</td><td>Richiesta di sopralluogo obbligatorio non ancora registrata come inviata</td><td><span class="badge crit">CRITICO</span></td><td>lun 05/10/2026 ore 12:00</td><td>ammissibilità dell'offerta</td><td>professionista / impresa (PAD)</td><td>disciplinare art. 11 pp. 16-17; gara_brief «Scadenze operative»</td></tr><tr><td>OI-02</td><td>STOP #1: sezione «Indicazioni strategiche del professionista» di <code>strategy_audit.md</code> vuota (6 domande chiave + direttive)</td><td><span class="badge crit">CRITICO</span></td><td>prima di STOP #2</td><td>menu criteri e intera Fase 2</td><td>professionista → main loop scrive le risposte</td><td><a href="../03_criteria/strategy_audit.html" rel="noreferrer">strategy_audit</a></td></tr><tr><td>OI-03</td><td>Quesiti Q1-Q5 già redatti: da decidere quali inviare</td><td><span class="badge crit">CRITICO</span></td><td>mar 06/10/2026 ore 12:00</td><td>baseline C2.3, C4.2, C4.1, C1.2</td><td>professionista (invio via PAD «Sezione chiarimenti»)</td><td><a href="../02_graph/economic_framework.html" rel="noreferrer">economic_framework</a> §10.1; index §7.4</td></tr><tr><td>OI-04</td><td>Quesiti candidati <strong>non coperti da Q1-Q5</strong>, nessun testo redatto: oneri sicurezza (domanda chiave 1); edizione della tariffa Basilicata (domanda chiave 2); comprova di C6.1 e C7.1 in Busta B; schede C5.1 dentro o fuori le 30 facciate; C5.1 arco temporale, lavori in RTI o subappalto</td><td><span class="badge crit">ALTO</span></td><td>mar 06/10/2026 ore 12:00</td><td>C5-C7 (10 pt), budget facciate, Analisi 2</td><td>professionista decide; main loop redige i testi se richiesto</td><td>strategy_audit domande 1-2; gara_brief «Domande aperte» n. 4 (b)-(d); criteria_matrix N7, N8</td></tr><tr><td>OI-05</td><td>7 contraddizioni irrisolte (dettaglio §2)</td><td><span class="badge crit">ALTO</span></td><td>quesiti 06/10; sopralluogo</td><td>baseline di 4 sottocriteri (24 pt)</td><td>professionista + risposte SA</td><td>index §7.1; economic_framework §10</td></tr><tr><td>OI-06</td><td>3 orfani da decidere con <code>/resolve_orphan</code> (dettaglio §3)</td><td><span class="badge warn">MODERATO</span></td><td>prima della Fase 2 su C1 e C3</td><td>vincoli fisici di C1.3 e C3.3</td><td>professionista</td><td>index §6</td></tr><tr><td>OI-07</td><td>5 tavole <code>alta</code> non lette: PI-00a, PI-00 (C2.1, C2.3), PA-05 (C3.1), SIC-02 (C3.3), PA-03 (C4.1); archi solo inferiti tranne PI-00a</td><td><span class="badge crit">ALTO</span></td><td>prima dell'analisi del criterio collegato</td><td>evidenza su C2.1 (15 pt), C3.1, C3.3, C4.1</td><td>main loop → drawing-reader (Fase 2 passo 2)</td><td>index §3, §8, §9</td></tr><tr><td>OI-08</td><td>Edizione/anno della tariffa Basilicata non dichiarati negli elaborati (il disciplinare cita il «Listino regionale vigente», p. 7)</td><td><span class="badge warn">MODERATO</span></td><td>prima di riaprire l'Analisi 2</td><td>confronto prezzi</td><td>professionista (quesito SA o altra fonte)</td><td>economic_framework §11, §13; strategy_audit domanda 2</td></tr><tr><td>OI-09</td><td>Analisi 2 «gap prezzi» rinviata (DEC-001) → Analisi 4 «investimento migliorativo» NON CALCOLABILE: nessuna misura del margine per le migliorie</td><td><span class="badge crit">ALTO</span></td><td>prima della stesura delle migliorie</td><td>dimensionamento migliorie; verifica anomalia art. 23</td><td>professionista (prezzario) → <code>/run_strategy_audit</code></td><td>strategy_audit §2, §4; decision_log DEC-001</td></tr><tr><td>OI-10</td><td>Artifact HTML in <code>11_view/</code> non generati automaticamente: l'hook è legato alla cartella di progetto della sessione</td><td><span class="badge warn">MODERATO</span></td><td>dopo ogni modifica di un <code>.md</code> in whitelist</td><td>allineamento degli artifact condivisi</td><td>main loop: <code>node scripts/render/md_to_html.js --all</code> poi <code>--check</code></td><td>CLAUDE.md §6.1; decision_log SYS-007</td></tr><tr><td>OI-11</td><td>Requisiti tabellari C5-C7 (10 pt) non verificati: numero di interventi analoghi documentabili (max 6), L. 68/1999 ultimo triennio, UNI/PdR 125:2022; forma di partecipazione; eventuale avvalimento premiale (contratto in Busta A)</td><td><span class="badge crit">ALTO</span></td><td>prima dell'analisi di C5-C7</td><td>10 pt «a costo zero»</td><td>professionista / impresa</td><td>gara_brief «Domande aperte» n. 1; criteria_matrix N7, N8</td></tr><tr><td>OI-12</td><td>Indirizzi, pareri o prescrizioni della Soprintendenza Basilicata assenti da tutti gli elaborati; PI-00a non firmata, fuori Elenco Elaborati, cartiglio «Agosto 2026»</td><td><span class="badge crit">ALTO</span></td><td>prima dell'analisi di C2</td><td>C2.1 (15 pt)</td><td>professionista</td><td>gara_brief «Domande aperte» n. 3; index §7.5; sintesi tutela_castello_e_impatto_visivo</td></tr><tr><td>OI-13</td><td>Budget sicurezza BASSO (3,41%); misure del PSC senza voce negli oneri: gru (montaggio gru a torre PSC p. 36), protezione attrezzature esistenti, monitoraggio vibrazioni e polveri, regolazione del traffico, interferenze con visitatori</td><td><span class="badge warn">MODERATO</span></td><td>prima dell'analisi di C3</td><td>C3.3, C4.2, sostenibilità</td><td>professionista</td><td>strategy_audit §1 e domanda 1</td></tr><tr><td>OI-14</td><td>Documenti richiamati ma assenti da <code>00_input/</code>: relazione ex L. 10/91 e abaco serramenti (baseline C1.1), «preventivo allegato» poltrone, «Elaborato B3» CAM, «elaborato C1» di G-08</td><td><span class="badge warn">MODERATO</span></td><td>prima dell'analisi di C1 e C4</td><td>baseline C1.1, C1.2, C4.2</td><td>professionista (quesito o richiesta alla SA)</td><td>index §7.5</td></tr><tr><td>OI-15</td><td><code>vincoli_offerta_tecnica.md</code> Sezione B non compilata (budget facciate per sottocriterio, criteri esclusi, priorità)</td><td><span class="badge warn">BASSO</span></td><td>prima di offer-writer</td><td>stesura offerta</td><td>professionista</td><td>vincoli_offerta_tecnica.md</td></tr></tbody></table></div>
+<h2 id="he91a3e6ce6d6" data-nav="2">2. Contraddizioni irrisolte (OI-05)</h2>
+<div class="tw"><table><thead><tr><th>Rif.</th><th>Contraddizione</th><th>Sottocriterio</th><th>Quesito</th><th>Verifica al sopralluogo</th></tr></thead><tbody><tr><td>D13</td><td>Accumulo di progetto 15 kWh (computo, RS-00, RS-01, PI-00) vs 20 kWh (G-08, PSC, RS-03, G-09); lettura della soglia «&gt;20 kWh»</td><td>C2.3 (7 pt)</td><td>Q1 — alta</td><td>no</td></tr><tr><td>D11</td><td>CAM D.M. 24.11.2025 (disciplinare, «Elaborato B3» inesistente) vs D.M. 23/06/2022 (G-09, capitolato) vs DM 11/10/2017 (elenco prezzi); «minimi CAM» indeterminati</td><td>C4.2 (5 pt)</td><td>Q2 — alta</td><td>no</td></tr><tr><td>D14</td><td>Ascensore 8 pers. / 6 fermate / corsa 18 m (computo, elenco prezzi) vs 6 pers. / 3 fermate / corsa 9 m (G-08, PSC); «elettrico a fune» vs idraulico</td><td>C4.1 (5 pt)</td><td>Q3 — media</td><td>sì</td></tr><tr><td>D18</td><td>Poltrone 134 (computo, G-08, PSC, RS-03) vs 128 (tavole VV.F. approvate) / 129 (PI-03) / 130 (PI-05)</td><td>C1.2 (7 pt)</td><td>Q4 — media</td><td>sì</td></tr><tr><td>D4</td><td>Manodopera 0,00 su tutte le voci NP (G-05) vs ≥ 13.708,57 € in G-03 e NP 16; PSC 773 uomini-giorno</td><td>trasversale (anomalia art. 23)</td><td>Q5 — bassa, facoltativo</td><td>no</td></tr><tr><td>D2</td><td>IVA lavori 59.428,23 € «al 22%» nel QE (= 15,07%); causa non ricostruibile</td><td>nessun impatto sull'offerta</td><td>nessuno</td><td>no</td></tr><tr><td>D16</td><td>Importo presunto lavori nel PSC 391.795,41 € vs QE 381.364,99 / 394.370,46 €</td><td>nessun impatto sull'offerta</td><td>nessuno</td><td>no</td></tr></tbody></table></div>
+<p>Nota operativa (inferito): la SA comunica data e ora del sopralluogo con almeno 2 giorni di preavviso (art. 11 p. 17), quindi è probabile che il sopralluogo avvenga <strong>dopo</strong> il termine quesiti del 06/10. La verifica in sito di D14 e D18 non sostituisce Q3 e Q4 se serve una risposta scritta della SA.</p>
+<h2 id="h0b8d11b1d48d" data-nav="2">3. Orfani (OI-06)</h2>
+<div class="tw"><table><thead><tr><th>Documento</th><th>Valutazione del grafo</th><th>Proposta per <code>/resolve_orphan</code></th></tr></thead><tbody><tr><td>IT-00-ESEC-01 Inquadramento su IGM</td><td>orfano giustificato (contesto territoriale, già coperto da IT-02 e IT-03)</td><td>lasciare orfano</td></tr><tr><td>PI-06-ESEC-01 Impianto idrico antincendio</td><td>orfano non del tutto giustificato: vincolo fisico (posizione naspi)</td><td>collegare come vincolo: C1 bassa (C1.3) e C3 bassa (C3.3), <code>confidence: inferito</code></td></tr><tr><td>VVF-PI-01-00 Planimetria generale VV.F.</td><td>orfano in gran parte giustificato</td><td>facoltativo: C3 bassa (C3.3), <code>confidence: inferito</code></td></tr></tbody></table></div>
+<h2 id="ha638a032b5dc" data-nav="2">4. Issue chiuse in questa fase</h2>
+<p>Nessuna issue di stato precedente: primo snapshot della gara (08_state era vuota).</p>
+</main>
+
+<footer class="src">
+  Generato da <span>08_state/open_issues.md</span> — ultima modifica 2026-10-03 11:28 — contenuto 9e17940ca958<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 08_state/open_issues.md</span>
+</footer>
+</div>
+
+</body>
+</html>

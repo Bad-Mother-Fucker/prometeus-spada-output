@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklist Criteri — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Checklist Criteri</div>
+  <h1>Checklist Criteri — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 09:45</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#hc7610359ff9b">Verifica dell'estrazione (skill extract-criteria-from-disciplinary)</a><a class="l2" href="#h4167c975bd05">Checklist trasversale — offerta tecnica (vale per tutti i criteri)</a><a class="l2" href="#C1">C1 — Involucro, Poltrone ed Efficientamento Acustico (25 pt, D)</a><a class="l2" href="#C2">C2 — Energie Rinnovabili e Sistemi di Sicurezza (30 pt, D)</a><a class="l2" href="#C3">C3 — Logistica Cantieri e Dotazioni Cinematografiche (15 pt, D)</a><a class="l2" href="#C4">C4 — Accessibilità Universale e Criteri CAM (10 pt, D)</a><a class="l2" href="#C5">C5 — Esperienza specifica pregressa (6 pt, T)</a><a class="l2" href="#C6">C6 — Criteri premiali art. 57 e Allegato II.3 (2 pt, T)</a><a class="l2" href="#C7">C7 — Criteri premiali art. 108 co. 7 (2 pt, T)</a></nav>
+<main>
+<p class="kv"><span class="k">CIG</span><span class="v">BCF01395AF · <strong>Fonte:</strong> disciplinare art. 16 e art. 18 (pp. 25-31) · <strong>Generata il:</strong> 2026-10-03</span></p>
+<p class="kv"><span class="k">Criteri attivi</span><span class="v">C1, C2, C3, C4, C5, C6, C7 — totale 90 punti tecnici (80 D + 10 T)</span></p>
+<hr>
+<h2 id="hc7610359ff9b" data-nav="2">Verifica dell'estrazione (skill extract-criteria-from-disciplinary)</h2>
+<h3 id="h9847997659b6" data-nav="3">Prima dell'estrazione</h3>
+<ul><li>[x] Individuata la sezione criteri: art. 18.1 &quot;Criteri di valutazione dell'offerta tecnica&quot;, Tabella dei criteri discrezionali (D) e tabellari (T), pp. 28-30</li><li>[x] Verificata l'assenza di allegati separati con i criteri (gli allegati del disciplinare sono A, B, C e NT, tutti amministrativi/procedurali — p. 36)</li><li>[x] Verificata l'assenza di errata corrige o chiarimenti in <code>00_input/</code> alla data del 2026-10-03 (i chiarimenti si chiudono il 06/10/2026: ricontrollare la sezione chiarimenti della PAD)</li></ul>
+<h3 id="hf06564bcea8c" data-nav="3">Durante l'estrazione</h3>
+<ul><li>[x] Estratti tutti i 7 criteri e 14 sub-criteri</li><li>[x] ID stabili C1-C7 nell'ordine del disciplinare (criteri 1-7)</li><li>[x] Punteggio massimo per ogni criterio</li><li>[x] Punteggi parziali per ogni sub-criterio (colonna &quot;Peso Sub&quot;)</li><li>[x] Metodo di attribuzione (D/T, art. 18.2-18.4)</li><li>[x] Elementi premianti espliciti</li><li>[x] Vincoli espliciti (art. 16, art. 18.1, art. 22, art. 23)</li><li>[x] Vincoli impliciti (segnalati come inferiti)</li><li>[x] Limiti dimensionali e formali (art. 16)</li><li>[x] Rischi fuori scope</li></ul>
+<h3 id="h07b98048adfe" data-nav="3">Dopo l'estrazione</h3>
+<ul><li>[x] <code>criteria_matrix.md</code> con tabella completa</li><li>[x] <code>criteria_matrix.json</code></li><li>[x] <code>criteria_checklist.md</code></li><li>[x] Un file <code>criterion_Cx.md</code> per ogni criterio (7 file)</li><li>[x] Totale punteggi verificato: 25+30+15+10+6+2+2 = 90 = totale tabella (p. 30); somma sub-criteri = 90</li><li>[x] Tabella criteri e Tabella 1 importi confrontate con il PDF originale (pp. 7-8, 28-30)</li></ul>
+<hr>
+<h2 id="h4167c975bd05" data-nav="2">Checklist trasversale — offerta tecnica (vale per tutti i criteri)</h2>
+<ul><li>[ ] Relazione tecnica unica, strutturata per criteri e sub-criteri, con esplicito riferimento alla tabella 18.1 (art. 16, p. 25)</li><li>[ ] Max 15 pagine fronte-retro = 30 facciate A4, pagine numerate, font ≥ 11 pt (art. 16, p. 25)</li><li>[ ] Copertina, sommario, elaborati grafici e schede tecniche fuori conteggio (art. 16, p. 25)</li><li>[ ] Computo metrico NON estimativo: per ogni miglioria riferimento a criterio/sub-criterio, descrizione, u.m., quantità, elementi tecnici di verifica (art. 16, pp. 25-26)</li><li>[ ] Cronoprogramma delle lavorazioni con le migliorie inserite e integrate con il progetto, entro i 150 giorni contrattuali (art. 16, p. 26; art. 3.1, p. 8)</li><li>[ ] Zero elementi economici (prezzi, importi, ribassi, percentuali di ribasso, valorizzazioni) in relazione, computo, cronoprogramma e allegati — pena esclusione (art. 16, p. 26; art. 22, p. 33)</li><li>[ ] Rispetto delle caratteristiche minime dei documenti di gara (art. 16, p. 25)</li><li>[ ] Sostenibilità economica complessiva delle migliorie (verifica di anomalia, art. 23, p. 33)</li><li>[ ] Firma digitale; regole RTI (art. 13, p. 17; art. 16, p. 25); caricamento in Busta B, slot &quot;Offerta Tecnica&quot;</li><li>[ ] Eventuale versione oscurata + dichiarazione motivata (art. 16, p. 26)</li><li>[ ] Dichiarazione sull'uso di sistemi di IA nell'elaborazione dell'offerta tecnica, da rendere nella domanda di partecipazione (Busta A) (art. 15.1, p. 21)</li><li>[ ] Obiettivo minimo: superare la soglia di 50/90 prima della riparametrazione (art. 18.1, p. 30)</li></ul>
+<hr>
+<h2 id="C1" data-nav="2">C1 — Involucro, Poltrone ed Efficientamento Acustico (25 pt, D)</h2>
+<ul><li>[ ] C1.1 (10): baseline di progetto Uf, Uw, Rw e abaco serramenti; dettagli nodi di posa</li><li>[ ] C1.1: verificare vincoli di tutela sull'aspetto esterno dei serramenti</li><li>[ ] C1.2 (7): baseline poltrone (numero, ergonomia, garanzia) e requisiti CAM arredi D.M. 254/2022</li><li>[ ] C1.3 (8): baseline acustica (tempo di riverbero, materiali previsti) e requisiti di reazione al fuoco</li><li>[ ] Indicatori misurabili per ogni miglioria rispetto al minimo di progetto</li><li>[ ] Voci di computo non estimativo e collocazione nel cronoprogramma</li></ul>
+<h2 id="C2" data-nav="2">C2 — Energie Rinnovabili e Sistemi di Sicurezza (30 pt, D)</h2>
+<ul><li>[ ] C2.1 (15): leggere <code>PI-00a-ESEC-01</code> (rinvio esplicito del disciplinare); configurazione FV di progetto; indirizzi/pareri di tutela</li><li>[ ] C2.1: rendere verificabili impatto visivo, riflettanza e conformità alla tutela (fotoinserimenti, schede)</li><li>[ ] C2.2 (8): verificare impianti di sicurezza o predisposizioni già previsti</li><li>[ ] C2.3 (7): capacità di accumulo di progetto e significato di &quot;&gt;20 kWh&quot;; impianti da integrare nella supervisione</li><li>[ ] Voci di computo non estimativo e collocazione nel cronoprogramma</li></ul>
+<h2 id="C3" data-nav="2">C3 — Logistica Cantieri e Dotazioni Cinematografiche (15 pt, D)</h2>
+<ul><li>[ ] C3.1 (5): stratigrafie di copertura piana/terrazzi e cupola in vetro; vincoli di tutela e di quota</li><li>[ ] C3.2 (5): &quot;configurazione base del cineteatro&quot; di progetto (forniture € 55.296,43, art. 3 p. 7)</li><li>[ ] C3.3 (5): censimento attrezzature esistenti (audio, proiettori, schermo); layout di cantiere e aree di stoccaggio</li><li>[ ] Voci di computo non estimativo e collocazione nel cronoprogramma</li></ul>
+<h2 id="C4" data-nav="2">C4 — Accessibilità Universale e Criteri CAM (10 pt, D)</h2>
+<ul><li>[ ] C4.1 (5): dotazioni e prestazioni dell'ascensore idraulico di progetto (vano circolare)</li><li>[ ] C4.2 (5): minimi CAM di progetto (riciclato, VOC, legno); quantità di tagli solai e demolizioni</li><li>[ ] Indicatori misurabili (percentuali, classi, dB) e comprovabilità delle certificazioni</li><li>[ ] Voci di computo non estimativo e collocazione nel cronoprogramma</li></ul>
+<h2 id="C5" data-nav="2">C5 — Esperienza specifica pregressa (6 pt, T)</h2>
+<ul><li>[ ] Elenco interventi dell'impresa su cinema/teatri/cineteatri/edifici prevalentemente di spettacolo aperti al pubblico</li><li>[ ] Per ognuno: committente, denominazione e ubicazione, destinazione d'uso, oggetto e descrizione lavorazioni, importo lavori, periodo di esecuzione, data di ultimazione</li><li>[ ] Documentazione probatoria disponibile e chiara</li><li>[ ] Eventuale avvalimento premiale (contratto in Busta A)</li></ul>
+<h2 id="C6" data-nav="2">C6 — Criteri premiali art. 57 e Allegato II.3 (2 pt, T)</h2>
+<ul><li>[ ] Rispetto obblighi L. 68/1999 nell'ultimo triennio (tutti i componenti se RTI — regola non indicata)</li><li>[ ] Documento di comprova da inserire in Busta B (non indicato: valutare chiarimento)</li></ul>
+<h2 id="C7" data-nav="2">C7 — Criteri premiali art. 108 co. 7 (2 pt, T)</h2>
+<ul><li>[ ] Certificazione UNI/PdR 125:2022 in corso di validità (tutti i componenti se RTI)</li><li>[ ] Documento di comprova da inserire in Busta B (non indicato: valutare chiarimento)</li></ul>
+</main>
+
+<footer class="src">
+  Generato da <span>03_criteria/criteria_checklist.md</span> — ultima modifica 2026-10-03 09:45 — contenuto 118ed64a4653<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 03_criteria/criteria_checklist.md</span>
+</footer>
+</div>
+
+</body>
+</html>

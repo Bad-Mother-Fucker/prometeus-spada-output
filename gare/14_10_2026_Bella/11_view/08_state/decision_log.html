@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision log — Cineteatro «Sala Polifunzionale Periz», Castello di Bella (PZ)</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Stato Progetto</div>
+  <h1>Decision log — Cineteatro «Sala Polifunzionale Periz», Castello di Bella (PZ)</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 11:27</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#h7f772c963779">1. Decisioni del professionista</a><a class="l2" href="#h21e1e9390aa2">2. Decisioni di sistema (applicazione di regole, non scelte del professionista)</a><a class="l2" href="#h2cd859fc2707">3. Decisioni attese (non ancora prese)</a></nav>
+<main>
+<p class="kv"><span class="k">Aggiornato il</span><span class="v">2026-10-03 13:25 CEST</span></p>
+<p class="kv"><span class="k">Agente</span><span class="v">context-monitor</span></p>
+<p class="kv"><span class="k">Fase</span><span class="v">chiusura Fase 1 (analisi preliminare completata)</span></p>
+<p class="kv"><span class="k">Regola</span><span class="v">un ID decisione non cambia; una decisione superata si marca «revocata» con rinvio alla nuova, non si cancella.</span></p>
+<hr>
+<h2 id="h7f772c963779" data-nav="2">1. Decisioni del professionista</h2>
+<div class="tw"><table><thead><tr><th>ID</th><th>Data</th><th>Decisione</th><th>Motivo</th><th>Effetti e file impattati</th><th>Stato</th></tr></thead><tbody><tr><td>DEC-001</td><td>2026-10-03</td><td>Analisi 2 «gap prezzi» dell'audit strategico <strong>rinviata a fase successiva</strong></td><td>Il progetto usa la tariffa Regione Basilicata (codici tipo B.10.001.01), ma il prezzario Basilicata non è disponibile in <code>prometeus-prezzari</code>; in cache c'è solo Calabria 2025, non pertinente</td><td><code>strategy_audit.md</code> §2 = NON DISPONIBILE e §4 «Investimento migliorativo» = NON CALCOLABILE; <code>scripts/prezzario/fetch_prezzario.sh</code> non eseguito; nota in <code>PROJECT_CONFIG.json → gara.prezzario_riferimento</code> (anno e percorso vuoti); <code>economic_framework.md</code> §11, §13</td><td>attiva — da riaprire quando il prezzario Basilicata (edizione corretta) è disponibile: fetch + <code>/run_strategy_audit</code></td></tr><tr><td>DEC-002</td><td>2026-10-03</td><td>Gli output della gara vanno <strong>pubblicati sul repository <code>prometeus-spada-output</code></strong></td><td>Condivisione degli output con i collaboratori</td><td><code>PROJECT_CONFIG.json → remote_output</code> (repository <code>prometeus-spada-output</code>, branch <code>main</code>, path <code>gare/</code>); <code>/sync_output</code> (<code>scripts/setup/sync_output.sh</code>) rigenera <code>11_view/</code> e copia 02_graph, 03_criteria, 04_doc_summaries, 05_criteria_outputs, 06_registers, 08_state, 10_offer, 11_view e <code>PROJECT_CONFIG.json</code> in <code>gare/14_10_2026_Bella/</code></td><td>attiva — esecuzione di <code>/sync_output</code> non verificata da questo snapshot</td></tr></tbody></table></div>
+<h2 id="h21e1e9390aa2" data-nav="2">2. Decisioni di sistema (applicazione di regole, non scelte del professionista)</h2>
+<div class="tw"><table><thead><tr><th>ID</th><th>Data</th><th>Decisione</th><th>Regola applicata</th><th>Agente</th><th>Rivedibile da</th></tr></thead><tbody><tr><td>SYS-001</td><td>2026-10-03</td><td>ID criteri C1-C7 assegnati secondo l'ordine della Tabella art. 18.1 del disciplinare</td><td>CLAUDE.md §4.1 (ID stabili)</td><td>disciplinare-analyst</td><td>nessuno: ID immutabili</td></tr><tr><td>SYS-002</td><td>2026-10-03</td><td>Prezzario Calabria 2025 <strong>non usato</strong> come sostituto, né per codice né per parola chiave</td><td>conseguenza di DEC-001; pertinenza territoriale della tariffa</td><td>strategy-auditor</td><td>professionista</td></tr><tr><td>SYS-003</td><td>2026-10-03</td><td>Baseline economiche e di computo dalle sole versioni <code>is_latest: true</code> (G-01, G-04, G-06 ESEC-02); ESEC-01 solo per confronto</td><td>CLAUDE.md §4.8 (versioni)</td><td>graph-builder</td><td><code>/update_document</code> su nuova versione</td></tr><tr><td>SYS-004</td><td>2026-10-03</td><td>Contraddizioni D1, D7, D15, D17, D19 <strong>risolte per gerarchia delle fonti</strong> (disciplinare &gt; capitolato/contratto &gt; elenco prezzi &gt; computo/QE &gt; relazioni &gt; tavole)</td><td><code>economic_framework.md</code> §10</td><td>graph-builder (Fase E)</td><td>professionista, se dissente</td></tr><tr><td>SYS-005</td><td>2026-10-03</td><td>Quesito su D19 (OG2 nell'Elenco Elaborati) <strong>sconsigliato</strong> senza valutazione del professionista: una riqualificazione in OG2 cambierebbe i requisiti di partecipazione</td><td>prudenza procedurale</td><td>graph-builder (Fase E)</td><td>professionista</td></tr><tr><td>SYS-006</td><td>2026-10-03</td><td>Orfani IT-00, PI-06, VVF-PI-01 <strong>non collegati d'iniziativa</strong>: decisione rimessa al professionista</td><td>CLAUDE.md §4.8 (orfani)</td><td>graph-builder</td><td>professionista con <code>/resolve_orphan</code></td></tr><tr><td>SYS-007</td><td>2026-10-03</td><td>Artifact HTML in <code>11_view/</code> rigenerati <strong>a mano</strong> (<code>node scripts/render/md_to_html.js --all</code>): l'hook PostToolUse è legato alla cartella di progetto della sessione e non scatta su questa gara</td><td>CLAUDE.md §6.1</td><td>context-monitor</td><td>ripristino dell'hook</td></tr></tbody></table></div>
+<h2 id="h2cd859fc2707" data-nav="2">3. Decisioni attese (non ancora prese)</h2>
+<div class="tw"><table><thead><tr><th>Rif.</th><th>Decisione da prendere</th><th>Chi</th><th>Entro</th><th>Blocca</th></tr></thead><tbody><tr><td>STOP #1</td><td>Risposte alle 6 domande chiave e direttive operative (tono, priorità C1-C7, vincoli, opportunità) in <code>strategy_audit.md</code></td><td>professionista</td><td>prima di STOP #2</td><td>menu criteri, Fase 2</td></tr><tr><td>Quesiti</td><td>Quali tra Q1-Q5 inviare, ed eventuali quesiti extra (oneri sicurezza, edizione tariffa, comprova C6.1/C7.1, schede C5.1, regole C5.1)</td><td>professionista</td><td>mar 06/10/2026 ore 12:00</td><td>baseline C2.3, C4.2, C4.1, C1.2</td></tr><tr><td>Sopralluogo</td><td>Invio richiesta e nominativo dell'incaricato</td><td>professionista / impresa</td><td>lun 05/10/2026 ore 12:00</td><td>ammissibilità dell'offerta</td></tr><tr><td>Orfani</td><td>Destinazione di IT-00, PI-06, VVF-PI-01</td><td>professionista</td><td>prima della Fase 2 su C1 e C3</td><td>copertura vincoli C1.3, C3.3</td></tr><tr><td>STOP #2</td><td>Criteri da analizzare e ordine</td><td>professionista</td><td>dopo STOP #1</td><td>Fase 2</td></tr><tr><td>Requisiti T</td><td>Dati impresa per C5 (interventi analoghi), C6 (L. 68/1999), C7 (UNI/PdR 125); forma di partecipazione; eventuale avvalimento premiale</td><td>professionista / impresa</td><td>prima dell'analisi di C5-C7</td><td>10 pt tabellari</td></tr><tr><td>Vincoli offerta</td><td><code>vincoli_offerta_tecnica.md</code> Sezione B (budget facciate, criteri esclusi, priorità)</td><td>professionista</td><td>prima di offer-writer</td><td>stesura offerta</td></tr></tbody></table></div>
+</main>
+
+<footer class="src">
+  Generato da <span>08_state/decision_log.md</span> — ultima modifica 2026-10-03 11:27 — contenuto b8c627d07ab6<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 08_state/decision_log.md</span>
+</footer>
+</div>
+
+</body>
+</html>

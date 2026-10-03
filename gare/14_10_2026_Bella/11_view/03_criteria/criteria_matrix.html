@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matrice Criteri — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Matrice Criteri</div>
+  <h1>Matrice Criteri — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 09:40</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#h2228628e7926">Ripartizione del punteggio complessivo</a><a class="l2" href="#hde17868cf5ef">Matrice criteri</a><a class="l2" href="#hb1c89c4f8ca4">Dettaglio sub-criteri (testo della Tabella, art. 18.1)</a><a class="l2" href="#hd8f9cf0a1de6">Metodi di attribuzione</a><a class="l2" href="#hf203d72b93ff">Vincoli trasversali a tutti i criteri (dal disciplinare)</a><a class="l2" href="#h8766098bb31d">Note e ambiguità segnalate</a></nav>
+<main>
+<p class="kv"><span class="k">CIG</span><span class="v">BCF01395AF · <strong>CUP:</strong> D63I23000230009</span></p>
+<p class="kv"><span class="k">Stazione appaltante</span><span class="v">Comune di Bella (PZ) — Area III Lavori Pubblici e Appalti (RUP ing. Vito Menza)</span></p>
+<p class="kv"><span class="k">Fonte</span><span class="v"><code>00_input/disciplinare/disciplinare.di.gara.pdf</code> (36 pp.) — art. 18 &quot;Criterio di aggiudicazione&quot;, Tabella dei criteri D/T pp. 28-30 (verificata sul PDF originale); bando sez. IV.2 p. 3 (conferma ripartizione 90/10)</span></p>
+<p class="kv"><span class="k">Estratto il</span><span class="v">2026-10-03 · <strong>Allegati separati con criteri / errata corrige / chiarimenti:</strong> nessuno presente in <code>00_input/</code> alla data di estrazione</span></p>
+<hr>
+<h2 id="h2228628e7926" data-nav="2">Ripartizione del punteggio complessivo</h2>
+<div class="tw"><table><thead><tr><th>Componente</th><th>Punti max</th><th>Fonte</th></tr></thead><tbody><tr><td>Offerta tecnica</td><td>90</td><td>art. 18 (p. 27); bando IV.2.2 (p. 3)</td></tr><tr><td>di cui discrezionali (D)</td><td>80</td><td>art. 18.1 Tabella (pp. 28-29): criteri 1-4</td></tr><tr><td>di cui tabellari (T)</td><td>10</td><td>art. 18.1 Tabella (pp. 29-30): criteri 5-7</td></tr><tr><td>Offerta economica</td><td>10</td><td>art. 18 (p. 27); bando IV.2.2 (p. 3)</td></tr><tr><td>Offerta temporale</td><td>0 — non prevista</td><td>nessun elemento di valutazione sul tempo; durata fissa 150 gg (art. 3.1, p. 8)</td></tr><tr><td><strong>TOTALE</strong></td><td><strong>100</strong></td><td></td></tr></tbody></table></div>
+<p class="kv"><span class="k">Soglia di sbarramento</span><span class="v">50 punti su 90 di punteggio tecnico complessivo; sotto soglia il concorrente è escluso. Il superamento è calcolato <strong>prima</strong> della riparametrazione (art. 18.1, p. 30; art. 22, p. 33).</span></p>
+<hr>
+<h2 id="hde17868cf5ef" data-nav="2">Matrice criteri</h2>
+<div class="tw"><table><thead><tr><th>ID</th><th>Criterio</th><th>Punteggio max</th><th>Subcriteri</th><th>Metodo attribuzione</th><th>Note</th></tr></thead><tbody><tr><td>C1</td><td>1. Involucro, Poltrone ed Efficientamento Acustico</td><td>25</td><td>C1.1 (10) · C1.2 (7) · C1.3 (8)</td><td>discrezionale (D)</td><td>Baseline = &quot;minimi di progetto&quot; (sub 1.1). Peso 27,8% del tecnico.</td></tr><tr><td>C2</td><td>2. Energie Rinnovabili e Sistemi di Sicurezza</td><td>30</td><td>C2.1 (15) · C2.2 (8) · C2.3 (7)</td><td>discrezionale (D)</td><td>C2.1 è il sub-criterio più pesante della gara; rinvio all'elaborato <code>PI-00a-ESEC-01</code>. Soglia &quot;&gt;20 kWh&quot; in C2.3 ambigua (vedi nota N5). Peso 33,3%.</td></tr><tr><td>C3</td><td>3. Logistica Cantieri e Dotazioni Cinematografiche</td><td>15</td><td>C3.1 (5) · C3.2 (5) · C3.3 (5)</td><td>discrezionale (D)</td><td>Il sub 3.1 (isolamento copertura/cupola) non è coerente con il titolo del criterio (nota N4). Peso 16,7%.</td></tr><tr><td>C4</td><td>4. Accessibilità Universale e Criteri CAM</td><td>10</td><td>C4.1 (5) · C4.2 (5)</td><td>discrezionale (D)</td><td>Baseline C4.2 = minimi CAM (D.M. 24.11.2025). Peso 11,1%.</td></tr><tr><td>C5</td><td>5. Esperienza specifica pregressa</td><td>6</td><td>C5.1 (6)</td><td>tabellare (T) — 1 pt per intervento analogo documentato, max 6</td><td>Nessuna proposta migliorativa possibile; dipende dal curriculum dell'O.E. Peso 6,7%.</td></tr><tr><td>C6</td><td>6. Criteri premiali art. 57 e Allegato II.3 del D. Lgs. 36/2023</td><td>2</td><td>C6.1 (2)</td><td>tabellare (T) — on/off</td><td>Rispetto obblighi L. 68/1999 nell'ultimo triennio. Forma di comprova non indicata (nota N7). Peso 2,2%.</td></tr><tr><td>C7</td><td>7. Criteri premiali 108 co.7 del D. Lgs. 36/2023</td><td>2</td><td>C7.1 (2)</td><td>tabellare (T) — on/off</td><td>Certificazione UNI/PdR 125:2022 in corso di validità; in RTI tutti i componenti. Peso 2,2%.</td></tr><tr><td></td><td><strong>TOTALE OFFERTA TECNICA</strong></td><td><strong>90</strong></td><td></td><td></td><td>Somma verificata: 25+30+15+10+6+2+2 = 90 = totale tabella (p. 30)</td></tr></tbody></table></div>
+<hr>
+<h2 id="hb1c89c4f8ca4" data-nav="2">Dettaglio sub-criteri (testo della Tabella, art. 18.1)</h2>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo sub-criterio</th><th>Punti</th><th>Natura</th><th>Oggetto della valutazione / perimetro tecnico delle migliorie (dal disciplinare)</th><th>Fonte</th></tr></thead><tbody><tr><td>C1.1</td><td>Qualità, quantità ed efficientamento nodi dei nuovi infissi</td><td>10</td><td>D</td><td>Proposte per il miglioramento delle prestazioni termo-acustiche complessive dei serramenti (trasmittanza Uf/Uw e abbattimento Rw) superiori ai minimi di progetto; fornitura quantitativa aggiuntiva di superfici vetrate performanti; soluzioni di isolamento termo-acustico integrativo dei nodi di posa (infisso-muratura) per l'eliminazione dei ponti termici e la prevenzione di condense/muffe.</td><td>p. 28</td></tr><tr><td>C1.2</td><td>Fornitura quantitativa e qualità delle nuove poltrone</td><td>7</td><td>D</td><td>Parametri migliorativi relativi all'ergonomia delle sedute, alla quantità di poltrone complete fornite come scorta di rispetto e all'estensione della garanzia.</td><td>p. 28</td></tr><tr><td>C1.3</td><td>Efficientamento e risanamento acustico dei materiali interni</td><td>8</td><td>D</td><td>Proposte per l'impiego di materiali di finitura, pannellature (MDF) o rivestimenti speciali a elevate prestazioni fonoassorbenti/fonoisolanti per ottimizzare il tempo di riverbero e l'acustica della sala.</td><td>p. 28</td></tr><tr><td>C2.1</td><td>Integrazione architettonica dell'impianto fotovoltaico (BIPV)</td><td>15</td><td>D</td><td>Sistemi fotovoltaici integrati sulla copertura, valutati in base all'azzeramento dell'impatto visivo, assenza di riflettanza e totale conformità agli indirizzi di tutela del vicino Castello della Soprintendenza Basilicata. (Ai fini della formulazione della miglioria, si rimanda all'elaborato grafico PI-00a-ESEC-01_PLANIMETRIA DI INSIEME CON FOTOVOLTAICO INTEGRATO E FOTOINSERIMENTI.)</td><td>p. 28</td></tr><tr><td>C2.2</td><td>Sistemi antintrusione e videosorveglianza</td><td>8</td><td>D</td><td>Proposta integrativa per la fornitura e installazione di un impianto di allarme perimetrale/volumetrico e di videosorveglianza TVCC a protezione della struttura e dei suoi accessi.</td><td>p. 28</td></tr><tr><td>C2.3</td><td>Sistemi di accumulo e Building Automation</td><td>7</td><td>D</td><td>Incremento quantitativo della capacità di accumulo delle batterie (&gt;20 kWh) e sistemi software di gestione e controllo remoto integrato degli impianti del teatro.</td><td>p. 28</td></tr><tr><td>C3.1</td><td>Risoluzione delle carenze termiche su terrazzi e cupola</td><td>5</td><td>D</td><td>Proposte per l'inserimento dello strato di isolamento termico sulla copertura piana e sistemi per l'abbattimento del carico termico estivo (effetto serra) della cupola in vetro.</td><td>p. 29</td></tr><tr><td>C3.2</td><td>Attrezzature o arredi cinematografici migliorativi/aggiuntivi</td><td>5</td><td>D</td><td>Proposte per la fornitura e posa in opera di components, arredi tecnici o attrezzature multimediali e cinematografiche aggiuntive o a prestazioni superiori rispetto alla configurazione base del cineteatro.</td><td>p. 29</td></tr><tr><td>C3.3</td><td>Logistica e piano di protezione delle attrezzature esistenti</td><td>5</td><td>D</td><td>Metodologia operative per lo smontaggio, imballaggio protettivo, stoccaggio sicuro e successivo rimontaggio/taratura dell'impianto audio, proiettori e dello schermo del cineteatro esistente.</td><td>p. 29</td></tr><tr><td>C4.1</td><td>Integrazioni tecnologiche e comfort dell'ascensore</td><td>5</td><td>D</td><td>Fornitura di accessori e dispositivi opzionali per l'impianto idraulico nel vano circolare (sistemi di telecontrollo, sintesi vocale, pulsanti Braille avanzati) e livello di isolamento acustico (dB) della cabina.</td><td>p. 29</td></tr><tr><td>C4.2</td><td>Criteri CAM avanzati, certificazioni di filiera ed economia circolare</td><td>5</td><td>D</td><td>Percentuale di materiale riciclato certificata (EPD) in lastre di cartongesso, silicati antincendio e isolanti eccedente i minimi CAM; utilizzo di legno tracciabile (FSC/PEFC); impiego di materiali a bassissima emissione VOC (Classe A+); piano avanzato di economia circolare per la gestione, selezione e riciclo dei detriti da taglio solai e demolizioni con monitoraggio polveri/vibrazioni.</td><td>p. 29</td></tr><tr><td>C5.1</td><td>Esperienza pregressa di realizzazione di interventi analoghi a quello oggetto di affidamento, realizzati su immobili destinati a cinema, teatro, cineteatri o altri edifici destinati prevalentemente ad attività di spettacolo e intrattenimento aperti al pubblico</td><td>6</td><td>T</td><td>Per ciascun intervento ritenuto ammissibile e adeguatamente documentato: 1 punto, fino a un massimo di 6. Per ciascun intervento una scheda sintetica con almeno: committente, denominazione e ubicazione dell'immobile, destinazione d'uso, oggetto e descrizione delle lavorazioni eseguite, importo dei lavori, periodo di esecuzione e data di ultimazione. Punteggio solo per gli interventi la cui documentazione consenta di verificare in maniera chiara la riconducibilità alle caratteristiche indicate.</td><td>p. 29</td></tr><tr><td>C6.1</td><td>Clausole sociali e meccanismi premiali per realizzare le pari opportunità generazionali e di genere e per promuovere l'inclusione lavorativa delle persone con disabilità o persone svantaggiate</td><td>2</td><td>T</td><td>Ai sensi dell'art. 57 del D. Lgs. 36/2023 punteggio premiale all'O.E. se nell'ultimo triennio ha rispettato gli obblighi di cui alla legge n. 68 del 1999 (Art. 1, co. 5 lett. e) dell'allegato II.3 al Codice).</td><td>p. 30</td></tr><tr><td>C7.1</td><td>Adozione di politiche tese al raggiungimento della parità di genere</td><td>2</td><td>T</td><td>Punteggio premiale al concorrente in possesso della certificazione del sistema di gestione per la parità di genere UNI/PdR 125:2022 in corso di validità. In caso di R.T.I. la certificazione deve essere posseduta da tutti i componenti del raggruppamento.</td><td>p. 30</td></tr></tbody></table></div>
+<p>Totale sub-criteri: 10+7+8+15+8+7+5+5+5+5+5+6+2+2 = <strong>90</strong> (coincide con il &quot;PUNTEGGIO MASSIMO&quot; della colonna Peso Sub, p. 30).</p>
+<hr>
+<h2 id="hd8f9cf0a1de6" data-nav="2">Metodi di attribuzione</h2>
+<p><strong>Elementi discrezionali (D) — art. 18.2 (p. 30).</strong> Ogni commissario (commissione di 3 membri, art. 19 p. 31) attribuisce a ciascun sub-criterio un coefficiente 0-1:</p>
+<div class="tw"><table><thead><tr><th>Giudizio</th><th>Coefficiente</th></tr></thead><tbody><tr><td>eccellente/ottimo</td><td>da 0,81 a 1</td></tr><tr><td>buono</td><td>da 0,61 a 0,80</td></tr><tr><td>discreto/adeguato</td><td>da 0,41 a 0,60</td></tr><tr><td><span class="badge good">sufficiente</span></td><td>da 0,21 a 0,40</td></tr><tr><td>scarso/mediocre</td><td>da 0,01 a 0,20</td></tr><tr><td>insufficiente/non valutabile</td><td>0</td></tr></tbody></table></div>
+<p>Coefficiente del sub-criterio = media aritmetica dei coefficienti dei commissari.</p>
+<p><strong>Elementi tabellari (T) — art. 18.2 (p. 30).</strong> Punteggio assegnato automaticamente e in valore assoluto in base a presenza/assenza nell'offerta dell'elemento richiesto (C5.1: 1 pt per intervento ammissibile, max 6).</p>
+<p><strong>Calcolo del punteggio — art. 18.4 (p. 31).</strong> Metodo aggregativo compensatore: Pi = Σ Cxi · Px.</p>
+<p class="kv"><span class="k">I^ riparametrazione</span><span class="v">se in un sub-criterio nessun concorrente ottiene il punteggio massimo, al migliore si attribuisce il massimo e agli altri un punteggio proporzionale decrescente. Arrotondamento alla seconda cifra decimale (per difetto se la terza è 0-4, per eccesso se 5-9).</span></p>
+<p><strong>Offerta economica — art. 18.3 (p. 31) e art. 17 (pp. 26-27).</strong> Ribasso percentuale unico (max 3 decimali) sull'importo a base di gara al netto di IVA e dei costi della sicurezza (€ 381.364,99). Formula bilineare:</p>
+<ul><li>Ci = X · (Ai / Asoglia) per Ai ≤ Asoglia</li><li>Ci = X + (1 − X) · [(Ai − Asoglia) / (Amax − Asoglia)] per Ai &gt; Asoglia</li><li>X = 0,85; Asoglia = media dei ribassi offerti; Amax = ribasso più conveniente. Punteggio = Ci × 10.</li></ul>
+<p class="kv"><span class="k">Parità</span><span class="v">a pari punteggio complessivo prevale il miglior punteggio tecnico; poi offerta migliorativa sul prezzo entro 5 giorni; poi sorteggio (art. 22, pp. 32-33).</span></p>
+<hr>
+<h2 id="hf203d72b93ff" data-nav="2">Vincoli trasversali a tutti i criteri (dal disciplinare)</h2>
+<ul><li>Offerta tecnica: relazione tecnica delle migliorie unica, con esplicito riferimento ai criteri della tabella 18.1, <strong>max 15 pagine fronte-retro = 30 facciate complessive</strong>, A4, pagine numerate, font non inferiore a 11 punti, strutturata per criteri e sub-criteri; non conteggiati copertine, sommari, elaborati grafici e schede tecniche esplicative (art. 16, p. 25). Limite di tipo <strong>B — totale distribuibile</strong> (nessun limite per sub-criterio).</li><li>Allegati obbligatori all'offerta tecnica: <strong>computo metrico NON estimativo</strong> delle migliorie (art. 16, pp. 25-26) e <strong>cronoprogramma delle lavorazioni</strong> integrato con le migliorie (art. 16, p. 26).</li><li><strong>Divieto assoluto di elementi economici</strong> (prezzi unitari/complessivi, importi, ribassi, percentuali, valorizzazioni) in relazione, computo, cronoprogramma o qualsiasi documento dell'offerta tecnica: <strong>esclusione</strong> (art. 16, p. 26; art. 22, p. 33).</li><li>Rispetto, <strong>pena l'esclusione</strong>, delle caratteristiche minime stabilite nei documenti di gara, nel rispetto del principio di equivalenza (art. 16, p. 25).</li><li>Soccorso istruttorio <strong>non</strong> ammesso sulla documentazione dell'offerta tecnica (art. 14, p. 19); la commissione può chiedere chiarimenti (risposta in 5 giorni) che non possono modificare l'offerta (art. 14, p. 20).</li><li>Verifica di anomalia ancorata all'<strong>incidenza economica e organizzativa delle migliorie</strong> (art. 23, p. 33): le migliorie, sommate alle prestazioni di progetto, non devono far dubitare della sostenibilità complessiva dell'offerta.</li><li>Escluse offerte parziali, plurime, condizionate, alternative o irregolari (art. 22, p. 33; art. 17, p. 27).</li><li>Progetto conforme ai CAM D.M. 24.11.2025 (edilizia) e D.M. 23 giugno 2022 n. 254 (arredi), richiamati nell'&quot;Elaborato B3 – Relazione sui Criteri Minimi Ambientali&quot; (Premesse, p. 3).</li><li>Firma digitale/FEQ/FEA; in RTI costituendo firmano mandanti e mandataria, in RTI costituito la sola mandataria (art. 13, p. 17; art. 16, p. 25). Caricamento in Busta B, slot &quot;Offerta Tecnica&quot; della PAD ASMECOMM, in lingua italiana (art. 16, p. 25).</li><li>Eventuale richiesta di oscuramento: versione oscurata + dichiarazione firmata motivata (art. 16, p. 26).</li></ul>
+<hr>
+<h2 id="h8766098bb31d" data-nav="2">Note e ambiguità segnalate</h2>
+<ul><li><strong>N1 — Rinvii interni errati.</strong> &quot;riparametrazione di cui al paragrafo 0&quot; (p. 30) — presumibilmente art. 18.4 (p. 31); &quot;si applica quanto previsto al paragrafo 0&quot; per il malfunzionamento PAD (p. 18) — presumibilmente art. 1.1 (p. 4).</li><li><strong>N2 — Tabella 1 importi (p. 7, verificata su PDF).</strong> La riga 1 &quot;Lavori di adeguamento impiantistico € 339.074,03&quot; + riga 2 &quot;Forniture € 55.296,43&quot; = € 394.370,46, cioè l'importo complessivo A+B, non A) € 381.364,99 come indicato in tabella. La riga lavori include quindi i costi della sicurezza (€ 13.005,47); lavori al netto della sicurezza = € 326.068,56 (valore derivato, non scritto nel disciplinare). La tabella categorie SOA (p. 8) somma € 381.364,99, dunque comprende anche le forniture.</li><li><strong>N3 — Riparametrazione.</strong> Prevista per sub-criterio (&quot;nel singolo sub-criterio&quot;); non è detto se si applichi anche ai sub-criteri tabellari. La soglia di sbarramento 50/90 si calcola prima della riparametrazione.</li><li><strong>N4 — C3: titolo vs contenuto.</strong> Il criterio &quot;Logistica Cantieri e Dotazioni Cinematografiche&quot; include il sub 3.1 sull'isolamento termico della copertura piana e della cupola in vetro: va comunque trattato sotto C3, come da tabella.</li><li><strong>N5 — C2.3 &quot;&gt;20 kWh&quot;.</strong> Non è chiaro se 20 kWh sia la capacità di progetto o la soglia minima oltre la quale l'incremento è valutato.</li><li><strong>N6 — C2.1 &quot;vicino Castello&quot;.</strong> La sala è in un'ala del Castello Aragonese di Bella (art. 11, p. 16), mentre il sub 2.1 parla di indirizzi di tutela &quot;del vicino Castello della Soprintendenza Basilicata&quot;. Gli indirizzi di tutela non sono riportati nel disciplinare. L'elaborato <code>PI-00a-ESEC-01</code> richiamato è presente in <code>00_input</code> ma non firmato e assente dall'Elenco Elaborati (manifest).</li><li><strong>N7 — C6.1 e C7.1: comprova.</strong> Il disciplinare non indica quale documento inserire in offerta tecnica per ottenere i punti tabellari (dichiarazione, certificato, altro). Per C6.1 non è indicata la regola in caso di RTI (per C7.1 sì: tutti i componenti). Il titolo del criterio 6 è troncato (&quot;...del D. Lgs. 36/2023 e&quot;).</li><li><strong>N8 — C5.1.</strong> Nessun arco temporale di riferimento, nessun importo minimo, nessuna indicazione se l'intervento debba essere stato eseguito direttamente dall'O.E. (l'avvalimento premiale è ammesso, art. 7 p. 13). Formato della scheda non indicato; non è detto se le schede rientrino nelle 30 facciate (sono esclusi solo copertine, sommari, elaborati grafici e &quot;schede tecniche esplicative&quot;).</li><li><strong>N9 — Limite pagine.</strong> Non sono indicati tipo di font, interlinea, margini, righe per facciata, né la conseguenza del superamento (non valutazione delle pagine eccedenti o altro).</li><li><strong>N10 — Oggetto.</strong> Premesse: &quot;adeguamento antincendio ed efficientamento energetico&quot;; oggetto (art. 3, bando): &quot;adeguamento ed efficientamento energetico&quot;. Differenza solo descrittiva.</li><li><strong>N11 — Elaborato CAM.</strong> Le Premesse citano &quot;Elaborato B3 – Relazione sui Criteri Minimi Ambientali&quot;; nel manifest la relazione CAM è <code>G-09-ESEC-01</code>. Corrispondenza da verificare.</li><li><strong>N12 — C4.1 &quot;impianto idraulico nel vano circolare&quot;.</strong> Letto come l'ascensore idraulico nel vano circolare (coerente con il titolo del sub-criterio). Il refuso &quot;components&quot; (C3.2) e &quot;Metodologia operative&quot; (C3.3) sono nel testo originale.</li></ul>
+</main>
+
+<footer class="src">
+  Generato da <span>03_criteria/criteria_matrix.md</span> — ultima modifica 2026-10-03 09:40 — contenuto f0e366daeb1c<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 03_criteria/criteria_matrix.md</span>
+</footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gara Brief — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</title>
+<style>
+  :root {
+    --bg:#f6f5f2; --card:#fff; --ink:#1c1b19; --mut:#6b6862; --line:#e2ded6;
+    --acc:#8a5a2b; --crit:#b3261e; --warn:#a56a00; --good:#2c6e49; --na:#6b6862;
+    --critbg:#fdf1f0; --warnbg:#fdf6e8; --goodbg:#eef6f1; --nabg:#f2f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#16150f; --card:#1f1e19; --ink:#eceae4; --mut:#a09c92; --line:#332f27;
+      --acc:#d8a76a; --crit:#f2b8b5; --warn:#e8c06a; --good:#8fd6ac;
+      --critbg:#2c1a19; --warnbg:#2a2216; --goodbg:#18271f; --nabg:#232219;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65
+    ui-serif, Georgia, "Times New Roman", serif; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 1.25rem 5rem; }
+  header.top { border-bottom:1px solid var(--line); margin-bottom:2rem;
+    padding:2.5rem 0 1.5rem; }
+  .kind { font:600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--acc); }
+  h1 { font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; margin:.6rem 0 .4rem; }
+  .sub { color:var(--mut); font:400 .95rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:1rem 1.25rem; margin:0 0 2.5rem; font:.9rem/1.7 ui-sans-serif, system-ui, sans-serif; }
+  nav.toc strong { display:block; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--mut); margin-bottom:.5rem; }
+  nav.toc a { display:block; color:var(--ink); text-decoration:none; }
+  nav.toc a:hover { color:var(--acc); text-decoration:underline; }
+  nav.toc a.l2 { padding-left:1rem; color:var(--mut); }
+  h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-bottom:.4rem;
+    border-bottom:1px solid var(--line); }
+  h3 { font-size:1.1rem; margin:2rem 0 .6rem; }
+  h4,h5,h6 { font-size:1rem; margin:1.5rem 0 .5rem; }
+  p { margin:.8rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; }
+  a { color:var(--acc); }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background:var(--nabg); padding:.12em .38em; border-radius:4px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:1rem; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  .wl { font:.9em ui-sans-serif, system-ui, sans-serif; color:var(--acc);
+    background:var(--nabg); padding:.1em .45em; border-radius:4px; white-space:nowrap; }
+  .tw { overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font:.92rem/1.5 ui-sans-serif,
+    system-ui, sans-serif; }
+  th,td { text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-weight:600; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--mut); background:var(--nabg); }
+  tbody tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; font:600 .74rem/1.4 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.03em; padding:.15em .55em; border-radius:999px; white-space:nowrap; }
+  .badge.crit { color:var(--crit); background:var(--critbg); }
+  .badge.warn { color:var(--warn); background:var(--warnbg); }
+  .badge.good { color:var(--good); background:var(--goodbg); }
+  .badge.na   { color:var(--na);   background:var(--nabg); }
+  blockquote { margin:1.2rem 0; padding:.9rem 1.1rem; border-left:4px solid var(--mut);
+    border-radius:0 8px 8px 0; background:var(--nabg); }
+  blockquote p { margin:.35rem 0; }
+  blockquote.crit { border-color:var(--crit); background:var(--critbg); }
+  blockquote.warn { border-color:var(--warn); background:var(--warnbg); }
+  blockquote.info { border-color:var(--acc); background:var(--card); }
+  details { margin:.8rem 0 1.2rem; padding:.15rem .9rem; border:1px solid var(--line);
+    border-radius:8px; background:var(--card); }
+  details[open] { padding-bottom:.6rem; }
+  summary { cursor:pointer; padding:.5rem 0;
+    font:600 .82rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--mut); }
+  summary:hover { color:var(--acc); }
+  p.kv { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline;
+    margin:.35rem 0; padding:.35rem 0; border-bottom:1px dotted var(--line); }
+  p.kv .k { font:600 .78rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--mut); min-width:13rem; }
+  p.kv .v { flex:1; }
+  ul,ol { padding-left:1.4rem; }
+  li { margin:.45rem 0; }
+  textarea.ans { display:block; width:100%; margin:.5rem 0 1.2rem;
+    font:.95rem/1.6 ui-sans-serif, system-ui, sans-serif; color:var(--ink);
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc);
+    border-radius:6px; padding:.6rem .75rem; resize:vertical; min-height:3.2rem; }
+  textarea.ans:focus { outline:2px solid var(--acc); outline-offset:1px; }
+  .bar { position:sticky; bottom:0; margin-top:3rem; display:flex; flex-wrap:wrap;
+    gap:.6rem; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem 1rem;
+    font:.85rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+  .bar button { font:600 .85rem/1 ui-sans-serif, system-ui, sans-serif; cursor:pointer;
+    border:1px solid var(--acc); background:var(--acc); color:var(--bg);
+    padding:.55rem .9rem; border-radius:6px; }
+  .bar button.ghost { background:none; color:var(--acc); }
+  .bar #count { color:var(--mut); margin-left:auto; }
+  footer.src { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+    color:var(--mut); font:.78rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break:break-all; }
+  @media print {
+    .bar, nav.toc { display:none; }
+    body { background:#fff; color:#000; }
+    textarea.ans { border:1px solid #999; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="kind">Gara Brief</div>
+  <h1>Gara Brief — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)</h1>
+  <div class="sub">Prometeus S.P.A.D.A. — aggiornato 2026-10-03 11:29</div>
+</header>
+<nav class="toc"><strong>Indice</strong><a class="l2" href="#h620f58be829a">Scadenze operative</a><a class="l2" href="#hd774d0330fab">In sintesi</a><a class="l2" href="#h865a7b782fde">Struttura del punteggio</a><a class="l2" href="#h693ef1936a78">Vincoli di formato dell'offerta tecnica</a><a class="l2" href="#hdbf1c7be5cea">Criteri in dettaglio</a><a class="l2" href="#hda66df59a2d0">Dove si concentra il potenziale</a><a class="l2" href="#h2be98d9460e6">Vincoli principali</a><a class="l2" href="#hf1ed078f5740">Elaborati citati nel disciplinare</a><a class="l2" href="#h033a83da3bcd">Domande aperte per il professionista</a><a class="l2" href="#hd70ee14a080f">Prossimi passi</a><a class="l2" href="#note-team">Note libere del team</a></nav>
+<main>
+<p class="kv"><span class="k">CIG</span><span class="v">BCF01395AF · <strong>CUP:</strong> D63I23000230009 · <strong>Importo a base d'asta:</strong> € 381.364,99 soggetto a ribasso + € 13.005,47 oneri sicurezza non ribassabili = € 394.370,46 (IVA esclusa) · <strong>Scadenza:</strong> mercoledì 14/10/2026 ore 12:00</span></p>
+<p class="kv"><span class="k">Stazione appaltante</span><span class="v">Comune di Bella (PZ) — Area III Lavori Pubblici e Appalti · RUP ing. Vito Menza · procedura aperta telematica (art. 71 D.Lgs. 36/2023) su PAD ASMECOMM, offerta economicamente più vantaggiosa</span></p>
+<p class="kv"><span class="k">Generato il</span><span class="v">03/10/2026 · <strong>Fonte:</strong> solo disciplinare (dati di gara verificati anche sul bando); elaborati di progetto caricati e censiti ma non ancora analizzati</span></p>
+<hr>
+<h2 id="h620f58be829a" data-nav="2">Scadenze operative</h2>
+<blockquote class="crit"><p><strong>ALERT — SCADENZE OPERATIVE.</strong> Date verificate sul &quot;Timing di gara&quot; del disciplinare (art. 13, p. 18) e sul bando (sez. IV.3, pp. 3-4): coincidono. Oggi è sabato 03/10/2026.</p><p><strong>LUNEDÌ 05/10/2026 ORE 12:00 — RICHIESTA DI SOPRALLUOGO OBBLIGATORIO</strong> tramite la PAD (sezione dedicata), indicando nominativo e qualifica della persona incaricata. Senza sopralluogo l'offerta è INAMMISSIBILE (art. 11, pp. 16-17). Resta mezza giornata lavorativa.</p><p><strong>MARTEDÌ 06/10/2026 ORE 12:00 — TERMINE PER I QUESITI DI CHIARIMENTO</strong>, solo tramite la &quot;Sezione chiarimenti&quot; della PAD (art. 2.2, p. 6). Le risposte sono pubblicate almeno 6 giorni prima della scadenza, quindi entro giovedì 08/10/2026.</p><p><strong>MERCOLEDÌ 14/10/2026 ORE 12:00 — TERMINE PERENTORIO DI CARICAMENTO DELL'OFFERTA</strong> (Busta A amministrativa, Busta B tecnica, Busta C economica, firmate digitalmente). Dopo tale ora la PAD non accetta offerte: irricevibilità (art. 13, p. 18).</p></blockquote>
+<div class="tw"><table><thead><tr><th>Scadenza</th><th>Data e ora</th><th>Cosa fare</th><th>Se si manca</th><th>Fonte</th></tr></thead><tbody><tr><td>Richiesta sopralluogo</td><td>lun 05/10/2026 ore 12:00</td><td>Richiesta su PAD con nominativo e qualifica dell'incaricato (legale rappresentante, procuratore, direttore tecnico o delegato con delega e documenti; un delegato non può rappresentare più concorrenti)</td><td>Offerta inammissibile</td><td>art. 11 (pp. 16-17); Timing p. 18; bando IV.3.1 (p. 3)</td></tr><tr><td>Svolgimento sopralluogo</td><td>data, ora e luogo comunicati dalla SA con almeno 2 giorni di anticipo</td><td>Accesso di persona alla sala &quot;Periz&quot;; ritirare l'attestazione di avvenuto sopralluogo</td><td>Offerta inammissibile</td><td>art. 11 (p. 17)</td></tr><tr><td>Quesiti di chiarimento</td><td>mar 06/10/2026 ore 12:00</td><td>Quesiti scritti in italiano solo dalla &quot;Sezione chiarimenti&quot; della PAD</td><td>Nessuna risposta</td><td>art. 2.2 (p. 6); Timing p. 18; bando IV.3.2 (pp. 3-4)</td></tr><tr><td>Pubblicazione risposte</td><td>entro gio 08/10/2026 (almeno 6 giorni prima della scadenza)</td><td>Controllare la sezione chiarimenti della PAD: le risposte fanno parte della documentazione accettata con l'offerta</td><td>—</td><td>art. 2.2 (p. 6); art. 13.1 (p. 19)</td></tr><tr><td>Caricamento offerta</td><td>mer 14/10/2026 ore 12:00</td><td>Buste A, B, C firmate digitalmente; per RTI/consorzi definire a sistema la forma di partecipazione entro lo stesso termine</td><td>Offerta irricevibile</td><td>art. 13 (p. 18); art. 4 (p. 9); bando IV.3.3 (p. 4)</td></tr><tr><td>Prima seduta pubblica</td><td>comunicata via PAD</td><td>Seduta telematica su Zoom</td><td>—</td><td>Timing p. 18; art. 20 (p. 32)</td></tr><tr><td>Validità offerta</td><td>180 giorni dalla scadenza</td><td>Garanzia provvisoria valida 180 giorni dalla presentazione</td><td>—</td><td>art. 13.1 (p. 19); art. 10 (p. 15)</td></tr></tbody></table></div>
+<hr>
+<h2 id="hd774d0330fab" data-nav="2">In sintesi</h2>
+<p>L'appalto, misto di lavori e forniture in lotto unico, riguarda l'adeguamento (antincendio, secondo le Premesse) e l'efficientamento energetico del Cine-Teatro e Sala Polifunzionale &quot;Periz&quot;, ospitato in un'ala del Castello Aragonese di Bella (PZ), insieme alla fornitura di poltrone, palco e allestimento scenografico (art. 3, p. 7; art. 11, p. 16; Premesse, p. 3). Importo complessivo € 394.370,46, di cui € 55.296,43 di forniture e € 13.005,47 di oneri della sicurezza, con costi della manodopera stimati in € 47.849,85. Categoria prevalente OG1 (€ 185.390,73), altre categorie OS3, OS4, OG9 e OS30 (subappaltabili al 100%), tutte in classifica I (pp. 7-8). Durata 150 giorni naturali e consecutivi, progetto esecutivo validato il 29/05/2026 e conforme ai CAM, finanziamento &quot;Cultura Missione Comune 2023&quot; e &quot;Cultura Missione Comune 2026&quot; (art. 3.1, p. 8; Premesse, p. 3). Il cantiere è in un edificio esistente dentro il castello, con accessi, spazi e movimentazione dei materiali condizionati: per questo il sopralluogo è obbligatorio (art. 11, pp. 16-17).</p>
+<hr>
+<h2 id="h865a7b782fde" data-nav="2">Struttura del punteggio</h2>
+<div class="tw"><table><thead><tr><th>Criterio</th><th>Titolo</th><th>Punti</th><th>Peso%</th><th>Priorita'</th></tr></thead><tbody><tr><td><span class="wl">C1</span></td><td>Involucro, Poltrone ed Efficientamento Acustico</td><td>25</td><td>27,8%</td><td>ALTA</td></tr><tr><td><span class="wl">C2</span></td><td>Energie Rinnovabili e Sistemi di Sicurezza</td><td>30</td><td>33,3%</td><td>ALTA</td></tr><tr><td><span class="wl">C3</span></td><td>Logistica Cantieri e Dotazioni Cinematografiche</td><td>15</td><td>16,7%</td><td></td></tr><tr><td><span class="wl">C4</span></td><td>Accessibilità Universale e Criteri CAM</td><td>10</td><td>11,1%</td><td></td></tr><tr><td><span class="wl">C5</span></td><td>Esperienza specifica pregressa (tabellare)</td><td>6</td><td>6,7%</td><td></td></tr><tr><td><span class="wl">C6</span></td><td>Criteri premiali art. 57 e Allegato II.3 D.Lgs. 36/2023 (tabellare)</td><td>2</td><td>2,2%</td><td></td></tr><tr><td><span class="wl">C7</span></td><td>Criteri premiali art. 108 co. 7 D.Lgs. 36/2023 (tabellare)</td><td>2</td><td>2,2%</td><td></td></tr><tr><td><strong>TOTALE OFFERTA TECNICA</strong></td><td></td><td><strong>90</strong></td><td><strong>100%</strong></td><td></td></tr></tbody></table></div>
+<blockquote class="info"><p>I criteri con peso &gt; 20% sono ad <strong>ALTA priorita'</strong>: concentrare qui le risorse di analisi.</p></blockquote>
+<div class="tw"><table><thead><tr><th>Componente</th><th>Punti</th><th>Note</th><th>Fonte</th></tr></thead><tbody><tr><td>Offerta tecnica</td><td>90</td><td>80 discrezionali (C1-C4) + 10 tabellari (C5-C7)</td><td>art. 18 (p. 27), art. 18.1 (pp. 28-30)</td></tr><tr><td>Offerta economica</td><td>10</td><td>Ribasso % unico (max 3 decimali) su € 381.364,99; formula bilineare con X = 0,85 e Asoglia = media dei ribassi</td><td>art. 17 (pp. 26-27), art. 18.3 (p. 31)</td></tr><tr><td>Offerta temporale</td><td>0</td><td>Non prevista: durata fissa di 150 giorni. Il premio di accelerazione (0,5% al giorno, max 10%) riguarda l'esecuzione e non dà punteggio</td><td>art. 3.1 (p. 8)</td></tr><tr><td><strong>Totale</strong></td><td><strong>100</strong></td><td></td><td>bando IV.2.2 (p. 3)</td></tr></tbody></table></div>
+<blockquote class="warn"><p>ATTENZIONE — <strong>Soglia di sbarramento: 50 punti su 90</strong> di punteggio tecnico, calcolata prima della riparametrazione. Sotto soglia il concorrente è escluso (art. 18.1, p. 30; art. 22, p. 33).</p></blockquote>
+<p class="kv"><span class="k">Come si assegnano i punti (D)</span><span class="v">ognuno dei 3 commissari dà un coefficiente da 0 a 1 per ciascun sub-criterio (ottimo 0,81-1, buono 0,61-0,80, discreto 0,41-0,60, sufficiente 0,21-0,40, scarso 0,01-0,20, insufficiente 0). Si fa la media e la si moltiplica per i punti del sub-criterio (art. 18.2, p. 30).</span></p>
+<p class="kv"><span class="k">Riparametrazione</span><span class="v">in ogni sub-criterio la migliore offerta riceve il massimo e le altre punteggi proporzionali. Ogni sub-criterio è quindi una gara a sé (art. 18.4, p. 31).</span></p>
+<p class="kv"><span class="k">Tabellari (T)</span><span class="v">punti assegnati automaticamente se l'elemento c'è, zero se manca (art. 18.2, p. 30).</span></p>
+<hr>
+<h2 id="h693ef1936a78" data-nav="2">Vincoli di formato dell'offerta tecnica</h2>
+<blockquote class="warn"><p>ATTENZIONE — <strong>Relazione tecnica: massimo 15 pagine fronte-retro (30 facciate complessive), A4, pagine numerate, carattere non inferiore a 11 punti, organizzata per criteri e sub-criteri.</strong> Nessun prezzo, importo o ribasso in nessun documento della Busta B, <strong>pena l'esclusione</strong> (art. 16, pp. 25-26).</p></blockquote>
+<div class="tw"><table><thead><tr><th>Parametro</th><th>Prescrizione del disciplinare</th><th>Fonte</th></tr></thead><tbody><tr><td>Documento principale</td><td>Una relazione tecnica delle migliorie offerte, con esplicito riferimento ai criteri della tabella 18.1</td><td>art. 16 (p. 25)</td></tr><tr><td>Lunghezza</td><td>Max 15 pagine fronte-retro = 30 facciate complessive per tutti i criteri. Non ci sono limiti per singolo criterio: le facciate si distribuiscono liberamente</td><td>art. 16 (p. 25)</td></tr><tr><td>Formato pagina</td><td>A4, pagine &quot;opportunamente numerate&quot;</td><td>art. 16 (p. 25)</td></tr><tr><td>Carattere</td><td>Dimensione non inferiore a 11 punti; tipo di carattere [non indicato]</td><td>art. 16 (p. 25)</td></tr><tr><td>Interlinea, margini, righe per facciata</td><td>[non indicato]</td><td>—</td></tr><tr><td>Struttura</td><td>Per criteri e sub-criteri: a ogni criterio e sub-criterio corrisponde la descrizione di quanto offerto</td><td>art. 16 (p. 25)</td></tr><tr><td>Esclusi dal conteggio</td><td>Copertine, sommari, elaborati grafici e schede tecniche esplicative</td><td>art. 16 (p. 25)</td></tr><tr><td>Allegati ammessi (facoltativi)</td><td>Elaborati grafici e schede tecniche a corredo della relazione; numero e formato [non indicato]</td><td>art. 16 (p. 25)</td></tr><tr><td>Allegato obbligatorio 1</td><td><strong>Computo metrico NON estimativo</strong> delle migliorie. Per ogni miglioria: riferimento al criterio o sub-criterio, descrizione puntuale, unità di misura, quantità ed elementi tecnici di verifica. Nessun prezzo, importo, percentuale o valorizzazione economica</td><td>art. 16 (pp. 25-26)</td></tr><tr><td>Allegato obbligatorio 2</td><td><strong>Cronoprogramma delle lavorazioni</strong>, redatto tenendo conto delle migliorie, che ne mostri l'inserimento e l'integrazione con il progetto a base di gara. Nessun elemento economico</td><td>art. 16 (p. 26)</td></tr><tr><td>Elementi economici</td><td>Vietati in tutta la Busta B: la loro presenza comporta l'esclusione</td><td>art. 16 (p. 26); art. 22 (p. 33)</td></tr><tr><td>Caratteristiche minime</td><td>L'offerta tecnica deve rispettarle, pena l'esclusione, secondo il principio di equivalenza</td><td>art. 16 (p. 25)</td></tr><tr><td>Firma e caricamento</td><td>Firma digitale, FEQ o FEA. In RTI costituendo firmano mandanti e mandataria, in RTI costituito la sola mandataria. Caricamento nella Busta B, slot &quot;Offerta Tecnica&quot;; firmati anche file e cartella compressa</td><td>art. 13 (p. 17); art. 16 (p. 25)</td></tr><tr><td>Lingua</td><td>Italiano</td><td>art. 16 (p. 25)</td></tr><tr><td>Oscuramento (eventuale)</td><td>Versione oscurata dell'offerta più dichiarazione firmata con le ragioni della richiesta</td><td>art. 16 (p. 26)</td></tr><tr><td>Errori e carenze</td><td>Il soccorso istruttorio NON si applica all'offerta tecnica. La commissione può chiedere chiarimenti (risposta entro 5 giorni) che non possono modificare l'offerta</td><td>art. 14 (pp. 19-20)</td></tr></tbody></table></div>
+<blockquote class="warn"><p>ATTENZIONE — <strong>Dichiarazione sull'intelligenza artificiale:</strong> nella domanda di partecipazione (Busta A) il concorrente deve dichiarare se nell'elaborazione dell'offerta tecnica si è avvalso di sistemi di IA, garantendo il rispetto del Regolamento UE 2024/1689, della legge 132/2025 e della normativa privacy, e se li userà in esecuzione (art. 15.1, p. 21). Questo sistema è basato su IA: la dichiarazione va resa di conseguenza.</p></blockquote>
+<hr>
+<h2 id="hdbf1c7be5cea" data-nav="2">Criteri in dettaglio</h2>
+<blockquote class="info"><p>Una scheda per criterio: cosa valuta, cosa va materialmente prodotto e consegnato, e — man mano che l'analisi procede — a che punto siamo. La riga <strong>Stato analisi</strong> e' l'unica parte viva del brief: la aggiorna <code>evidence-auditor</code> a fine audit e <code>feedback-processor</code> a feedback elaborato. Il resto della scheda deriva dal solo disciplinare.</p></blockquote>
+<h3 id="ha91ee0a6d924" data-nav="3"><span class="wl">C1</span> — Involucro, Poltrone ed Efficientamento Acustico (25 punti)</h3>
+<p><strong>Sommario.</strong> Il criterio valuta tre famiglie di migliorie. La prima riguarda i nuovi serramenti: trasmittanza Uf/Uw e abbattimento acustico Rw superiori ai minimi di progetto, superfici vetrate performanti aggiuntive, isolamento dei nodi di posa infisso-muratura contro ponti termici e condense. La seconda riguarda le poltrone: ergonomia, scorta di poltrone complete, garanzia estesa. La terza riguarda i materiali interni fonoassorbenti e fonoisolanti (finiture, pannelli MDF, rivestimenti speciali) per il tempo di riverbero e l'acustica della sala. Il punteggio è interamente discrezionale (coefficienti 0-1 e riparametrazione per sub-criterio), e il riferimento esplicito è il superamento dei minimi del progetto (art. 18.1, p. 28).</p>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo</th><th>Punti</th><th>Natura</th></tr></thead><tbody><tr><td>C1.1</td><td>Qualità, quantità ed efficientamento nodi dei nuovi infissi</td><td>10</td><td>Discrezionale</td></tr><tr><td>C1.2</td><td>Fornitura quantitativa e qualità delle nuove poltrone</td><td>7</td><td>Discrezionale</td></tr><tr><td>C1.3</td><td>Efficientamento e risanamento acustico dei materiali interni</td><td>8</td><td>Discrezionale</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Deliverables richiesti</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Deliverable</th><th>Vincolo di formato</th><th>Fonte</th></tr></thead><tbody><tr><td>Relazione tecnica, sezione C1 con descrizione di quanto offerto per C1.1, C1.2 e C1.3</td><td>Rientra nelle 30 facciate A4 complessive, pagine numerate, carattere ≥ 11 pt, struttura per criteri e sub-criteri</td><td>art. 16, p. 25</td></tr><tr><td>Computo metrico non estimativo, voci delle migliorie C1</td><td>Per ogni miglioria: riferimento al sub-criterio, descrizione, unità di misura, quantità, elementi tecnici di verifica. Nessun prezzo o importo (pena esclusione)</td><td>art. 16, pp. 25-26</td></tr><tr><td>Elaborati grafici e schede tecniche esplicative (facoltativi)</td><td>Non conteggiati nelle 30 facciate; limiti [non indicato]</td><td>art. 16, p. 25</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Stato analisi</span><span class="v">non ancora analizzato</span></p>
+<hr>
+<h3 id="h1df48cf71789" data-nav="3"><span class="wl">C2</span> — Energie Rinnovabili e Sistemi di Sicurezza (30 punti)</h3>
+<p><strong>Sommario.</strong> È il criterio più pesante (un terzo del punteggio tecnico) e contiene il sub-criterio singolo più pesante della gara. C2.1 (15 punti) chiede un fotovoltaico integrato in copertura (BIPV), giudicato su azzeramento dell'impatto visivo, assenza di riflettanza e totale conformità agli indirizzi di tutela della Soprintendenza Basilicata, con rinvio all'elaborato <code>PI-00a-ESEC-01</code>. C2.2 (8 punti) chiede di proporre un impianto di allarme perimetrale/volumetrico e di videosorveglianza TVCC. C2.3 (7 punti) chiede più capacità di accumulo delle batterie (&quot;&gt; 20 kWh&quot;) e un software di gestione e controllo remoto degli impianti del teatro. Il punteggio è interamente discrezionale (art. 18.1, p. 28).</p>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo</th><th>Punti</th><th>Natura</th></tr></thead><tbody><tr><td>C2.1</td><td>Integrazione architettonica dell'impianto fotovoltaico (BIPV)</td><td>15</td><td>Discrezionale</td></tr><tr><td>C2.2</td><td>Sistemi antintrusione e videosorveglianza</td><td>8</td><td>Discrezionale</td></tr><tr><td>C2.3</td><td>Sistemi di accumulo e Building Automation</td><td>7</td><td>Discrezionale</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Deliverables richiesti</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Deliverable</th><th>Vincolo di formato</th><th>Fonte</th></tr></thead><tbody><tr><td>Relazione tecnica, sezione C2 con descrizione di quanto offerto per C2.1, C2.2 e C2.3</td><td>Rientra nelle 30 facciate A4 complessive, pagine numerate, carattere ≥ 11 pt, struttura per criteri e sub-criteri. Per C2.1 la miglioria va formulata con riferimento all'elaborato PI-00a-ESEC-01</td><td>art. 16, p. 25; art. 18.1, p. 28</td></tr><tr><td>Computo metrico non estimativo, voci delle migliorie C2</td><td>Per ogni miglioria: riferimento al sub-criterio, descrizione, unità di misura, quantità, elementi tecnici di verifica. Nessun prezzo o importo (pena esclusione)</td><td>art. 16, pp. 25-26</td></tr><tr><td>Elaborati grafici (ad esempio fotoinserimenti) e schede tecniche esplicative (facoltativi)</td><td>Non conteggiati nelle 30 facciate; limiti [non indicato]</td><td>art. 16, p. 25</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Stato analisi</span><span class="v">non ancora analizzato</span></p>
+<hr>
+<h3 id="hd86dd6c3af3f" data-nav="3"><span class="wl">C3</span> — Logistica Cantieri e Dotazioni Cinematografiche (15 punti)</h3>
+<p><strong>Sommario.</strong> I tre sub-criteri valgono 5 punti ciascuno. C3.1 chiede isolamento termico della copertura piana e sistemi contro il surriscaldamento estivo della cupola in vetro: il contenuto non corrisponde al titolo del criterio, ma va comunque trattato qui. C3.2 chiede componenti, arredi tecnici e attrezzature multimediali e cinematografiche aggiuntive o con prestazioni superiori alla configurazione base del cineteatro. C3.3 chiede una metodologia per smontare, proteggere, stoccare, rimontare e tarare l'impianto audio, i proiettori e lo schermo esistenti. Il punteggio è interamente discrezionale (art. 18.1, p. 29).</p>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo</th><th>Punti</th><th>Natura</th></tr></thead><tbody><tr><td>C3.1</td><td>Risoluzione delle carenze termiche su terrazzi e cupola</td><td>5</td><td>Discrezionale</td></tr><tr><td>C3.2</td><td>Attrezzature o arredi cinematografici migliorativi/aggiuntivi</td><td>5</td><td>Discrezionale</td></tr><tr><td>C3.3</td><td>Logistica e piano di protezione delle attrezzature esistenti</td><td>5</td><td>Discrezionale</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Deliverables richiesti</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Deliverable</th><th>Vincolo di formato</th><th>Fonte</th></tr></thead><tbody><tr><td>Relazione tecnica, sezione C3 con descrizione di quanto offerto per C3.1, C3.2 e C3.3</td><td>Rientra nelle 30 facciate A4 complessive, pagine numerate, carattere ≥ 11 pt, struttura per criteri e sub-criteri</td><td>art. 16, p. 25</td></tr><tr><td>Computo metrico non estimativo, voci delle migliorie C3</td><td>Per ogni miglioria: riferimento al sub-criterio, descrizione, unità di misura, quantità, elementi tecnici di verifica. Nessun prezzo o importo (pena esclusione)</td><td>art. 16, pp. 25-26</td></tr><tr><td>Elaborati grafici e schede tecniche esplicative (facoltativi)</td><td>Non conteggiati nelle 30 facciate; limiti [non indicato]</td><td>art. 16, p. 25</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Stato analisi</span><span class="v">non ancora analizzato</span></p>
+<hr>
+<h3 id="h7db7f52c4320" data-nav="3"><span class="wl">C4</span> — Accessibilità Universale e Criteri CAM (10 punti)</h3>
+<p><strong>Sommario.</strong> C4.1 (5 punti) premia accessori e dispositivi opzionali per l'ascensore idraulico nel vano circolare (telecontrollo, sintesi vocale, pulsanti Braille avanzati) e l'isolamento acustico della cabina in dB. C4.2 (5 punti) premia le prestazioni ambientali oltre i minimi CAM: riciclato certificato EPD in cartongesso, silicati antincendio e isolanti, legno FSC/PEFC, materiali a bassissime emissioni VOC (classe A+). Premia anche un piano di economia circolare per i detriti da taglio dei solai e dalle demolizioni, con monitoraggio di polveri e vibrazioni. Il punteggio è interamente discrezionale (art. 18.1, p. 29).</p>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo</th><th>Punti</th><th>Natura</th></tr></thead><tbody><tr><td>C4.1</td><td>Integrazioni tecnologiche e comfort dell'ascensore</td><td>5</td><td>Discrezionale</td></tr><tr><td>C4.2</td><td>Criteri CAM avanzati, certificazioni di filiera ed economia circolare</td><td>5</td><td>Discrezionale</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Deliverables richiesti</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Deliverable</th><th>Vincolo di formato</th><th>Fonte</th></tr></thead><tbody><tr><td>Relazione tecnica, sezione C4 con descrizione di quanto offerto per C4.1 e C4.2</td><td>Rientra nelle 30 facciate A4 complessive, pagine numerate, carattere ≥ 11 pt, struttura per criteri e sub-criteri</td><td>art. 16, p. 25</td></tr><tr><td>Computo metrico non estimativo, voci delle migliorie C4</td><td>Per ogni miglioria: riferimento al sub-criterio, descrizione, unità di misura, quantità, elementi tecnici di verifica. Nessun prezzo o importo (pena esclusione)</td><td>art. 16, pp. 25-26</td></tr><tr><td>Elaborati grafici e schede tecniche esplicative, ad esempio EPD e schede prodotto (facoltativi)</td><td>Non conteggiati nelle 30 facciate; limiti [non indicato]</td><td>art. 16, p. 25</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Stato analisi</span><span class="v">non ancora analizzato</span></p>
+<hr>
+<h3 id="h112b05d661bb" data-nav="3"><span class="wl">C5</span> — Esperienza specifica pregressa (6 punti)</h3>
+<p><strong>Sommario.</strong> Il punteggio è tabellare: 1 punto per ogni intervento analogo ammissibile e documentato, fino a 6. Contano solo gli interventi su cinema, teatri, cineteatri o altri edifici destinati prevalentemente ad attività di spettacolo e intrattenimento aperti al pubblico. Il punto è assegnato solo se la scheda permette di verificare con chiarezza che l'intervento rispetta queste caratteristiche. Non sono possibili proposte migliorative: il punteggio dipende dal curriculum dell'impresa, eventualmente integrato con avvalimento premiale (art. 18.1, p. 29; art. 7, p. 13).</p>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo</th><th>Punti</th><th>Natura</th></tr></thead><tbody><tr><td>C5.1</td><td>Interventi analoghi su immobili per cinema, teatro, cineteatri o spettacolo aperti al pubblico</td><td>6</td><td>Tabellare</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Deliverables richiesti</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Deliverable</th><th>Vincolo di formato</th><th>Fonte</th></tr></thead><tbody><tr><td>Scheda sintetica per ciascun intervento analogo (al massimo 6 utili)</td><td>Contenuto minimo: committente; denominazione e ubicazione dell'immobile; destinazione d'uso; oggetto e descrizione delle lavorazioni eseguite; importo dei lavori; periodo di esecuzione e data di ultimazione. Formato e lunghezza [non indicato]; se rientri nelle 30 facciate [non indicato]</td><td>art. 18.1, sub 5.1, p. 29</td></tr><tr><td>Relazione tecnica, sezione C5</td><td>Struttura per criteri e sub-criteri richiesta per l'intera tabella 18.1; contenuto per i criteri tabellari [non indicato]</td><td>art. 16, p. 25</td></tr><tr><td>Contratto di avvalimento premiale (solo se l'esperienza è di un'impresa ausiliaria)</td><td>Allegato alla domanda (Busta A), nativo digitale e firmato digitalmente dalle parti</td><td>art. 7, pp. 13-14; art. 15.4, p. 23</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Stato analisi</span><span class="v">non ancora analizzato</span></p>
+<hr>
+<h3 id="h21b8fbc06923" data-nav="3"><span class="wl">C6</span> — Criteri premiali art. 57 e Allegato II.3 D.Lgs. 36/2023 (2 punti)</h3>
+<p><strong>Sommario.</strong> Il punteggio è tabellare (2 punti o zero) ed è attribuito se l'operatore economico, nell'ultimo triennio, ha rispettato gli obblighi della legge 68/1999 sul collocamento dei disabili (art. 57 e all. II.3, art. 1 co. 5 lett. e). Non sono possibili proposte migliorative. Il disciplinare non indica con quale documento dimostrarlo né la regola in caso di RTI (art. 18.1, p. 30).</p>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo</th><th>Punti</th><th>Natura</th></tr></thead><tbody><tr><td>C6.1</td><td>Clausole sociali e premiali per pari opportunità e inclusione lavorativa</td><td>2</td><td>Tabellare</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Deliverables richiesti</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Deliverable</th><th>Vincolo di formato</th><th>Fonte</th></tr></thead><tbody><tr><td>Comprova del rispetto degli obblighi della L. 68/1999 nell'ultimo triennio. Il documento non è specificato dal disciplinare (TBD)</td><td>[non indicato]</td><td>art. 18.1, sub 6.1, p. 30</td></tr><tr><td>Relazione tecnica, sezione C6</td><td>Struttura per criteri e sub-criteri richiesta per l'intera tabella 18.1; contenuto [non indicato]</td><td>art. 16, p. 25</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Stato analisi</span><span class="v">non ancora analizzato</span></p>
+<hr>
+<h3 id="h74791f55473a" data-nav="3"><span class="wl">C7</span> — Criteri premiali art. 108 co. 7 D.Lgs. 36/2023 (2 punti)</h3>
+<p><strong>Sommario.</strong> Il punteggio è tabellare (2 punti o zero) ed è attribuito al concorrente in possesso della certificazione UNI/PdR 125:2022 sulla parità di genere, in corso di validità. In caso di RTI devono possederla tutti i componenti. Non sono possibili proposte migliorative; il disciplinare non indica come comprovarla nell'offerta (art. 18.1, p. 30).</p>
+<div class="tw"><table><thead><tr><th>Sub</th><th>Titolo</th><th>Punti</th><th>Natura</th></tr></thead><tbody><tr><td>C7.1</td><td>Adozione di politiche tese al raggiungimento della parità di genere</td><td>2</td><td>Tabellare</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Deliverables richiesti</span><span class="v"></span></p>
+<div class="tw"><table><thead><tr><th>Deliverable</th><th>Vincolo di formato</th><th>Fonte</th></tr></thead><tbody><tr><td>Certificazione UNI/PdR 125:2022 in corso di validità (in RTI: di tutti i componenti). Modalità di comprova non specificata (TBD)</td><td>[non indicato]</td><td>art. 18.1, sub 7.1, p. 30</td></tr><tr><td>Relazione tecnica, sezione C7</td><td>Struttura per criteri e sub-criteri richiesta per l'intera tabella 18.1; contenuto [non indicato]</td><td>art. 16, p. 25</td></tr></tbody></table></div>
+<p class="kv"><span class="k">Stato analisi</span><span class="v">non ancora analizzato</span></p>
+<hr>
+<h2 id="hda66df59a2d0" data-nav="2">Dove si concentra il potenziale</h2>
+<p>Con la riparametrazione per sub-criterio, chi presenta la proposta migliore in un sub-criterio prende tutti i punti, anche nei sub-criteri da 5 punti. Il margine maggiore è dove il disciplinare elenca leve ampie e misurabili senza limiti specifici di modifica.</p>
+<ul><li><strong>C2.1 — BIPV (15 pt)</strong>: è il sub-criterio più pesante della gara e ha tre parametri di giudizio espliciti (impatto visivo, riflettanza, conformità alla tutela). Il potenziale è alto, ma il margine è vincolato da tutela e rinvio a <code>PI-00a-ESEC-01</code>: serve una soluzione tecnica mirata, non generica.</li><li><strong>C1.1 — Serramenti (10 pt)</strong>: tre leve distinte (prestazioni Uf/Uw/Rw, superfici vetrate aggiuntive, nodi di posa) con una soglia numerica di confronto, i minimi di progetto. Il miglioramento si può dimostrare con valori, cosa che favorisce i giudizi &quot;ottimo&quot;.</li><li><strong>C2.2 — Antintrusione e TVCC (8 pt)</strong>: è una &quot;proposta integrativa&quot; e il disciplinare non pone limiti specifici oltre a quelli generali, quindi la libertà di proposta è ampia.</li><li><strong>C1.3, C1.2, C2.3 (8 + 7 + 7 pt)</strong>: le leve sono quantitative e dichiarate (prestazioni acustiche, scorta di poltrone, garanzia, kWh di accumulo, software di supervisione), quindi facili da rendere verificabili.</li><li><strong>C3.3 — Protezione delle attrezzature esistenti (5 pt)</strong>: è l'unico sub-criterio metodologico, senza forniture. Si può ottenere punteggio con organizzazione e dettaglio operativo, con un'incidenza economica bassa che conta nella verifica di anomalia (art. 23).</li><li><strong>C3.2, C4.1, C4.2 (5 pt ciascuno)</strong>: gli elementi premianti sono elencati puntualmente (attrezzature cinematografiche, dotazioni dell'ascensore, percentuali EPD e classi VOC oltre i CAM).</li><li><strong>C5, C6, C7 (10 pt tabellari)</strong>: non dipendono da proposte. Valgono quanto l'intero C4 e sono &quot;a costo zero&quot; se l'impresa possiede i requisiti: vanno verificati subito.</li></ul>
+<hr>
+<h2 id="h2be98d9460e6" data-nav="2">Vincoli principali</h2>
+<ul><li>[C1-C4]: le migliorie devono rispettare, pena l'esclusione, le caratteristiche minime dei documenti di gara (art. 16, p. 25). Nessun elemento economico in relazione, computo non estimativo o cronoprogramma, pena l'esclusione (art. 16, p. 26; art. 22, p. 33).</li><li>[C1-C4]: la verifica di anomalia guarda proprio all'incidenza economica e organizzativa delle migliorie sommate al progetto (art. 23, p. 33). Le migliorie devono restare sostenibili.</li><li>[C1-C4]: tutto deve stare in 30 facciate complessive. Le migliorie vanno inserite nel cronoprogramma entro i 150 giorni contrattuali (art. 16, pp. 25-26; art. 3.1, p. 8).</li><li>[C1]: prestazioni dei serramenti superiori ai minimi di progetto. Le poltrone ricadono nei CAM arredi del D.M. 254/2022 (art. 18.1, p. 28; Premesse, p. 3).</li><li>[C2]: per C2.1, conformità totale agli indirizzi di tutela della Soprintendenza Basilicata e riferimento all'elaborato PI-00a-ESEC-01. Per C2.3, riferimento &quot;&gt; 20 kWh&quot; (art. 18.1, p. 28).</li><li>[C4]: per C4.2 la soglia sono i minimi CAM del D.M. 24.11.2025 (art. 18.1, p. 29; Premesse, p. 3).</li><li>[C5], [C6], [C7]: punteggio predeterminato, nessuna proposta migliorativa possibile. Per C7 in RTI la certificazione deve essere di tutti i componenti (art. 18.1, pp. 29-30).</li><li>Rischi di fuori scope (inferiti, da verificare sugli elaborati): interventi visibili su involucro, copertura e cupola di un edificio dentro il Castello Aragonese (C1.1, C2.1, C3.1); materiali acustici da rendere compatibili con l'adeguamento antincendio (C1.3); piano di economia circolare da limitare alle demolizioni già previste (C4.2).</li><li>Soglia di sbarramento 50/90 prima della riparametrazione (art. 18.1, p. 30). Il soccorso istruttorio non si applica all'offerta tecnica (art. 14, p. 19).</li></ul>
+<hr>
+<h2 id="hf1ed078f5740" data-nav="2">Elaborati citati nel disciplinare</h2>
+<blockquote class="info"><p>Prima lista di cosa serve. Verificare la presenza al momento del caricamento in 00_input/elaborati/.</p></blockquote>
+<p>La colonna &quot;Presenza in 00_input&quot; deriva solo da <code>00_input/_manifest_input.md</code>: gli elaborati non sono ancora stati letti.</p>
+<div class="tw"><table><thead><tr><th>Elaborato</th><th>Sezione citata nel disciplinare</th><th>Priorita' per l'analisi</th><th>Presenza in 00_input (da manifest)</th></tr></thead><tbody><tr><td>PI-00a-ESEC-01 Planimetria di insieme con fotovoltaico integrato e fotoinserimenti</td><td>art. 18.1, sub 2.1 (p. 28)</td><td>Alta (C2.1, 15 pt)</td><td>Presente: PDF non firmato, non nell'Elenco Elaborati, dicitura &quot;dettaglio offerta tecnica&quot;</td></tr><tr><td>G-04-ESEC-02 Computo Metrico Estimativo (C.M.E.)</td><td>art. 3 (p. 7); art. 3.2 (p. 9)</td><td>Alta</td><td>Presente, revisione più recente (sostituisce ESEC-01)</td></tr><tr><td>G-06-ESEC-02 Capitolato Speciale d'Appalto (art. 2.6 durata, art. 2.17 anticipazione)</td><td>art. 3.1 (p. 8)</td><td>Alta</td><td>Presente, revisione più recente (sostituisce ESEC-01)</td></tr><tr><td>Elaborato B3, Relazione sui Criteri Minimi Ambientali</td><td>Premesse (p. 3)</td><td>Alta (C4.2, C1.2)</td><td>Nel manifest la relazione CAM è G-09-ESEC-01: corrispondenza della denominazione da verificare</td></tr><tr><td>Cronoprogramma dei lavori di progetto</td><td>art. 3.1 (p. 8), premio di accelerazione; base del cronoprogramma da allegare (art. 16, p. 26)</td><td>Alta</td><td>SIC-01-ESEC-01 presente</td></tr><tr><td>Progetto esecutivo nel suo insieme (&quot;progetto posto a base di gara&quot;, &quot;minimi di progetto&quot;, &quot;configurazione base del cineteatro&quot;)</td><td>art. 2.1 (p. 6); art. 16 (p. 26); art. 18.1 (pp. 28-29); art. 23 (p. 33)</td><td>Alta</td><td>40 elaborati dell'Elenco G-00-ESEC-01 più integrazioni 2026 (56 file censiti)</td></tr><tr><td>G-05-ESEC-01 Quadro Incidenza Manodopera</td><td>art. 3 (p. 7)</td><td>Media</td><td>Presente (nessuna ESEC-02: verificarne la coerenza con G-04-ESEC-02)</td></tr><tr><td>Quadro economico, voce &quot;imprevisti&quot;</td><td>art. 3.1 (p. 8), premio di accelerazione</td><td>Media</td><td>G-01-ESEC-02 presente, revisione più recente</td></tr><tr><td>Listino regionale vigente (prezzario)</td><td>art. 3 (p. 7)</td><td>Media</td><td>Prezzario Basilicata non disponibile in prometeus-prezzari</td></tr><tr><td>Allegato NT, Norme tecniche della PAD</td><td>art. 1 (pp. 4-5); art. 16 (p. 25)</td><td>Bassa (procedurale)</td><td>Presente (norme.tecniche.pdf)</td></tr><tr><td>Allegati A (domanda), B (patente a crediti), C (equivalenza CCNL)</td><td>art. 2.1 (p. 6); art. 15 (p. 20); art. 17 (p. 27)</td><td>Bassa per l'analisi tecnica (Buste A e C)</td><td>Non presenti in 00_input</td></tr><tr><td>Determina n. 80 dell'11/09/2026; verbale di validazione del 29/05/2026; delibere G.C. n. 69/2026 e n. 84/2026</td><td>Premesse (p. 3)</td><td>Bassa</td><td>Non presenti</td></tr></tbody></table></div>
+<hr>
+<h2 id="h033a83da3bcd" data-nav="2">Domande aperte per il professionista</h2>
+<blockquote class="info"><p>Da discutere prima del Gate A (strategia) o durante.</p></blockquote>
+<ol><li>Requisiti tabellari (10 punti, quanto l'intero C4): quanti interventi documentabili su cinema, teatri o edifici di spettacolo aperti al pubblico ha l'impresa (fino a 6)? Rispetta gli obblighi della L. 68/1999 nell'ultimo triennio e possiede la UNI/PdR 125:2022 in corso di validità? Partecipa da sola o in RTI (in RTI la PdR 125 deve averla ogni componente)? Serve un avvalimento premiale per C5?<textarea class="ans" id="f0" rows="3" placeholder="Risposta…"></textarea></li><li>Quanto investire in migliorie: la tecnica vale 90 punti e il prezzo 10. Con la formula bilineare (X = 0,85) i ribassi oltre la media rendono poco, e la verifica di anomalia (art. 23) guarda proprio all'incidenza delle migliorie. Quale quota del margine siete disposti a trasformare in migliorie?<textarea class="ans" id="f1" rows="3" placeholder="Risposta…"></textarea></li><li>C2.1 BIPV (15 punti): avete indicazioni o pareri della Soprintendenza Basilicata sulla copertura e sulla cupola del castello? Avete già un orientamento su tecnologie fotovoltaiche integrate a impatto visivo e riflettanza nulli, coerenti con PI-00a-ESEC-01?<textarea class="ans" id="f2" rows="3" placeholder="Risposta…"></textarea></li><li>Chiarimenti da inviare entro martedì 06/10 ore 12:00: procediamo? Quesiti possibili: (a) in C2.3 &quot;&gt; 20 kWh&quot; indica la capacità di progetto o una soglia minima? (b) con quale documento in Busta B si comprovano C6.1 e C7.1? (c) le schede di C5.1 rientrano nelle 30 facciate? (d) per C5.1 valgono un arco temporale e lavori eseguiti in RTI o in subappalto?<textarea class="ans" id="f3" rows="3" placeholder="Risposta…"></textarea></li><li>Sopralluogo obbligatorio: è già stato richiesto (entro lunedì 05/10 ore 12:00)? Chi lo farà? Si può usare la visita per verificare serramenti, copertura e cupola e le attrezzature audio/video esistenti, che servono per C1.1, C3.1 e C3.3?<textarea class="ans" id="f4" rows="3" placeholder="Risposta…"></textarea></li></ol>
+<hr>
+<h2 id="hd70ee14a080f" data-nav="2">Prossimi passi</h2>
+<ol><li><strong>Entro lunedì 05/10 ore 12:00</strong>: richiesta di sopralluogo sulla PAD ASMECOMM, con nominativo e qualifica dell'incaricato.</li><li>Condividere questo brief con il professionista e l'operatore e raccogliere le risposte alle domande aperte (Gate A anticipato).</li><li><strong>Entro martedì 06/10 ore 12:00</strong>: inviare gli eventuali quesiti di chiarimento sulla PAD. Controllare le risposte entro giovedì 08/10.</li><li>Fase 1 completata (03/10/2026): knowledge graph costruito (<code>02_graph/index.md</code>) e audit strategico prodotto (<code>03_criteria/strategy_audit.md</code>). Compilare la sezione &quot;Indicazioni strategiche del professionista&quot; dell'audit e decidere quali quesiti Q1-Q5 (<code>02_graph/economic_framework.md</code> §10.1) inviare alla SA.</li><li>Il prezzario della Regione Basilicata non è disponibile in prometeus-prezzari, quindi l'Analisi 2 (gap prezzi) dell'audit strategico è rinviata.</li></ol>
+<h2 id="note-team">Note libere del team</h2><textarea class="ans" id="f5" rows="5" placeholder="Osservazioni, vincoli, indicazioni aggiuntive…"></textarea>
+</main>
+<div class="bar">
+  <button id="copy" type="button">Copia risposte in Markdown</button>
+  <button id="dl" class="ghost" type="button">Scarica .md</button>
+  <button id="reset" class="ghost" type="button">Azzera</button>
+  <span id="count"></span>
+</div>
+<footer class="src">
+  Generato da <span>03_criteria/gara_brief.md</span> — ultima modifica 2026-10-03 11:29 — contenuto b2d224fcc0b1<br>
+  Il markdown e' la fonte di verita': non modificare questo file, rigeneralo con
+  <span>node scripts/render/md_to_html.js 03_criteria/gara_brief.md</span>
+</footer>
+</div>
+
+<script>
+(function () {
+  var KEY = 'spada:b2d224fcc0b1';
+  var FIELDS = [{"id":"f0","label":"Requisiti tabellari (10 punti, quanto l'intero C4): quanti interventi documentabili su cinema, teatri o edifici di spettacolo aperti al pubblico ha l'impresa (f","section":"Domande aperte per il professionista","kind":"risposta"},{"id":"f1","label":"Quanto investire in migliorie: la tecnica vale 90 punti e il prezzo 10. Con la formula bilineare (X = 0,85) i ribassi oltre la media rendono poco, e la verifica","section":"Domande aperte per il professionista","kind":"risposta"},{"id":"f2","label":"C2.1 BIPV (15 punti): avete indicazioni o pareri della Soprintendenza Basilicata sulla copertura e sulla cupola del castello? Avete già un orientamento su tecno","section":"Domande aperte per il professionista","kind":"risposta"},{"id":"f3","label":"Chiarimenti da inviare entro martedì 06/10 ore 12:00: procediamo? Quesiti possibili: (a) in C2.3 \"> 20 kWh\" indica la capacità di progetto o una soglia minima? ","section":"Domande aperte per il professionista","kind":"risposta"},{"id":"f4","label":"Sopralluogo obbligatorio: è già stato richiesto (entro lunedì 05/10 ore 12:00)? Chi lo farà? Si può usare la visita per verificare serramenti, copertura e cupol","section":"Domande aperte per il professionista","kind":"risposta"},{"id":"f5","label":"Note libere del team","section":"Note libere","kind":"note"}];
+  var boxes = FIELDS.map(function (f) { return document.getElementById(f.id); });
+
+  function load() {
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+    FIELDS.forEach(function (f, n) { if (saved[f.id]) boxes[n].value = saved[f.id]; });
+    autosize();
+  }
+  function save() {
+    var data = {};
+    FIELDS.forEach(function (f, n) { if (boxes[n].value.trim()) data[f.id] = boxes[n].value; });
+    try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {}
+    var n = Object.keys(data).length;
+    document.getElementById('count').textContent =
+      n + ' / ' + FIELDS.length + ' compilate';
+  }
+  function autosize() {
+    boxes.forEach(function (b) { b.style.height = 'auto'; b.style.height = (b.scrollHeight + 2) + 'px'; });
+  }
+  function toMarkdown() {
+    var out = ['# Risposte — Gara Brief — Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)', '',
+               '> Incollare in \`03_criteria/gara_brief.md\` — il markdown resta la fonte di verita\'.', ''];
+    var section = null;
+    FIELDS.forEach(function (f, n) {
+      var v = boxes[n].value.trim();
+      if (!v) return;
+      if (f.section !== section) { section = f.section; out.push('## ' + section, ''); }
+      out.push('**' + f.label + '**', '', v, '');
+    });
+    if (out.length <= 4) out.push('_Nessuna risposta compilata._');
+    return out.join('\n');
+  }
+
+  boxes.forEach(function (b) {
+    b.addEventListener('input', function () { save(); autosize(); });
+  });
+  document.getElementById('copy').addEventListener('click', function () {
+    navigator.clipboard.writeText(toMarkdown()).then(function () {
+      var el = document.getElementById('copy');
+      var t = el.textContent; el.textContent = 'Copiato ✓';
+      setTimeout(function () { el.textContent = t; }, 1600);
+    });
+  });
+  document.getElementById('dl').addEventListener('click', function () {
+    var blob = new Blob([toMarkdown()], { type: 'text/markdown' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'risposte_03_criteria_gara_brief_md.md';
+    a.click(); URL.revokeObjectURL(a.href);
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    if (!confirm('Cancellare tutte le risposte compilate su questo dispositivo?')) return;
+    boxes.forEach(function (b) { b.value = ''; });
+    save(); autosize();
+  });
+  window.addEventListener('load', function () { load(); save(); });
+  load(); save();
+})();
+</script>
+</body>
+</html>

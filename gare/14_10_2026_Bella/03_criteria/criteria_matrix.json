@@ -1,0 +1,463 @@
+{
+  "gara": "Lavori di adeguamento ed efficientamento energetico del Cineteatro “Sala Polifunzionale Periz” ubicato nel Castello di Bella (PZ)",
+  "cig": "BCF01395AF",
+  "cup": "D63I23000230009",
+  "source": "00_input/disciplinare/disciplinare.di.gara.pdf — art. 18.1, Tabella criteri D/T, pp. 28-30",
+  "extracted_on": "2026-10-03",
+  "score_split": {
+    "technical": 90,
+    "technical_discretionary": 80,
+    "technical_tabular": 10,
+    "economic": 10,
+    "temporal": 0,
+    "total": 100,
+    "source": "art. 18 (p. 27); bando IV.2.2 (p. 3); nessun elemento temporale (durata fissa 150 gg, art. 3.1 p. 8)"
+  },
+  "threshold": {
+    "min_technical_score": 50,
+    "out_of": 90,
+    "computed": "prima della riparametrazione",
+    "consequence": "esclusione",
+    "source": "art. 18.1 (p. 30); art. 22 (p. 33)"
+  },
+  "discretionary_method": {
+    "description": "coefficiente 0-1 per commissario, media aritmetica per sub-criterio",
+    "scale": [
+      { "level": "eccellente/ottimo", "range": "0,81-1" },
+      { "level": "buono", "range": "0,61-0,80" },
+      { "level": "discreto/adeguato", "range": "0,41-0,60" },
+      { "level": "sufficiente", "range": "0,21-0,40" },
+      { "level": "scarso/mediocre", "range": "0,01-0,20" },
+      { "level": "insufficiente/non valutabile", "range": "0" }
+    ],
+    "commission_members": 3,
+    "source": "art. 18.2 (p. 30); art. 19 (p. 31)"
+  },
+  "tabular_method": "punteggio assegnato automaticamente e in valore assoluto in base a presenza/assenza dell'elemento richiesto (art. 18.2, p. 30)",
+  "aggregation": "aggregativo compensatore Pi = Σ Cxi·Px; I^ riparametrazione per sub-criterio; arrotondamento a 2 decimali (art. 18.4, p. 31)",
+  "economic_method": {
+    "formula": "bilineare",
+    "x": 0.85,
+    "definition": "Ci = X·(Ai/Asoglia) se Ai ≤ Asoglia; Ci = X + (1−X)·[(Ai−Asoglia)/(Amax−Asoglia)] se Ai > Asoglia; Asoglia = media ribassi; Amax = ribasso più conveniente",
+    "base": "ribasso % (max 3 decimali) sull'importo a base di gara € 381.364,99 al netto di IVA e costi sicurezza",
+    "source": "art. 18.3 (p. 31); art. 17 (pp. 26-27)"
+  },
+  "technical_offer_format": {
+    "limit_type": "TIPO B — limite totale distribuibile",
+    "max_pages": "15 pagine fronte-retro = 30 facciate complessive",
+    "page_format": "A4, pagine opportunamente numerate",
+    "font": "non inferiore a 11 punti (tipo di font non indicato)",
+    "line_spacing": "[non indicato]",
+    "margins": "[non indicato]",
+    "lines_per_page": "[non indicato]",
+    "structure": "per criteri e sub-criteri della tabella 18.1",
+    "excluded_from_count": ["copertine", "sommari", "elaborati grafici", "schede tecniche esplicative"],
+    "mandatory_attachments": ["computo metrico NON estimativo delle migliorie", "cronoprogramma delle lavorazioni"],
+    "source": "art. 16 (pp. 25-26)"
+  },
+  "criteria": [
+    {
+      "id": "C1",
+      "disciplinare_ref": "1",
+      "title": "Involucro, Poltrone ed Efficientamento Acustico",
+      "max_score": 25,
+      "weight_pct": 27.8,
+      "priority": "ALTA",
+      "nature": "discrezionale",
+      "subcriteria": [
+        {
+          "id": "C1.1",
+          "title": "Qualità, quantità ed efficientamento nodi dei nuovi infissi",
+          "max_score": 10,
+          "nature": "D",
+          "object": "Proposte per il miglioramento delle prestazioni termo-acustiche complessive dei serramenti (trasmittanza Uf/Uw e abbattimento Rw) superiori ai minimi di progetto; fornitura quantitativa aggiuntiva di superfici vetrate performanti; soluzioni di isolamento termo-acustico integrativo dei nodi di posa (infisso-muratura) per l'eliminazione dei ponti termici e la prevenzione di condense/muffe.",
+          "source": "art. 18.1, p. 28"
+        },
+        {
+          "id": "C1.2",
+          "title": "Fornitura quantitativa e qualità delle nuove poltrone",
+          "max_score": 7,
+          "nature": "D",
+          "object": "Parametri migliorativi relativi all'ergonomia delle sedute, alla quantità di poltrone complete fornite come scorta di rispetto e all'estensione della garanzia.",
+          "source": "art. 18.1, p. 28"
+        },
+        {
+          "id": "C1.3",
+          "title": "Efficientamento e risanamento acustico dei materiali interni",
+          "max_score": 8,
+          "nature": "D",
+          "object": "Proposte per l'impiego di materiali di finitura, pannellature (MDF) o rivestimenti speciali a elevate prestazioni fonoassorbenti/fonoisolanti per ottimizzare il tempo di riverbero e l'acustica della sala.",
+          "source": "art. 18.1, p. 28"
+        }
+      ],
+      "scoring_method": "discrezionale: coefficiente 0-1 per commissario, media, riparametrazione per sub-criterio (art. 18.2-18.4)",
+      "rewarding_elements": [
+        "Uf/Uw e Rw dei serramenti superiori ai minimi di progetto (C1.1)",
+        "superfici vetrate performanti aggiuntive (C1.1)",
+        "isolamento termo-acustico dei nodi di posa infisso-muratura contro ponti termici e condense/muffe (C1.1)",
+        "ergonomia delle sedute (C1.2)",
+        "quantità di poltrone complete come scorta di rispetto (C1.2)",
+        "estensione della garanzia delle poltrone (C1.2)",
+        "materiali di finitura, pannellature MDF o rivestimenti speciali fonoassorbenti/fonoisolanti per tempo di riverbero e acustica della sala (C1.3)"
+      ],
+      "constraints": [
+        "Migliorie su serramenti superiori ai minimi di progetto: il progetto esecutivo è la soglia minima (art. 18.1, sub 1.1, p. 28)",
+        "Rispetto, pena esclusione, delle caratteristiche minime dei documenti di gara, principio di equivalenza (art. 16, p. 25)",
+        "Poltrone (arredi) soggette ai CAM D.M. 23 giugno 2022 n. 254; lavori ai CAM D.M. 24.11.2025 (Premesse, p. 3)",
+        "Nessun elemento economico in relazione, computo non estimativo e cronoprogramma, pena esclusione (art. 16, p. 26)",
+        "Sostenibilità economica delle migliorie oggetto di verifica di anomalia (art. 23, p. 33)"
+      ],
+      "implicit_constraints": [
+        "Durata lavori fissa 150 giorni: le migliorie devono essere inserite nel cronoprogramma senza estendere la durata contrattuale (art. 3.1, p. 8; art. 16, p. 26)",
+        "Materiali interni compatibili con l'adeguamento antincendio della sala (Premesse, p. 3) — inferito"
+      ],
+      "documents_required": [
+        "Relazione tecnica — sezione C1 strutturata per sub 1.1, 1.2, 1.3 (art. 16, p. 25)",
+        "Computo metrico non estimativo — voci delle migliorie C1 (art. 16, pp. 25-26)",
+        "Elaborati grafici e schede tecniche esplicative, facoltativi (art. 16, p. 25)"
+      ],
+      "out_of_scope_risks": [
+        "Modifiche a geometria/partiture/aspetto esterno dei serramenti in un'ala del Castello Aragonese (art. 11, p. 16) — possibile eccedenza dal progetto approvato e necessità di autorizzazioni di tutela (inferito)",
+        "Superfici vetrate aggiuntive che comportino nuove aperture o modifiche d'involucro: variante e non miglioria (inferito)",
+        "Pannellature MDF/rivestimenti non compatibili con le classi di reazione al fuoco richieste (inferito)",
+        "Scorta poltrone ed estensione garanzia con incidenza economica rilevante ai fini dell'anomalia (art. 23, p. 33)"
+      ],
+      "notes": []
+    },
+    {
+      "id": "C2",
+      "disciplinare_ref": "2",
+      "title": "Energie Rinnovabili e Sistemi di Sicurezza",
+      "max_score": 30,
+      "weight_pct": 33.3,
+      "priority": "ALTA",
+      "nature": "discrezionale",
+      "subcriteria": [
+        {
+          "id": "C2.1",
+          "title": "Integrazione architettonica dell'impianto fotovoltaico (BIPV)",
+          "max_score": 15,
+          "nature": "D",
+          "object": "Sistemi fotovoltaici integrati sulla copertura, valutati in base all'azzeramento dell'impatto visivo, assenza di riflettanza e totale conformità agli indirizzi di tutela del vicino Castello della Soprintendenza Basilicata. (ai fini della formulazione della miglioria, si rimanda all'elaborato grafico PI-00a-ESEC-01_PLANIMETRIA DI INSIEME CON FOTOVOLTAICO INTEGRATO E FOTOINSERIMENTI)",
+          "source": "art. 18.1, p. 28"
+        },
+        {
+          "id": "C2.2",
+          "title": "Sistemi antintrusione e videosorveglianza",
+          "max_score": 8,
+          "nature": "D",
+          "object": "Proposta integrativa per la fornitura e installazione di un impianto di allarme perimetrale/volumetrico e di videosorveglianza TVCC a protezione della struttura e dei suoi accessi.",
+          "source": "art. 18.1, p. 28"
+        },
+        {
+          "id": "C2.3",
+          "title": "Sistemi di accumulo e Building Automation",
+          "max_score": 7,
+          "nature": "D",
+          "object": "Incremento quantitativo della capacità di accumulo delle batterie (>20 kWh) e sistemi software di gestione e controllo remoto integrato degli impianti del teatro.",
+          "source": "art. 18.1, p. 28"
+        }
+      ],
+      "scoring_method": "discrezionale: coefficiente 0-1 per commissario, media, riparametrazione per sub-criterio (art. 18.2-18.4)",
+      "rewarding_elements": [
+        "azzeramento dell'impatto visivo del FV integrato in copertura (C2.1)",
+        "assenza di riflettanza (C2.1)",
+        "totale conformità agli indirizzi di tutela della Soprintendenza Basilicata (C2.1)",
+        "impianto di allarme perimetrale/volumetrico e TVCC a protezione della struttura e degli accessi (C2.2)",
+        "incremento quantitativo della capacità di accumulo (>20 kWh) (C2.3)",
+        "software di gestione e controllo remoto integrato degli impianti del teatro (C2.3)"
+      ],
+      "constraints": [
+        "C2.1: FV integrato sulla copertura, conforme agli indirizzi di tutela della Soprintendenza Basilicata; formulazione con riferimento all'elaborato PI-00a-ESEC-01 (art. 18.1, sub 2.1, p. 28)",
+        "C2.3: valutato l'incremento della capacità di accumulo con riferimento a '>20 kWh' (art. 18.1, sub 2.3, p. 28)",
+        "Rispetto, pena esclusione, delle caratteristiche minime dei documenti di gara (art. 16, p. 25)",
+        "Nessun elemento economico nell'offerta tecnica, pena esclusione (art. 16, p. 26)",
+        "Sostenibilità economica delle migliorie oggetto di verifica di anomalia (art. 23, p. 33)"
+      ],
+      "implicit_constraints": [
+        "Edificio in un'ala del Castello Aragonese di Bella (art. 11, p. 16): interventi visibili in copertura soggetti a tutela — inferito",
+        "Durata lavori fissa 150 giorni (art. 3.1, p. 8)"
+      ],
+      "documents_required": [
+        "Relazione tecnica — sezione C2 strutturata per sub 2.1, 2.2, 2.3 (art. 16, p. 25)",
+        "Computo metrico non estimativo — voci delle migliorie C2 (art. 16, pp. 25-26)",
+        "Elaborati grafici e schede tecniche esplicative, facoltativi (art. 16, p. 25)"
+      ],
+      "out_of_scope_risks": [
+        "C2.1: soluzioni FV visibili o riflettenti, o non conformi agli indirizzi di tutela → punteggio basso e rischio di non autorizzabilità (art. 18.1, p. 28)",
+        "C2.1: estensione del campo FV oltre la copertura o modifiche strutturali della copertura (inferito)",
+        "C2.2: installazioni a vista sui paramenti storici del castello e interferenze con impianti di progetto (inferito)",
+        "C2.3: maggiore accumulo che richieda nuovi locali tecnici o misure antincendio aggiuntive (inferito)"
+      ],
+      "notes": [
+        "N5: non chiaro se 20 kWh sia la capacità di progetto o la soglia di valutazione",
+        "N6: 'vicino Castello' mentre la sala è nel Castello; indirizzi di tutela non riportati nel disciplinare; PI-00a-ESEC-01 non firmato e non in Elenco Elaborati"
+      ]
+    },
+    {
+      "id": "C3",
+      "disciplinare_ref": "3",
+      "title": "Logistica Cantieri e Dotazioni Cinematografiche",
+      "max_score": 15,
+      "weight_pct": 16.7,
+      "priority": "",
+      "nature": "discrezionale",
+      "subcriteria": [
+        {
+          "id": "C3.1",
+          "title": "Risoluzione delle carenze termiche su terrazzi e cupola",
+          "max_score": 5,
+          "nature": "D",
+          "object": "Proposte per l'inserimento dello strato di isolamento termico sulla copertura piana e sistemi per l'abbattimento del carico termico estivo (effetto serra) della cupola in vetro.",
+          "source": "art. 18.1, p. 29"
+        },
+        {
+          "id": "C3.2",
+          "title": "Attrezzature o arredi cinematografici migliorativi/aggiuntivi",
+          "max_score": 5,
+          "nature": "D",
+          "object": "Proposte per la fornitura e posa in opera di components, arredi tecnici o attrezzature multimediali e cinematografiche aggiuntive o a prestazioni superiori rispetto alla configurazione base del cineteatro.",
+          "source": "art. 18.1, p. 29"
+        },
+        {
+          "id": "C3.3",
+          "title": "Logistica e piano di protezione delle attrezzature esistenti",
+          "max_score": 5,
+          "nature": "D",
+          "object": "Metodologia operative per lo smontaggio, imballaggio protettivo, stoccaggio sicuro e successivo rimontaggio/taratura dell'impianto audio, proiettori e dello schermo del cineteatro esistente.",
+          "source": "art. 18.1, p. 29"
+        }
+      ],
+      "scoring_method": "discrezionale: coefficiente 0-1 per commissario, media, riparametrazione per sub-criterio (art. 18.2-18.4)",
+      "rewarding_elements": [
+        "strato di isolamento termico sulla copertura piana (C3.1)",
+        "sistemi di abbattimento del carico termico estivo della cupola in vetro (C3.1)",
+        "componenti, arredi tecnici, attrezzature multimediali e cinematografiche aggiuntive o a prestazioni superiori alla configurazione base (C3.2)",
+        "metodologia di smontaggio, imballaggio protettivo, stoccaggio sicuro e rimontaggio/taratura di impianto audio, proiettori e schermo esistenti (C3.3)"
+      ],
+      "constraints": [
+        "C3.2: confronto con la 'configurazione base del cineteatro' di progetto (art. 18.1, sub 3.2, p. 29)",
+        "C3.3: riferito alle attrezzature esistenti — impianto audio, proiettori e schermo (art. 18.1, sub 3.3, p. 29)",
+        "Rispetto, pena esclusione, delle caratteristiche minime dei documenti di gara (art. 16, p. 25)",
+        "Nessun elemento economico nell'offerta tecnica, pena esclusione (art. 16, p. 26)",
+        "Sostenibilità economica delle migliorie oggetto di verifica di anomalia (art. 23, p. 33)"
+      ],
+      "implicit_constraints": [
+        "Cantiere in edificio esistente nel castello, con limitazioni di accesso, movimentazione e deposito materiali (art. 11, pp. 16-17)",
+        "Durata lavori fissa 150 giorni (art. 3.1, p. 8)"
+      ],
+      "documents_required": [
+        "Relazione tecnica — sezione C3 strutturata per sub 3.1, 3.2, 3.3 (art. 16, p. 25)",
+        "Computo metrico non estimativo — voci delle migliorie C3 (art. 16, pp. 25-26)",
+        "Elaborati grafici e schede tecniche esplicative, facoltativi (art. 16, p. 25)"
+      ],
+      "out_of_scope_risks": [
+        "C3.1: interventi su cupola in vetro e copertura visibili dall'esterno del castello — possibile incompatibilità con la tutela (inferito)",
+        "C3.1: spessori e sovraccarichi aggiuntivi in copertura con impatto su impermeabilizzazione, quote e soglie (inferito)",
+        "C3.2: forniture non pertinenti alla configurazione del cineteatro o con incidenza economica rilevante (art. 23, p. 33)"
+      ],
+      "notes": [
+        "N4: il titolo del criterio non è coerente con il contenuto del sub 3.1 (termico)"
+      ]
+    },
+    {
+      "id": "C4",
+      "disciplinare_ref": "4",
+      "title": "Accessibilità Universale e Criteri CAM",
+      "max_score": 10,
+      "weight_pct": 11.1,
+      "priority": "",
+      "nature": "discrezionale",
+      "subcriteria": [
+        {
+          "id": "C4.1",
+          "title": "Integrazioni tecnologiche e comfort dell'ascensore",
+          "max_score": 5,
+          "nature": "D",
+          "object": "Fornitura di accessori e dispositivi opzionali per l'impianto idraulico nel vano circolare (sistemi di telecontrollo, sintesi vocale, pulsanti Braille avanzati) e livello di isolamento acustico (dB) della cabina.",
+          "source": "art. 18.1, p. 29"
+        },
+        {
+          "id": "C4.2",
+          "title": "Criteri CAM avanzati, certificazioni di filiera ed economia circolare",
+          "max_score": 5,
+          "nature": "D",
+          "object": "Percentuale di materiale riciclato certificata (EPD) in lastre di cartongesso, silicati antincendio e isolanti eccedente i minimi CAM; utilizzo di legno tracciabile (FSC/PEFC); impiego di materiali a bassissima emissione VOC (Classe A+); piano avanzato di economia circolare per la gestione, selezione e riciclo dei detriti da taglio solai e demolizioni con monitoraggio polveri/vibrazioni.",
+          "source": "art. 18.1, p. 29"
+        }
+      ],
+      "scoring_method": "discrezionale: coefficiente 0-1 per commissario, media, riparametrazione per sub-criterio (art. 18.2-18.4)",
+      "rewarding_elements": [
+        "telecontrollo, sintesi vocale, pulsanti Braille avanzati per l'ascensore (C4.1)",
+        "isolamento acustico della cabina in dB (C4.1)",
+        "riciclato certificato EPD eccedente i minimi CAM in cartongesso, silicati antincendio e isolanti (C4.2)",
+        "legno tracciabile FSC/PEFC (C4.2)",
+        "materiali a bassissima emissione VOC Classe A+ (C4.2)",
+        "piano avanzato di economia circolare dei detriti da taglio solai e demolizioni con monitoraggio polveri/vibrazioni (C4.2)"
+      ],
+      "constraints": [
+        "C4.2: le percentuali di riciclato devono eccedere i minimi CAM (art. 18.1, sub 4.2, p. 29); CAM di riferimento D.M. 24.11.2025 (Premesse, p. 3)",
+        "C4.1: accessori riferiti all'impianto (ascensore) idraulico nel vano circolare di progetto (art. 18.1, sub 4.1, p. 29)",
+        "Rispetto, pena esclusione, delle caratteristiche minime dei documenti di gara (art. 16, p. 25)",
+        "Nessun elemento economico nell'offerta tecnica, pena esclusione (art. 16, p. 26)",
+        "Sostenibilità economica delle migliorie oggetto di verifica di anomalia (art. 23, p. 33)"
+      ],
+      "implicit_constraints": [
+        "Le certificazioni dichiarate (EPD, FSC/PEFC, A+) devono essere comprovabili in esecuzione — inferito"
+      ],
+      "documents_required": [
+        "Relazione tecnica — sezione C4 strutturata per sub 4.1, 4.2 (art. 16, p. 25)",
+        "Computo metrico non estimativo — voci delle migliorie C4 (art. 16, pp. 25-26)",
+        "Elaborati grafici e schede tecniche esplicative, facoltativi (art. 16, p. 25)"
+      ],
+      "out_of_scope_risks": [
+        "C4.1: modifiche al vano circolare o alla tipologia di ascensore di progetto (inferito)",
+        "C4.2: il piano di economia circolare deve riferirsi a demolizioni e tagli solai già previsti in progetto, non introdurne di nuovi (inferito)",
+        "C4.2: impegni su certificazioni non verificabili o non reperibili sul mercato (inferito)"
+      ],
+      "notes": [
+        "N12: 'impianto idraulico nel vano circolare' letto come ascensore idraulico, coerente con il titolo del sub-criterio"
+      ]
+    },
+    {
+      "id": "C5",
+      "disciplinare_ref": "5",
+      "title": "Esperienza specifica pregressa",
+      "max_score": 6,
+      "weight_pct": 6.7,
+      "priority": "",
+      "nature": "tabellare",
+      "subcriteria": [
+        {
+          "id": "C5.1",
+          "title": "Esperienza pregressa di realizzazione di interventi analoghi a quello oggetto di affidamento, realizzati su immobili destinati a cinema, teatro, cineteatri o altri edifici destinati prevalentemente ad attività di spettacolo e intrattenimento aperti al pubblico",
+          "max_score": 6,
+          "nature": "T",
+          "object": "Per ciascun intervento ritenuto ammissibile e adeguatamente documentato sarà attribuito 1 punto, fino a un massimo di 6 punti. Ai fini della valutazione, l'Operatore Economico dovrà produrre per ciascun intervento una scheda sintetica contenente almeno: committente, denominazione e ubicazione dell'immobile, destinazione d'uso, oggetto e descrizione delle lavorazioni eseguite, importo dei lavori, periodo di esecuzione e data di ultimazione. La Commissione procederà all'attribuzione del punteggio esclusivamente per gli interventi per i quali la documentazione prodotta consenta di verificare in maniera chiara la riconducibilità alle caratteristiche sopra indicate.",
+          "source": "art. 18.1, p. 29"
+        }
+      ],
+      "scoring_method": "tabellare: 1 punto per intervento ammissibile e documentato, max 6 (art. 18.1 p. 29; art. 18.2 p. 30)",
+      "rewarding_elements": [
+        "numero di interventi analoghi documentati su immobili per spettacolo/intrattenimento aperti al pubblico (fino a 6)"
+      ],
+      "constraints": [
+        "Interventi ammissibili solo su immobili destinati a cinema, teatro, cineteatri o altri edifici destinati prevalentemente ad attività di spettacolo e intrattenimento aperti al pubblico (p. 29)",
+        "Scheda sintetica per intervento con contenuto minimo obbligatorio (p. 29)",
+        "Punteggio solo se la documentazione consente di verificare in maniera chiara la riconducibilità (p. 29)"
+      ],
+      "implicit_constraints": [
+        "Nessuna proposta migliorativa possibile: il punteggio dipende dal curriculum dell'O.E."
+      ],
+      "documents_required": [
+        "Scheda sintetica per ciascun intervento analogo (max 6 utili) (art. 18.1, sub 5.1, p. 29)"
+      ],
+      "out_of_scope_risks": [
+        "Interventi su edifici a destinazione mista o non prevalentemente di spettacolo: rischio di non ammissibilità (p. 29)",
+        "Schede prive di uno dei contenuti minimi: punto non attribuito (p. 29)"
+      ],
+      "notes": [
+        "N8: nessun arco temporale, importo minimo o regola sull'esecutore; formato schede non indicato; conteggio nelle 30 facciate non chiarito"
+      ]
+    },
+    {
+      "id": "C6",
+      "disciplinare_ref": "6",
+      "title": "Criteri premiali art. 57 e Allegato II.3 del D. Lgs. 36/2023",
+      "max_score": 2,
+      "weight_pct": 2.2,
+      "priority": "",
+      "nature": "tabellare",
+      "subcriteria": [
+        {
+          "id": "C6.1",
+          "title": "Clausole sociali e meccanismi premiali per realizzare le pari opportunità generazionali e di genere e per promuovere l'inclusione lavorativa delle persone con disabilità o persone svantaggiate",
+          "max_score": 2,
+          "nature": "T",
+          "object": "Ai sensi dell'art. 57 del D. Lgs. 36/2023 sarà attribuito un punteggio premiale all'O.E. se nell'ultimo triennio rispettato gli obblighi di cui alla legge n. 68 del 1999. (Art. 1, co. 5 lett. e) dell'allegato II.3 al Codice)",
+          "source": "art. 18.1, p. 30"
+        }
+      ],
+      "scoring_method": "tabellare on/off: 2 punti se requisito presente (art. 18.1 p. 30; art. 18.2 p. 30)",
+      "rewarding_elements": [
+        "rispetto degli obblighi L. 68/1999 nell'ultimo triennio"
+      ],
+      "constraints": [
+        "Requisito riferito all'ultimo triennio (art. 18.1, sub 6.1, p. 30)"
+      ],
+      "implicit_constraints": [
+        "Nessuna proposta migliorativa possibile: dipende dallo status dell'O.E."
+      ],
+      "documents_required": [
+        "Comprova del rispetto degli obblighi L. 68/1999 nell'ultimo triennio — documento non specificato dal disciplinare (TBD) (art. 18.1, sub 6.1, p. 30)"
+      ],
+      "out_of_scope_risks": [
+        "Forma e collocazione della comprova non indicate: rischio di mancata attribuzione se non inserita in offerta tecnica (TBD)",
+        "Regola per RTI non indicata (TBD)"
+      ],
+      "notes": [
+        "N7: comprova non indicata; titolo troncato nel disciplinare ('... del D. Lgs. 36/2023 e')"
+      ]
+    },
+    {
+      "id": "C7",
+      "disciplinare_ref": "7",
+      "title": "Criteri premiali 108 co.7 del D. Lgs. 36/2023",
+      "max_score": 2,
+      "weight_pct": 2.2,
+      "priority": "",
+      "nature": "tabellare",
+      "subcriteria": [
+        {
+          "id": "C7.1",
+          "title": "Adozione di politiche tese al raggiungimento della parità di genere",
+          "max_score": 2,
+          "nature": "T",
+          "object": "Sarà attribuito punteggio premiale al concorrente è in possesso della certificazione del sistema di gestione per la parità di genere UNI/PdR 125:2022 in corso di validità. In caso di R.T.I. la certificazione, ai fini dell'ottenimento del punteggio, dovrà essere posseduta da tutti i componenti del raggruppamento.",
+          "source": "art. 18.1, p. 30"
+        }
+      ],
+      "scoring_method": "tabellare on/off: 2 punti se requisito presente (art. 18.1 p. 30; art. 18.2 p. 30)",
+      "rewarding_elements": [
+        "certificazione UNI/PdR 125:2022 in corso di validità"
+      ],
+      "constraints": [
+        "Certificazione in corso di validità (art. 18.1, sub 7.1, p. 30)",
+        "In RTI: certificazione posseduta da tutti i componenti (art. 18.1, sub 7.1, p. 30)"
+      ],
+      "implicit_constraints": [
+        "Nessuna proposta migliorativa possibile: dipende dallo status dell'O.E."
+      ],
+      "documents_required": [
+        "Certificazione UNI/PdR 125:2022 in corso di validità (in RTI: di tutti i componenti) — modalità di comprova in offerta non specificata (TBD) (art. 18.1, sub 7.1, p. 30)"
+      ],
+      "out_of_scope_risks": [
+        "RTI con anche un solo componente privo di certificazione: 0 punti (p. 30)",
+        "Certificazione non in corso di validità alla presentazione dell'offerta: 0 punti (inferito da 'in corso di validità')"
+      ],
+      "notes": [
+        "N7: modalità di comprova non indicata"
+      ]
+    }
+  ],
+  "transversal_deliverables": [
+    "Relazione tecnica delle migliorie, unica, strutturata per criteri e sub-criteri: max 15 pagine fronte-retro (30 facciate) A4 numerate, font ≥ 11 pt (art. 16, p. 25)",
+    "Computo metrico NON estimativo delle migliorie, senza alcun elemento economico (art. 16, pp. 25-26)",
+    "Cronoprogramma delle lavorazioni integrato con le migliorie, senza alcun elemento economico (art. 16, p. 26)",
+    "Eventuale versione oscurata dell'offerta tecnica + dichiarazione firmata motivata (art. 16, p. 26)"
+  ],
+  "ambiguities": [
+    "N1: rinvii a 'paragrafo 0' (pp. 18, 30)",
+    "N2: Tabella 1 (p. 7) — riga lavori € 339.074,03 include i costi della sicurezza; la somma delle righe dà A+B (€ 394.370,46), non A (€ 381.364,99)",
+    "N3: riparametrazione per sub-criterio, applicazione ai tabellari non specificata",
+    "N4: C3 titolo non coerente con il sub 3.1",
+    "N5: C2.3 '>20 kWh' baseline o soglia",
+    "N6: C2.1 'vicino Castello'; indirizzi di tutela non riportati; PI-00a-ESEC-01 non firmato",
+    "N7: C6.1/C7.1 comprova non indicata; C6 regola RTI non indicata",
+    "N8: C5.1 senza arco temporale/importo minimo/regola esecutore; schede e limite facciate",
+    "N9: limite pagine senza font/interlinea/margini/conseguenze del superamento",
+    "N10: oggetto con/senza 'antincendio'",
+    "N11: 'Elaborato B3' CAM vs G-09-ESEC-01 nel manifest",
+    "N12: C4.1 'impianto idraulico nel vano circolare' = ascensore"
+  ]
+}
